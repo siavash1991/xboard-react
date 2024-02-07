@@ -38,7 +38,10 @@
 		"build": "react-scripts build",
 		"test": "jest",
 		"eject": "react-scripts eject",
-		"cypress": "cypress open"
+		"cypress": "cypress open",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"postdeploy": "echo 'Deployment complete.'"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -4,6 +4,7 @@
 	"private": true,
 	"homepage": "https://siavash1991.github.io/xboard-react",
 	"dependencies": {
+		"@heroicons/react": "^2.1.1",
 		"@reduxjs/toolkit": "^2.1.0",
 		"autoprefixer": "^10.4.17",
 		"flowbite-react": "^0.7.2",

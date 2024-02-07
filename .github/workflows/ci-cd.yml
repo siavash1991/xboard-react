@@ -1,0 +1,32 @@
+name: CI/CD
+
+on:
+    push:
+        branches:
+            - gh-pages
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 14
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Build
+              run: npm run build
+
+            - name: Deploy to GitHub Pages
+              if: success()
+              run: |
+                  git config --global user.email "actions@github.com"
+                  git config --global user.name "GitHub Actions"
+                  npm run deploy

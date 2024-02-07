@@ -1,0 +1,9 @@
+{
+	"explorer.compactFolders": true,
+	"explorer.expandSingleFolderWorkspaces": true,
+	"workbench.tree.indent": 20,
+	"gitlens.views.worktrees.files.icon": "type",
+	"workbench.list.horizontalScrolling": false,
+	"search.defaultViewMode": "list",
+	"problems.defaultViewMode": "tree"
+}

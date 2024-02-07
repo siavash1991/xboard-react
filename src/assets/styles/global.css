@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	background-color: #e8f2fb;
+}
+/* Custom scrollbar style */
+* {
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #a3d977;
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #e5e9ed;
+	}
+
+	/** For Firefox */
+	scrollbar-width: thin;
+
+	&::-moz-scrollbar {
+		width: 10px;
+	}
+
+	&::-moz-scrollbar-thumb {
+		background-color: #95a2b3;
+	}
+
+	&::-moz-scrollbar-track {
+		background-color: #e5e9ed;
+	}
+}
+
+body {
+	&::-webkit-scrollbar-thumb {
+		background-color: #0c1d39;
+	}
+	&::-moz-scrollbar-thumb {
+		background-color: #0c1d39;
+	}
+}
+
+.component-wrapper {
+	/* background-color: #eef7fd; */
+	padding-bottom: 0.4rem;
+	border-radius: 0.75rem;
+}
+.spinner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	animation: spin 1s linear infinite, fadeOut 0.5s 3.5s forwards;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

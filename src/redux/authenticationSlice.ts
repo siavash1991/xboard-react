@@ -1,8 +1,8 @@
 // src/redux/authenticationSlice.ts
 
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
-import { RootState } from './store';
+import axios from 'axios';
+// import { RootState } from './store';
 
 interface AuthState {
 	username: string | null;

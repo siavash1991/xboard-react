@@ -95,7 +95,7 @@ const XBarChart = () => {
 
 			new Chart(ctx, chartData);
 		}
-	}, []);
+	}, [chartId]);
 
 	return (
 		<div className="component-wrapper  bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6 mb-7">

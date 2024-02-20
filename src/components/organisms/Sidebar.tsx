@@ -22,27 +22,29 @@ const XSidebar = () => {
 		setActiveItem(pathname);
 	}, [pathname]);
 
-	const [mode, setMode, toggleMode] = useThemeMode();
+	const [, , toggleMode] = useThemeMode();
 
 	const dispatch = useAppDispatch();
-	const darkMode = useAppSelector(selectDarkMode);
+	useAppSelector(selectDarkMode);
 
 	useEffect(() => {
 		const storedMode = localStorage.getItem('darkMode');
 		if (storedMode === 'true') {
 			toggleMode();
 		}
-	}, []);
+	}, [toggleMode]);
+
 	const handleDarkModeToggle = () => {
 		dispatch(toggleDarkMode());
 	};
+
 	return (
 		<Sidebar
 			aria-label="Sidebar with logo branding example"
 			className="w-100 overflow-y-auto"
 		>
 			<Sidebar.Logo
-				href="#"
+				href="/"
 				img={Logo}
 				imgAlt="Flowbite logo"
 				data-testid="sidebar-logo"
@@ -74,21 +76,21 @@ const XSidebar = () => {
 						Users
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="#"
+						href="/"
 						icon={HiInformationCircle}
 						active={activeItem === '/forms'}
 					>
 						Forms
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="#"
+						href="/"
 						icon={HiChartPie}
 						active={activeItem === '/charts'}
 					>
 						Charts
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="#"
+						href="/"
 						icon={HiOutlineArchive}
 						active={activeItem === '/cards'}
 					>
@@ -139,7 +141,7 @@ const XSidebar = () => {
 				</div>
 				<a
 					className="text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300"
-					href="#"
+					href="/"
 				>
 					Turn new navigation off
 				</a>

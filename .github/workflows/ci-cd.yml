@@ -1,13 +1,13 @@
-name: CI/CD
+name: Deploy to GitHub Pages
 
 on:
     push:
         branches:
-            - gh-pages
+            - development
 
 jobs:
-    build:
-        runs-on: windows-latest # Specify the Windows environment
+    deploy:
+        runs-on: ubuntu-latest
 
         steps:
             - name: Checkout Repository
@@ -16,7 +16,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 'v18.17.1' # Set Node.js version to v18.17.1
+                  node-version: '18.17.1'
 
             - name: Install Dependencies
               run: npm install
@@ -25,8 +25,9 @@ jobs:
               run: npm run build
 
             - name: Deploy to GitHub Pages
-              if: success()
-              run: |
-                  git config --global user.email "actions@github.com"
-                  git config --global user.name "GitHub Actions"
-                  npm run deploy
+              if: github.ref == 'refs/heads/development'
+              uses: JamesIves/github-pages-deploy-action@4.2.0
+              with:
+                  branch: gh-pages
+                  folder: build
+                  token: ${{ secrets.GITHUB_TOKEN }}

@@ -23,6 +23,10 @@ jobs:
             - name: Build the project
               run: npm run build # Ensure this command builds the 'build' folder
 
+            - name: Debug - List files in build directory
+              run: |
+                  ls -la ./build
+
             - name: Deploy to GitHub Pages
               uses: actions/checkout@v3 # Checkout gh-pages branch
               with:

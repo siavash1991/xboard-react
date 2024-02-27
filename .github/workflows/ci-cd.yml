@@ -30,6 +30,12 @@ jobs:
             - name: Debug - Print git status
               run: git status
 
+            - name: Stage changes in build directory
+              run: git add ./build/*
+
+            - name: Commit changes in build directory
+              run: git commit -m "Update build files"
+
             - name: Deploy to GitHub Pages
               uses: actions/checkout@v3 # Checkout gh-pages branch
               with:

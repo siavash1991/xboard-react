@@ -27,6 +27,9 @@ jobs:
               run: |
                   ls -la ./build
 
+            - name: Debug - Print git status
+              run: git status
+
             - name: Deploy to GitHub Pages
               uses: actions/checkout@v3 # Checkout gh-pages branch
               with:

@@ -7,48 +7,29 @@ on:
 
 jobs:
     build-and-deploy:
-        runs-on: ubuntu-latest # Specify the operating system
+        runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v3
+            - name: Checkout Repository
+              uses: actions/checkout@v2
 
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 'v18.17.1' # Set Node.js version to v18.17.1
+                  node-version: '18.x' # Update to your desired Node.js version
 
             - name: Install Dependencies
               run: npm install
 
             - name: Build the project
-              run: npm run build # Ensure this command builds the 'build' folder
-
-            - name: Debug - List files in build directory
-              run: |
-                  ls -la ./build
-
-            - name: Debug - Print git status
-              run: git status
-
-            - name: Stage changes in build directory
-              run: git add ./build/*
-
-            - name: Commit changes in build directory
-              run: git commit -m "Update build files"
+              run: npm run build
 
             - name: Deploy to GitHub Pages
-              uses: actions/checkout@v3 # Checkout gh-pages branch
+              uses: peaceiris/actions-gh-pages@v3
               with:
-                  repository: ${{ github.repository }}
-                  ref: gh-pages
-                  token: ${{ secrets.GITHUB_TOKEN }} # Use your personal access token
+                  github_token: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+                  publish_dir: ./build
+                  publish_branch: gh-pages
 
-            - name: Copy build folder to gh-pages root
-              run: |
-                  rm -rf *  # Remove existing files in gh-pages branch (optional)
-                  cp -r ./build/* ./  # Copy all files from 'build' to the root
-                  git config user.name "GitHub Actions"
-                  git config user.email "actions@github.com"
-                  git add .
-                  git commit -m "Deploy from development branch"
-                  git push origin gh-pages --quiet
+            - name: Clean up build files
+              run: rm -rf build

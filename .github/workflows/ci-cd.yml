@@ -3,7 +3,7 @@ name: CI/CD
 on:
     push:
         branches:
-            - development
+            - development # Trigger on pushes to the 'development' branch
 
 jobs:
     build-and-deploy:
@@ -21,31 +21,21 @@ jobs:
               run: npm install
 
             - name: Build the project
-              run: npm run build
+              run: npm run build # Ensure this command builds the 'build' folder
 
             - name: Deploy to GitHub Pages
-              uses: actions/upload-artifact@v3
-              with:
-                  name: build-artifacts
-                  path: ./build
-
-            - uses: actions/checkout@v3
+              uses: actions/checkout@v3 # Checkout gh-pages branch
               with:
                   repository: ${{ github.repository }}
                   ref: gh-pages
                   token: ${{ secrets.GITHUB_TOKEN }} # Use your personal access token
 
-            - name: Download Artifacts
-              uses: actions/download-artifact@v3
-              with:
-                  name: build-artifacts
-
-            - name: Deploy build to gh-pages root
+            - name: Copy build folder to gh-pages root
               run: |
                   rm -rf *  # Remove existing files in gh-pages branch (optional)
-                  mv build-artifacts/build/* ./  # Move files from artifact to root
+                  cp -r ./build/* ./  # Copy all files from 'build' to the root
                   git config user.name "GitHub Actions"
                   git config user.email "actions@github.com"
                   git add .
-                  git commit -m "Deploy from main branch"
+                  git commit -m "Deploy from development branch"
                   git push origin gh-pages --quiet

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: CI/CD
 
 on:
     push:
@@ -6,28 +6,46 @@ on:
             - development
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+    build-and-deploy:
+        runs-on: ubuntu-latest # Specify the operating system
 
         steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v2
+            - uses: actions/checkout@v3
 
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '18.17.1'
+                  node-version: 'v18.17.1' # Set Node.js version to v18.17.1
 
             - name: Install Dependencies
               run: npm install
 
-            - name: Build
+            - name: Build the project
               run: npm run build
 
             - name: Deploy to GitHub Pages
-              if: github.ref == 'refs/heads/development'
-              uses: JamesIves/github-pages-deploy-action@4.2.0
+              uses: actions/upload-artifact@v3
               with:
-                  branch: gh-pages
-                  folder: build
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  name: build-artifacts
+                  path: ./build
+
+            - uses: actions/checkout@v3
+              with:
+                  repository: ${{ github.repository }}
+                  ref: gh-pages
+                  token: ${{ secrets.GITHUB_TOKEN }} # Use your personal access token
+
+            - name: Download Artifacts
+              uses: actions/download-artifact@v3
+              with:
+                  name: build-artifacts
+
+            - name: Deploy build to gh-pages root
+              run: |
+                  rm -rf *  # Remove existing files in gh-pages branch (optional)
+                  mv build-artifacts/build/* ./  # Move files from artifact to root
+                  git config user.name "GitHub Actions"
+                  git config user.email "actions@github.com"
+                  git add .
+                  git commit -m "Deploy from main branch"
+                  git push origin gh-pages --quiet

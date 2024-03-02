@@ -54,7 +54,7 @@ const XSidebar = () => {
 			<Sidebar.Items>
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
-						href="/"
+						href="/xboard-react/"
 						icon={HiChartPie}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"

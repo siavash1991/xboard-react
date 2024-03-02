@@ -14,7 +14,7 @@ function App() {
 				<Router>
 					<Suspense fallback={<XLoadingSpinner />}>
 						<Routes>
-							<Route path="/" element={<XMain />} />
+							<Route path="/xboard-react/" element={<XMain />} />
 							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</Suspense>

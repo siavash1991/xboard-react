@@ -1,5 +1,6 @@
 import { Footer } from 'flowbite-react';
 import Logo from '../../assets/images/favicon.svg';
+import { withBasePath } from 'components/shared/basePathHelper';
 
 const XFooter = () => {
 	return (
@@ -7,7 +8,7 @@ const XFooter = () => {
 			<div className="w-full text-center">
 				<div className="w-full flex flex-wrap items-center justify-center sm:justify-between">
 					<Footer.Brand
-						href="/xboard-react/"
+						href={withBasePath('/')}
 						src={Logo}
 						alt="Xboard Logo"
 						name="XBoard"

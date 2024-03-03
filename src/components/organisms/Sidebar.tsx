@@ -14,6 +14,7 @@ import {
 	HiOutlineUsers,
 } from 'react-icons/hi';
 import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks';
+import { withBasePath } from 'components/shared/basePathHelper';
 
 const XSidebar = () => {
 	const { pathname } = useLocation();
@@ -33,18 +34,16 @@ const XSidebar = () => {
 			toggleMode();
 		}
 	}, [toggleMode]);
-
 	const handleDarkModeToggle = () => {
 		dispatch(toggleDarkMode());
 	};
-
 	return (
 		<Sidebar
 			aria-label="Sidebar with logo branding example"
 			className="w-100 overflow-y-auto"
 		>
 			<Sidebar.Logo
-				href="/xboard-react/"
+				href={withBasePath('/')}
 				img={Logo}
 				imgAlt="Flowbite logo"
 				data-testid="sidebar-logo"
@@ -54,7 +53,7 @@ const XSidebar = () => {
 			<Sidebar.Items>
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
-						href="/xboard-react/"
+						href={withBasePath('/')}
 						icon={HiChartPie}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
@@ -62,49 +61,49 @@ const XSidebar = () => {
 						Dashboard
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/user-profile"
+						href={withBasePath('/user-profile')}
 						icon={HiOutlineUser}
 						active={activeItem === '/user-profile'}
 					>
 						Profile
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/users"
+						href={withBasePath('/users')}
 						icon={HiOutlineUsers}
 						active={activeItem === '/users'}
 					>
 						Users
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/"
+						href={withBasePath('/')}
 						icon={HiInformationCircle}
 						active={activeItem === '/forms'}
 					>
 						Forms
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/"
+						href={withBasePath('/')}
 						icon={HiChartPie}
 						active={activeItem === '/charts'}
 					>
 						Charts
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/"
+						href={withBasePath('/')}
 						icon={HiOutlineArchive}
 						active={activeItem === '/cards'}
 					>
 						Cards
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/signin"
+						href={withBasePath('/signin')}
 						icon={HiArrowSmRight}
 						active={activeItem === '/signin'}
 					>
 						Sign In
 					</Sidebar.Item>
 					<Sidebar.Item
-						href="/signout"
+						href={withBasePath('/signout')}
 						icon={HiArrowSmLeft}
 						active={activeItem === '/signout'}
 					>
@@ -141,7 +140,7 @@ const XSidebar = () => {
 				</div>
 				<a
 					className="text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300"
-					href="/"
+					href={withBasePath('/')}
 				>
 					Turn new navigation off
 				</a>

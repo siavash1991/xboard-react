@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/xboard-react/static/css/main.294e6be7.css",
-    "main.js": "/xboard-react/static/js/main.784759a7.js",
-    "static/js/520.a19e47c0.chunk.js": "/xboard-react/static/js/520.a19e47c0.chunk.js",
-    "static/js/816.952924a0.chunk.js": "/xboard-react/static/js/816.952924a0.chunk.js",
-    "static/js/544.125af779.chunk.js": "/xboard-react/static/js/544.125af779.chunk.js",
+    "main.js": "/xboard-react/static/js/main.22a4f9b9.js",
+    "static/js/188.5192c025.chunk.js": "/xboard-react/static/js/188.5192c025.chunk.js",
+    "static/js/832.0a1544ba.chunk.js": "/xboard-react/static/js/832.0a1544ba.chunk.js",
+    "static/js/544.e33289e3.chunk.js": "/xboard-react/static/js/544.e33289e3.chunk.js",
+    "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
     "main.294e6be7.css.map": "/xboard-react/static/css/main.294e6be7.css.map",
-    "main.784759a7.js.map": "/xboard-react/static/js/main.784759a7.js.map",
-    "520.a19e47c0.chunk.js.map": "/xboard-react/static/js/520.a19e47c0.chunk.js.map",
-    "816.952924a0.chunk.js.map": "/xboard-react/static/js/816.952924a0.chunk.js.map",
-    "544.125af779.chunk.js.map": "/xboard-react/static/js/544.125af779.chunk.js.map"
+    "main.22a4f9b9.js.map": "/xboard-react/static/js/main.22a4f9b9.js.map",
+    "188.5192c025.chunk.js.map": "/xboard-react/static/js/188.5192c025.chunk.js.map",
+    "832.0a1544ba.chunk.js.map": "/xboard-react/static/js/832.0a1544ba.chunk.js.map",
+    "544.e33289e3.chunk.js.map": "/xboard-react/static/js/544.e33289e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.294e6be7.css",
-    "static/js/main.784759a7.js"
+    "static/js/main.22a4f9b9.js"
   ]
 }

@@ -1,4 +1,5 @@
 import { Footer } from 'flowbite-react';
+import Logo from '../../assets/images/favicon.svg';
 
 const XFooter = () => {
 	return (
@@ -6,8 +7,8 @@ const XFooter = () => {
 			<div className="w-full text-center">
 				<div className="w-full flex flex-wrap items-center justify-center sm:justify-between">
 					<Footer.Brand
-						href="https://flowbite.com"
-						src="https://flowbite.com/docs/images/logo.svg"
+						href="/xboard-react/"
+						src={Logo}
 						alt="Xboard Logo"
 						name="XBoard"
 					/>

@@ -1,9 +1,10 @@
 import { Avatar } from 'flowbite-react';
+import avatarImg from '../../assets/images/avatar.jpg';
 const XUserAvatarInfo = () => {
 	return (
 		<div className="flex items-center gap-4">
 			<Avatar
-				img="/images/avatar.jpg"
+				img={avatarImg}
 				w-10
 				h-10
 				rounded-md

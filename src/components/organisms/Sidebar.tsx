@@ -44,7 +44,7 @@ const XSidebar = () => {
 			className="w-100 overflow-y-auto"
 		>
 			<Sidebar.Logo
-				href="/"
+				href="/xboard-react/"
 				img={Logo}
 				imgAlt="Flowbite logo"
 				data-testid="sidebar-logo"

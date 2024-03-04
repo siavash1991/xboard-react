@@ -5,9 +5,9 @@ const XUserAvatarInfo = () => {
 		<div className="flex items-center gap-4">
 			<Avatar
 				img={avatarImg}
-				w-10
-				h-10
-				rounded-md
+				w-10="true"
+				h-10="true"
+				rounded-md="true"
 				status="online"
 				statusPosition="bottom-right"
 			/>

@@ -14,8 +14,10 @@ export const themeSlice = createSlice({
 	},
 	reducers: {
 		toggleDarkMode: (state) => {
+			//console.log('sia2: ' + state.darkMode);
+
 			const newMode = !state.darkMode;
-			localStorage.setItem('darkMode', newMode.toString());
+			//localStorage.setItem('darkMode', newMode.toString());
 			return { ...state, darkMode: newMode };
 		},
 	},

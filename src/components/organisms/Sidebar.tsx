@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { toggleDarkMode, selectDarkMode } from '../../redux/themeSlice';
 import { Badge, Sidebar, DarkThemeToggle, useThemeMode } from 'flowbite-react';
+import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks';
+import { withBasePath } from 'components/shared/basePathHelper';
 import Logo from '../../assets/images/favicon.svg';
 
 import {
@@ -13,30 +15,31 @@ import {
 	HiOutlineUser,
 	HiOutlineUsers,
 } from 'react-icons/hi';
-import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks';
-import { withBasePath } from 'components/shared/basePathHelper';
 
 const XSidebar = () => {
 	const { pathname } = useLocation();
 	const [activeItem, setActiveItem] = useState('');
-	useEffect(() => {
-		setActiveItem(pathname);
-	}, [pathname]);
+	const dispatch = useAppDispatch();
+	const darkMode = useAppSelector(selectDarkMode);
 
 	const [, , toggleMode] = useThemeMode();
 
-	const dispatch = useAppDispatch();
-	useAppSelector(selectDarkMode);
+	useEffect(() => {
+		setActiveItem(pathname);
+	}, [pathname]);
 
 	useEffect(() => {
 		const storedMode = localStorage.getItem('darkMode');
 		if (storedMode === 'true') {
 			toggleMode();
 		}
-	}, [toggleMode]);
+	}, [dispatch]);
 	const handleDarkModeToggle = () => {
+		const newMode = !darkMode;
+		localStorage.setItem('darkMode', newMode.toString());
 		dispatch(toggleDarkMode());
 	};
+
 	return (
 		<Sidebar
 			aria-label="Sidebar with logo branding example"
@@ -53,6 +56,7 @@ const XSidebar = () => {
 			<Sidebar.Items>
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
+						key="dashboard"
 						href={withBasePath('/')}
 						icon={HiChartPie}
 						active={activeItem === '/'}
@@ -61,6 +65,7 @@ const XSidebar = () => {
 						Dashboard
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="profile"
 						href={withBasePath('/user-profile')}
 						icon={HiOutlineUser}
 						active={activeItem === '/user-profile'}
@@ -68,6 +73,7 @@ const XSidebar = () => {
 						Profile
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="users"
 						href={withBasePath('/users')}
 						icon={HiOutlineUsers}
 						active={activeItem === '/users'}
@@ -75,6 +81,7 @@ const XSidebar = () => {
 						Users
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="forms"
 						href={withBasePath('/')}
 						icon={HiInformationCircle}
 						active={activeItem === '/forms'}
@@ -82,6 +89,7 @@ const XSidebar = () => {
 						Forms
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="charts"
 						href={withBasePath('/')}
 						icon={HiChartPie}
 						active={activeItem === '/charts'}
@@ -89,6 +97,7 @@ const XSidebar = () => {
 						Charts
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="cards"
 						href={withBasePath('/')}
 						icon={HiOutlineArchive}
 						active={activeItem === '/cards'}
@@ -96,6 +105,7 @@ const XSidebar = () => {
 						Cards
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="signin"
 						href={withBasePath('/signin')}
 						icon={HiArrowSmRight}
 						active={activeItem === '/signin'}
@@ -103,6 +113,7 @@ const XSidebar = () => {
 						Sign In
 					</Sidebar.Item>
 					<Sidebar.Item
+						key="signout"
 						href={withBasePath('/signout')}
 						icon={HiArrowSmLeft}
 						active={activeItem === '/signout'}
@@ -148,11 +159,12 @@ const XSidebar = () => {
 			<Sidebar.Items className="absolute bottom-0 text-white text-sm p-4">
 				<DarkThemeToggle
 					onClick={() => {
-						toggleMode();
 						handleDarkModeToggle();
+						toggleMode();
 					}}
 					data-testid="dark-theme-toggle"
 				/>
+
 				<span className="ml-2">Dark Mode</span>
 			</Sidebar.Items>
 		</Sidebar>

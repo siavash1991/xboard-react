@@ -10,13 +10,13 @@ const XHeader = () => {
 	const darkMode = useAppSelector(selectDarkMode);
 
 	const [, , toggleMode] = useThemeMode();
-
 	useEffect(() => {
-		const storedMode = localStorage.getItem('darkMode');
-		if (storedMode === 'true') {
-			toggleMode();
+		const storedDarkMode = localStorage.getItem('darkMode');
+
+		if (storedDarkMode === 'true') {
+			document.querySelector('html')?.classList.add('dark');
 		}
-	}, [dispatch]);
+	}, []);
 	const handleDarkModeToggle = () => {
 		const newMode = !darkMode;
 		localStorage.setItem('darkMode', newMode.toString());

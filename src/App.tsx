@@ -6,6 +6,8 @@ import XLoadingSpinner from 'components/atoms/LoadingSpinner';
 import { withBasePath } from 'components/shared/basePathHelper'; // Import the helper function
 
 const XMain = lazy(() => import('./components/pages/Main'));
+const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));
+
 const NotFound = lazy(() => import('./components/pages/404'));
 
 function App() {
@@ -18,6 +20,10 @@ function App() {
 							<Route
 								path={withBasePath('/')}
 								element={<XMain />}
+							/>
+							<Route
+								path="/user-profile"
+								element={<XUpdateUser />}
 							/>
 							<Route path="*" element={<NotFound />} />
 						</Routes>

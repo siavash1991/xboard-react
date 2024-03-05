@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/xboard-react/static/css/main.294e6be7.css",
-    "main.js": "/xboard-react/static/js/main.22a4f9b9.js",
-    "static/js/188.5192c025.chunk.js": "/xboard-react/static/js/188.5192c025.chunk.js",
-    "static/js/832.0a1544ba.chunk.js": "/xboard-react/static/js/832.0a1544ba.chunk.js",
-    "static/js/544.e33289e3.chunk.js": "/xboard-react/static/js/544.e33289e3.chunk.js",
+    "main.css": "/xboard-react/static/css/main.145858cd.css",
+    "main.js": "/xboard-react/static/js/main.0e20e534.js",
+    "static/js/520.10a4a9c4.chunk.js": "/xboard-react/static/js/520.10a4a9c4.chunk.js",
+    "static/js/340.42c3876c.chunk.js": "/xboard-react/static/js/340.42c3876c.chunk.js",
+    "static/js/816.17a8a6f8.chunk.js": "/xboard-react/static/js/816.17a8a6f8.chunk.js",
+    "static/js/544.125af779.chunk.js": "/xboard-react/static/js/544.125af779.chunk.js",
+    "static/js/80.c7c69bde.chunk.js": "/xboard-react/static/js/80.c7c69bde.chunk.js",
     "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
-    "main.294e6be7.css.map": "/xboard-react/static/css/main.294e6be7.css.map",
-    "main.22a4f9b9.js.map": "/xboard-react/static/js/main.22a4f9b9.js.map",
-    "188.5192c025.chunk.js.map": "/xboard-react/static/js/188.5192c025.chunk.js.map",
-    "832.0a1544ba.chunk.js.map": "/xboard-react/static/js/832.0a1544ba.chunk.js.map",
-    "544.e33289e3.chunk.js.map": "/xboard-react/static/js/544.e33289e3.chunk.js.map"
+    "main.145858cd.css.map": "/xboard-react/static/css/main.145858cd.css.map",
+    "main.0e20e534.js.map": "/xboard-react/static/js/main.0e20e534.js.map",
+    "520.10a4a9c4.chunk.js.map": "/xboard-react/static/js/520.10a4a9c4.chunk.js.map",
+    "340.42c3876c.chunk.js.map": "/xboard-react/static/js/340.42c3876c.chunk.js.map",
+    "816.17a8a6f8.chunk.js.map": "/xboard-react/static/js/816.17a8a6f8.chunk.js.map",
+    "544.125af779.chunk.js.map": "/xboard-react/static/js/544.125af779.chunk.js.map",
+    "80.c7c69bde.chunk.js.map": "/xboard-react/static/js/80.c7c69bde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.294e6be7.css",
-    "static/js/main.22a4f9b9.js"
+    "static/css/main.145858cd.css",
+    "static/js/main.0e20e534.js"
   ]
 }

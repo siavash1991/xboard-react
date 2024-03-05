@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import XLoadingSpinner from 'components/atoms/LoadingSpinner';
-import { withBasePath } from 'components/shared/basePathHelper'; // Import the helper function
+// import { withBasePath } from 'components/shared/basePathHelper'; // Import the helper function
 
 const XMain = lazy(() => import('./components/pages/Main'));
 const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));
@@ -17,10 +17,7 @@ function App() {
 				<Router>
 					<Suspense fallback={<XLoadingSpinner />}>
 						<Routes>
-							<Route
-								path={withBasePath('/')}
-								element={<XMain />}
-							/>
+							<Route path="/" element={<XMain />} />
 							<Route
 								path="/user-profile"
 								element={<XUpdateUser />}

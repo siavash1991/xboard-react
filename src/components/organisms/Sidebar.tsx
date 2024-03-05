@@ -28,7 +28,7 @@ const XSidebar = () => {
 			className="w-100 overflow-y-auto"
 		>
 			<Sidebar.Logo
-				href={withBasePath('/')}
+				href="#/"
 				img={Logo}
 				imgAlt="Flowbite logo"
 				data-testid="sidebar-logo"
@@ -39,7 +39,7 @@ const XSidebar = () => {
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
 						key="dashboard"
-						href={withBasePath('/')}
+						href="#/"
 						icon={HiChartPie}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
@@ -48,7 +48,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="profile"
-						href={withBasePath('/user-profile')}
+						href="#/user-profile"
 						icon={HiOutlineUser}
 						active={activeItem === '/user-profile'}
 					>
@@ -56,7 +56,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="users"
-						href={withBasePath('/users')}
+						href="#/users"
 						icon={HiOutlineUsers}
 						active={activeItem === '/users'}
 					>
@@ -64,7 +64,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="forms"
-						href={withBasePath('/')}
+						href="#/"
 						icon={HiInformationCircle}
 						active={activeItem === '/forms'}
 					>
@@ -72,7 +72,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="charts"
-						href={withBasePath('/')}
+						href="#/"
 						icon={HiChartPie}
 						active={activeItem === '/charts'}
 					>
@@ -80,7 +80,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="cards"
-						href={withBasePath('/')}
+						href="#/"
 						icon={HiOutlineArchive}
 						active={activeItem === '/cards'}
 					>
@@ -88,7 +88,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="signin"
-						href={withBasePath('/signin')}
+						href="#/signin"
 						icon={HiArrowSmRight}
 						active={activeItem === '/signin'}
 					>
@@ -96,7 +96,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="signout"
-						href={withBasePath('/signout')}
+						href="#/signout"
 						icon={HiArrowSmLeft}
 						active={activeItem === '/signout'}
 					>
@@ -133,7 +133,7 @@ const XSidebar = () => {
 				</div>
 				<a
 					className="text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300"
-					href={withBasePath('/')}
+					href="#/"
 				>
 					Turn new navigation off
 				</a>

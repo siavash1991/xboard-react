@@ -2,7 +2,7 @@
 	"name": "test",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://siavash1991.github.io/xboard-react/#",
+	"homepage": "https://siavash1991.github.io/xboard-react/#/",
 	"dependencies": {
 		"@heroicons/react": "^2.0.18",
 		"@hookform/resolvers": "^3.3.2",

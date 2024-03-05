@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import XLoadingSpinner from 'components/atoms/LoadingSpinner';
-// import { withBasePath } from 'components/shared/basePathHelper'; // Import the helper function
+// import { withBasePath } from 'components/shared/basePathHelper'; // Import the helper function - useful for BrowserRouter
 
 const XMain = lazy(() => import('./components/pages/Main'));
 const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));

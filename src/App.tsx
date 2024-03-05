@@ -8,6 +8,8 @@ const XMain = lazy(() => import('./components/pages/Main'));
 const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));
 const XUsers = lazy(() => import('./components/pages/Users'));
 
+const XSignIn = lazy(() => import('./components/pages/SignIn'));
+const XSignUp = lazy(() => import('./components/pages/SignUp'));
 const NotFound = lazy(() => import('./components/pages/404'));
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
 								element={<XUpdateUser />}
 							/>
 							<Route path="/users" element={<XUsers />} />
+
+							<Route path="/signin" element={<XSignIn />} />
+							<Route path="/signup" element={<XSignUp />} />
 
 							<Route path="*" element={<NotFound />} />
 						</Routes>

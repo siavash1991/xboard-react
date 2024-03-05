@@ -95,11 +95,11 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="signout"
-						href="#/signout"
+						href="#/signup"
 						icon={HiArrowSmLeft}
-						active={activeItem === '/signout'}
+						active={activeItem === '/signup'}
 					>
-						Sign Out
+						Sign Up
 					</Sidebar.Item>
 				</Sidebar.ItemGroup>
 			</Sidebar.Items>

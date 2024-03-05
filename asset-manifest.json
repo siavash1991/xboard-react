@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/xboard-react/static/css/main.145858cd.css",
-    "main.js": "/xboard-react/static/js/main.c5f1dc59.js",
-    "static/js/520.7f699aff.chunk.js": "/xboard-react/static/js/520.7f699aff.chunk.js",
-    "static/js/340.ec2078d8.chunk.js": "/xboard-react/static/js/340.ec2078d8.chunk.js",
-    "static/js/816.a1980188.chunk.js": "/xboard-react/static/js/816.a1980188.chunk.js",
+    "main.js": "/xboard-react/static/js/main.c0670127.js",
+    "static/js/520.53dfb4b9.chunk.js": "/xboard-react/static/js/520.53dfb4b9.chunk.js",
+    "static/js/340.a72acee6.chunk.js": "/xboard-react/static/js/340.a72acee6.chunk.js",
+    "static/js/816.67e39590.chunk.js": "/xboard-react/static/js/816.67e39590.chunk.js",
     "static/js/544.e33289e3.chunk.js": "/xboard-react/static/js/544.e33289e3.chunk.js",
     "static/js/80.c7c69bde.chunk.js": "/xboard-react/static/js/80.c7c69bde.chunk.js",
     "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
     "main.145858cd.css.map": "/xboard-react/static/css/main.145858cd.css.map",
-    "main.c5f1dc59.js.map": "/xboard-react/static/js/main.c5f1dc59.js.map",
-    "520.7f699aff.chunk.js.map": "/xboard-react/static/js/520.7f699aff.chunk.js.map",
-    "340.ec2078d8.chunk.js.map": "/xboard-react/static/js/340.ec2078d8.chunk.js.map",
-    "816.a1980188.chunk.js.map": "/xboard-react/static/js/816.a1980188.chunk.js.map",
+    "main.c0670127.js.map": "/xboard-react/static/js/main.c0670127.js.map",
+    "520.53dfb4b9.chunk.js.map": "/xboard-react/static/js/520.53dfb4b9.chunk.js.map",
+    "340.a72acee6.chunk.js.map": "/xboard-react/static/js/340.a72acee6.chunk.js.map",
+    "816.67e39590.chunk.js.map": "/xboard-react/static/js/816.67e39590.chunk.js.map",
     "544.e33289e3.chunk.js.map": "/xboard-react/static/js/544.e33289e3.chunk.js.map",
     "80.c7c69bde.chunk.js.map": "/xboard-react/static/js/80.c7c69bde.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.145858cd.css",
-    "static/js/main.c5f1dc59.js"
+    "static/js/main.c0670127.js"
   ]
 }

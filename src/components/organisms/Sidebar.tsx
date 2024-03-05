@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { toggleDarkMode, selectDarkMode } from '../../redux/themeSlice';
-import { Badge, Sidebar, DarkThemeToggle, useThemeMode } from 'flowbite-react';
-import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks';
+import { Badge, Sidebar } from 'flowbite-react';
 import { withBasePath } from 'components/shared/basePathHelper';
 import Logo from '../../assets/images/favicon.svg';
 
@@ -19,26 +17,10 @@ import {
 const XSidebar = () => {
 	const { pathname } = useLocation();
 	const [activeItem, setActiveItem] = useState('');
-	const dispatch = useAppDispatch();
-	const darkMode = useAppSelector(selectDarkMode);
-
-	const [, , toggleMode] = useThemeMode();
 
 	useEffect(() => {
 		setActiveItem(pathname);
 	}, [pathname]);
-
-	useEffect(() => {
-		const storedMode = localStorage.getItem('darkMode');
-		if (storedMode === 'true') {
-			toggleMode();
-		}
-	}, [dispatch]);
-	const handleDarkModeToggle = () => {
-		const newMode = !darkMode;
-		localStorage.setItem('darkMode', newMode.toString());
-		dispatch(toggleDarkMode());
-	};
 
 	return (
 		<Sidebar
@@ -156,17 +138,7 @@ const XSidebar = () => {
 					Turn new navigation off
 				</a>
 			</Sidebar.CTA>
-			<Sidebar.Items className="absolute bottom-0 text-white text-sm p-4">
-				<DarkThemeToggle
-					onClick={() => {
-						handleDarkModeToggle();
-						toggleMode();
-					}}
-					data-testid="dark-theme-toggle"
-				/>
-
-				<span className="ml-2">Dark Mode</span>
-			</Sidebar.Items>
+			<Sidebar.Items className="absolute bottom-0 text-white text-sm p-4"></Sidebar.Items>
 		</Sidebar>
 	);
 };

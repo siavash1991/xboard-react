@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Badge, Sidebar } from 'flowbite-react';
-import { withBasePath } from 'components/shared/basePathHelper';
 import Logo from '../../assets/images/favicon.svg';
 
 import {

@@ -1,6 +1,4 @@
 import React, { ReactNode } from 'react';
-import XFooter from '../organisms/Footer';
-import XHeader from '../organisms/Header';
 
 interface AuthLayoutProps {
 	children: ReactNode;

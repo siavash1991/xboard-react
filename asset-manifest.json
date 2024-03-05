@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/xboard-react/static/css/main.145858cd.css",
-    "main.js": "/xboard-react/static/js/main.0e20e534.js",
+    "main.js": "/xboard-react/static/js/main.c8c814f9.js",
     "static/js/520.10a4a9c4.chunk.js": "/xboard-react/static/js/520.10a4a9c4.chunk.js",
     "static/js/340.42c3876c.chunk.js": "/xboard-react/static/js/340.42c3876c.chunk.js",
     "static/js/816.17a8a6f8.chunk.js": "/xboard-react/static/js/816.17a8a6f8.chunk.js",
@@ -11,7 +11,7 @@
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
     "main.145858cd.css.map": "/xboard-react/static/css/main.145858cd.css.map",
-    "main.0e20e534.js.map": "/xboard-react/static/js/main.0e20e534.js.map",
+    "main.c8c814f9.js.map": "/xboard-react/static/js/main.c8c814f9.js.map",
     "520.10a4a9c4.chunk.js.map": "/xboard-react/static/js/520.10a4a9c4.chunk.js.map",
     "340.42c3876c.chunk.js.map": "/xboard-react/static/js/340.42c3876c.chunk.js.map",
     "816.17a8a6f8.chunk.js.map": "/xboard-react/static/js/816.17a8a6f8.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.145858cd.css",
-    "static/js/main.0e20e534.js"
+    "static/js/main.c8c814f9.js"
   ]
 }

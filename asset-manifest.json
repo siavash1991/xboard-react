@@ -1,33 +1,33 @@
 {
   "files": {
     "main.css": "/xboard-react/static/css/main.daffaca9.css",
-    "main.js": "/xboard-react/static/js/main.943efec4.js",
-    "static/js/602.4b7913d4.chunk.js": "/xboard-react/static/js/602.4b7913d4.chunk.js",
-    "static/js/796.2e48a1d3.chunk.js": "/xboard-react/static/js/796.2e48a1d3.chunk.js",
-    "static/js/344.8fdb48f4.chunk.js": "/xboard-react/static/js/344.8fdb48f4.chunk.js",
+    "main.js": "/xboard-react/static/js/main.f211dab8.js",
+    "static/js/602.0e293f0a.chunk.js": "/xboard-react/static/js/602.0e293f0a.chunk.js",
+    "static/js/720.8958eccb.chunk.js": "/xboard-react/static/js/720.8958eccb.chunk.js",
+    "static/js/344.1ee82f14.chunk.js": "/xboard-react/static/js/344.1ee82f14.chunk.js",
     "static/js/64.e57afe62.chunk.js": "/xboard-react/static/js/64.e57afe62.chunk.js",
     "static/js/536.d6376bf0.chunk.js": "/xboard-react/static/js/536.d6376bf0.chunk.js",
-    "static/js/816.5811fde4.chunk.js": "/xboard-react/static/js/816.5811fde4.chunk.js",
+    "static/js/208.5f6aa202.chunk.js": "/xboard-react/static/js/208.5f6aa202.chunk.js",
     "static/js/978.0e3f3293.chunk.js": "/xboard-react/static/js/978.0e3f3293.chunk.js",
     "static/js/544.e33289e3.chunk.js": "/xboard-react/static/js/544.e33289e3.chunk.js",
-    "static/js/336.65653e8e.chunk.js": "/xboard-react/static/js/336.65653e8e.chunk.js",
+    "static/js/396.dcdfdb6d.chunk.js": "/xboard-react/static/js/396.dcdfdb6d.chunk.js",
     "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
     "main.daffaca9.css.map": "/xboard-react/static/css/main.daffaca9.css.map",
-    "main.943efec4.js.map": "/xboard-react/static/js/main.943efec4.js.map",
-    "602.4b7913d4.chunk.js.map": "/xboard-react/static/js/602.4b7913d4.chunk.js.map",
-    "796.2e48a1d3.chunk.js.map": "/xboard-react/static/js/796.2e48a1d3.chunk.js.map",
-    "344.8fdb48f4.chunk.js.map": "/xboard-react/static/js/344.8fdb48f4.chunk.js.map",
+    "main.f211dab8.js.map": "/xboard-react/static/js/main.f211dab8.js.map",
+    "602.0e293f0a.chunk.js.map": "/xboard-react/static/js/602.0e293f0a.chunk.js.map",
+    "720.8958eccb.chunk.js.map": "/xboard-react/static/js/720.8958eccb.chunk.js.map",
+    "344.1ee82f14.chunk.js.map": "/xboard-react/static/js/344.1ee82f14.chunk.js.map",
     "64.e57afe62.chunk.js.map": "/xboard-react/static/js/64.e57afe62.chunk.js.map",
     "536.d6376bf0.chunk.js.map": "/xboard-react/static/js/536.d6376bf0.chunk.js.map",
-    "816.5811fde4.chunk.js.map": "/xboard-react/static/js/816.5811fde4.chunk.js.map",
+    "208.5f6aa202.chunk.js.map": "/xboard-react/static/js/208.5f6aa202.chunk.js.map",
     "978.0e3f3293.chunk.js.map": "/xboard-react/static/js/978.0e3f3293.chunk.js.map",
     "544.e33289e3.chunk.js.map": "/xboard-react/static/js/544.e33289e3.chunk.js.map",
-    "336.65653e8e.chunk.js.map": "/xboard-react/static/js/336.65653e8e.chunk.js.map"
+    "396.dcdfdb6d.chunk.js.map": "/xboard-react/static/js/396.dcdfdb6d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.daffaca9.css",
-    "static/js/main.943efec4.js"
+    "static/js/main.f211dab8.js"
   ]
 }

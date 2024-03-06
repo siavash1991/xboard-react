@@ -36,7 +36,6 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 
 	const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
 		// Process the form data (you may want to make an API call here)
-		console.log('sia: ');
 
 		// Set the success state to true
 		setIsSuccess(true);

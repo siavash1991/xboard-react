@@ -9,11 +9,11 @@ body {
 /* Custom scrollbar style */
 
 *:not(html) {
-	scrollbar-width: thin;
+	scrollbar-width: inherit;
 }
 
 *::-webkit-scrollbar {
-	width: 5px;
+	width: 3px;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -26,7 +26,7 @@ body {
 }
 
 *::-moz-scrollbar {
-	width: 10px;
+	width: 3px;
 }
 
 *::-moz-scrollbar-thumb {

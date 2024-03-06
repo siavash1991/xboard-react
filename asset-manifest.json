@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/xboard-react/static/css/main.daffaca9.css",
-    "main.js": "/xboard-react/static/js/main.f211dab8.js",
-    "static/js/602.0e293f0a.chunk.js": "/xboard-react/static/js/602.0e293f0a.chunk.js",
+    "main.css": "/xboard-react/static/css/main.e36d1ad9.css",
+    "main.js": "/xboard-react/static/js/main.a86d1aaa.js",
+    "static/js/602.3d465cab.chunk.js": "/xboard-react/static/js/602.3d465cab.chunk.js",
     "static/js/720.8958eccb.chunk.js": "/xboard-react/static/js/720.8958eccb.chunk.js",
     "static/js/344.1ee82f14.chunk.js": "/xboard-react/static/js/344.1ee82f14.chunk.js",
     "static/js/64.e57afe62.chunk.js": "/xboard-react/static/js/64.e57afe62.chunk.js",
@@ -14,9 +14,9 @@
     "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
-    "main.daffaca9.css.map": "/xboard-react/static/css/main.daffaca9.css.map",
-    "main.f211dab8.js.map": "/xboard-react/static/js/main.f211dab8.js.map",
-    "602.0e293f0a.chunk.js.map": "/xboard-react/static/js/602.0e293f0a.chunk.js.map",
+    "main.e36d1ad9.css.map": "/xboard-react/static/css/main.e36d1ad9.css.map",
+    "main.a86d1aaa.js.map": "/xboard-react/static/js/main.a86d1aaa.js.map",
+    "602.3d465cab.chunk.js.map": "/xboard-react/static/js/602.3d465cab.chunk.js.map",
     "720.8958eccb.chunk.js.map": "/xboard-react/static/js/720.8958eccb.chunk.js.map",
     "344.1ee82f14.chunk.js.map": "/xboard-react/static/js/344.1ee82f14.chunk.js.map",
     "64.e57afe62.chunk.js.map": "/xboard-react/static/js/64.e57afe62.chunk.js.map",
@@ -27,7 +27,7 @@
     "396.dcdfdb6d.chunk.js.map": "/xboard-react/static/js/396.dcdfdb6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.daffaca9.css",
-    "static/js/main.f211dab8.js"
+    "static/css/main.e36d1ad9.css",
+    "static/js/main.a86d1aaa.js"
   ]
 }

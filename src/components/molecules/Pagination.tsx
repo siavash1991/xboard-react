@@ -24,7 +24,7 @@ const XPagination: React.FC<XPaginationProps> = ({
 				previousLabel="Previous"
 				nextLabel="Next"
 				showIcons
-				className="space-x-2"
+				className="pagination space-x-2"
 			/>
 		</div>
 	);

@@ -21,7 +21,7 @@ describe('Dark Mode Toggle Button', () => {
 
 	it('Preserves dark mode state if set before the test', () => {
 		// Set dark mode manually before visiting the page
-		localStorage.setItem('darkMode', 'true');
+		localStorage.setItem('color-theme', 'dark');
 
 		// Visit the page containing the dark mode toggle button
 		cy.visit('https://siavash1991.github.io/xboard-react/#/');

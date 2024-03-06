@@ -8,7 +8,8 @@
 			"jest",
 			"node",
 			"@types/react-redux",
-			"@testing-library/jest-dom"
+			"@testing-library/jest-dom",
+			"cypress"
 		],
 		"skipLibCheck": true,
 		"esModuleInterop": true,

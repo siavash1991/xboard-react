@@ -191,8 +191,10 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 			<div className="component-wrapper mb-7 h-fit  col-span-12 md:col-span-4">
 				<Card className="p-5 ">
 					<div className="mt-6">
-						<h3 className="text-lg font-bold mb-2">Actions</h3>
-						<p>
+						<h3 className="text-lg font-bold mb-2 dark:text-white">
+							Actions
+						</h3>
+						<p className="dark:text-white">
 							Explore new features, manage preferences, update
 							your profile, and stay updated with our latest
 							offerings.

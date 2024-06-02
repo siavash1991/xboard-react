@@ -4,7 +4,7 @@ import { withBasePath } from 'components/shared/basePathHelper';
 
 const XFooter = () => {
 	return (
-		<Footer container className="mb-7 .sticky .bottom-0">
+		<Footer container className="mb-7 sticky top-[100vh]">
 			<div className="w-full text-center">
 				<div className="w-full flex flex-wrap items-center justify-center sm:justify-between">
 					<Footer.Brand

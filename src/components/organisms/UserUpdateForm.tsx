@@ -202,7 +202,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 						<Button className="bg-slate-900 text-sky-200 my-4">
 							Change Password
 						</Button>
-						<Button className="bg-red-400 text-gray-700 my-4">
+						<Button className="bg-red-400 dark:bg-red-600 text-gray-700 dark:text-sky-500 my-4">
 							Delete Account
 						</Button>
 					</div>

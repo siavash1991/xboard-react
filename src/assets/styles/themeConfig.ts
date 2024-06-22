@@ -29,8 +29,16 @@ const customTheme: CustomFlowbiteTheme = {
 		item: {
 			base: 'relative my-1 flex items-center justify-center rounded-md p-2 text-sm font-normal text-sky-200 hover:transition-all duration-300 hover:bg-gray-800 dark:text-white dark:hover:bg-gray-700',
 			active: 'active-item bg-gray-100 dark:bg-gray-700 text-gray-800 hover:text-sky-200',
+			collapsed: {
+				noIcon: 'font-bold',
+			},
 			icon: {
-				base: 'h-4 w-4 flex-shrink-0 text-sky-200 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white',
+				base: 'h-4 w-4',
+			},
+		},
+		collapse: {
+			icon: {
+				base: 'h-4 w-4',
 			},
 		},
 		cta: {

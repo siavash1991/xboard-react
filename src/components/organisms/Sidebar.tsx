@@ -9,6 +9,7 @@ import {
 	HiChartPie,
 	HiInformationCircle,
 	HiOutlineArchive,
+	HiOutlineClipboard,
 	HiOutlineUser,
 	HiOutlineUsers,
 } from 'react-icons/hi';
@@ -38,7 +39,7 @@ const XSidebar = () => {
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
 						key="dashboard"
-						href="#/"
+						href="/#/"
 						icon={HiChartPie}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
@@ -47,7 +48,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="profile"
-						href="#/user-profile"
+						href="/#/user-profile"
 						icon={HiOutlineUser}
 						active={activeItem === '/user-profile'}
 					>
@@ -55,7 +56,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="users"
-						href="#/users"
+						href="/#/users"
 						icon={HiOutlineUsers}
 						active={activeItem === '/users'}
 					>
@@ -77,14 +78,31 @@ const XSidebar = () => {
 					>
 						Charts
 					</Sidebar.Item>
-					<Sidebar.Item
-						key="cards"
-						href="#/"
-						icon={HiOutlineArchive}
-						active={activeItem === '/cards'}
+					<Sidebar.Collapse
+						icon={HiOutlineClipboard}
+						label="Cards"
+						open={activeItem.includes('cards-')}
 					>
-						Cards
-					</Sidebar.Item>
+						<Sidebar.Item
+							active={
+								activeItem === '/cards-default' ||
+								activeItem === '/#/cards-default'
+							}
+							href="/#/cards-default"
+						>
+							Default
+						</Sidebar.Item>
+						<Sidebar.Item
+							href="/#/cards-advance"
+							active={
+								activeItem === '/cards-advance' ||
+								activeItem === '/#/cards-advance'
+							}
+						>
+							Advance
+						</Sidebar.Item>
+					</Sidebar.Collapse>
+
 					<Sidebar.Item
 						key="signin"
 						href="#/signin"

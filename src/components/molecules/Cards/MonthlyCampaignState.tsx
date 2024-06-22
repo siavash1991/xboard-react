@@ -21,7 +21,7 @@ interface XDefaultCardProps {
 	className?: string;
 }
 const XMonthlyCampaignStateCard: React.FC<XDefaultCardProps> = ({
-	className,
+	className = '',
 }) => {
 	const data: DataItem[] = [
 		{
@@ -106,9 +106,7 @@ const XMonthlyCampaignStateCard: React.FC<XDefaultCardProps> = ({
 	};
 
 	return (
-		<div
-			className={`component-wrapper bg-component-light dark:bg-gray-600 mb-7 ${className}`}
-		>
+		<div className={`component-wrapper mb-7 ${className}`}>
 			<Card href="#">
 				<div className="flex justify-between items-center mb-4">
 					<div>

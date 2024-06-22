@@ -1,8 +1,11 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-const XSearch = () => {
+interface XSearchProps {
+	className?: string;
+}
+const XSearch: React.FC<XSearchProps> = ({ className = '' }) => {
 	return (
-		<div className="search w-5/12 md:w-6/12 lg:w-8/12 xl:w-9/12">
+		<div className={`search ${className}`}>
 			<div className="relative">
 				<input
 					type="text"

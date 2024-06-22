@@ -46,7 +46,7 @@ const XHeader = () => {
 	return (
 		<header className="container mx-auto mb-12">
 			<div className="flex flex-1 items-center justify-between w-full ">
-				<XSearch />
+				<XSearch className="w-5/12 md:w-6/12 lg:w-8/12 xl:w-9/12" />
 				<div className="flex items-center gap-4">
 					<UserAvatarInfo />
 

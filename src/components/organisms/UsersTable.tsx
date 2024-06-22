@@ -64,6 +64,7 @@ const XUsersTable: React.FC<UsersTableProps> = ({ userData, usersPerPage }) => {
 				itemsPerPage={usersPerPage}
 				currentPage={currentPage}
 				onPageChange={onPageChange}
+				className="col-span-12"
 			/>
 		</>
 	);

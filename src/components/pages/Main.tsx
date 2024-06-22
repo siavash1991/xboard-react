@@ -13,11 +13,14 @@ const XMain: React.FC = () => {
 				<h1 className="text-2xl font-bold text-gray-900 dark:text-white w-full mb-7">
 					Dashboard
 				</h1>
-				<XOverviewCards cardData={overview} />
-				<XSimpleTable />
+				<XOverviewCards
+					cardData={overview}
+					className="col-span-12 grid-cols-12 gap-4 w-full"
+				/>
+				<XSimpleTable className="bg-component-light dark:bg-gray-600 col-span-12" />
 				<div className="col-span-12 grid grid-cols-12 gap-4 mb-7">
-					<XLineChart />
-					<XBarChart />
+					<XLineChart className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
+					<XBarChart className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
 				</div>
 			</div>
 		</XBaseLayout>

@@ -1,4 +1,4 @@
-import { useEffect, useId } from 'react';
+import React, { useEffect, useId } from 'react';
 import Chart, { ChartConfiguration } from 'chart.js/auto';
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -97,8 +97,10 @@ const chartData: ChartConfiguration<'line'> = {
 		},
 	},
 };
-
-const XLineChart = () => {
+interface XLineChartProps {
+	className?: string;
+}
+const XLineChart: React.FC<XLineChartProps> = ({ className = '' }) => {
 	const chartId = useId();
 
 	useEffect(() => {
@@ -114,7 +116,7 @@ const XLineChart = () => {
 	}, [chartId]);
 
 	return (
-		<div className="component-wrapper  bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6 mb-7">
+		<div className={`component-wrapper mb-7 ${className}`}>
 			<div className="bg-white dark:bg-gray-800 w-full rounded-md">
 				<canvas id={chartId} width="400" height="200"></canvas>
 			</div>

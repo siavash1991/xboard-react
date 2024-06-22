@@ -1,8 +1,12 @@
 import { Checkbox, Table } from 'flowbite-react';
+import React from 'react';
 
-const XSimpleTable = () => {
+interface XSimpleTableProps {
+	className?: string;
+}
+const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 	return (
-		<div className="component-wrapper  bg-component-light dark:bg-gray-600 col-span-12 mb-7">
+		<div className={`component-wrapper mb-7 ${className}`}>
 			<Table hoverable className="w-full">
 				<Table.Head>
 					<Table.HeadCell className="p-4">

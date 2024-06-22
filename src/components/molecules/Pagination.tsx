@@ -6,6 +6,7 @@ interface XPaginationProps {
 	itemsPerPage: number;
 	currentPage: number;
 	onPageChange: (page: number) => void;
+	className?: string;
 }
 
 const XPagination: React.FC<XPaginationProps> = ({
@@ -13,9 +14,12 @@ const XPagination: React.FC<XPaginationProps> = ({
 	itemsPerPage,
 	currentPage,
 	onPageChange,
+	className = '',
 }) => {
 	return (
-		<div className="col-span-12 flex items-center justify-center mt-2 mb-10">
+		<div
+			className={`flex items-center justify-center mt-2 mb-10 ${className}`}
+		>
 			<FlowbitePagination
 				layout="pagination"
 				currentPage={currentPage}

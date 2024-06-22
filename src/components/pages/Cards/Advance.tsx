@@ -12,7 +12,7 @@ const XDefaultCards: React.FC = () => {
 				>
 					Advance Cards
 				</h1>
-				<XMonthlyCampaignStateCard className="col-span-4" />
+				<XMonthlyCampaignStateCard className="bg-component-light dark:bg-gray-600 col-span-4" />
 			</div>
 		</XBaseLayout>
 	);

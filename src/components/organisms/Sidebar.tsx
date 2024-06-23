@@ -4,15 +4,14 @@ import { Badge, Sidebar } from 'flowbite-react';
 import Logo from '../../assets/images/favicon.svg';
 
 import {
-	HiArrowSmLeft,
-	HiArrowSmRight,
-	HiChartPie,
-	HiInformationCircle,
-	HiOutlineArchive,
-	HiOutlineClipboard,
-	HiOutlineUser,
-	HiOutlineUsers,
-} from 'react-icons/hi';
+	ArrowLeftIcon,
+	ArrowRightIcon,
+	ChartPieIcon,
+	InformationCircleIcon,
+	ClipboardIcon,
+	UserCircleIcon,
+	UsersIcon,
+} from '@heroicons/react/24/outline';
 
 const XSidebar = () => {
 	const { pathname } = useLocation();
@@ -40,7 +39,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="dashboard"
 						href="/#/"
-						icon={HiChartPie}
+						icon={ChartPieIcon}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
 					>
@@ -49,7 +48,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="profile"
 						href="/#/user-profile"
-						icon={HiOutlineUser}
+						icon={UserCircleIcon}
 						active={activeItem === '/user-profile'}
 					>
 						Profile
@@ -57,7 +56,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="users"
 						href="/#/users"
-						icon={HiOutlineUsers}
+						icon={UsersIcon}
 						active={activeItem === '/users'}
 					>
 						Users
@@ -65,7 +64,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="forms"
 						href="#/"
-						icon={HiInformationCircle}
+						icon={InformationCircleIcon}
 						active={activeItem === '/forms'}
 					>
 						Forms
@@ -73,13 +72,13 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="charts"
 						href="#/"
-						icon={HiChartPie}
+						icon={ChartPieIcon}
 						active={activeItem === '/charts'}
 					>
 						Charts
 					</Sidebar.Item>
 					<Sidebar.Collapse
-						icon={HiOutlineClipboard}
+						icon={ClipboardIcon}
 						label="Cards"
 						open={activeItem.includes('cards-')}
 					>
@@ -106,7 +105,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="signin"
 						href="#/signin"
-						icon={HiArrowSmRight}
+						icon={ArrowRightIcon}
 						active={activeItem === '/signin'}
 					>
 						Sign In
@@ -114,7 +113,7 @@ const XSidebar = () => {
 					<Sidebar.Item
 						key="signout"
 						href="#/signup"
-						icon={HiArrowSmLeft}
+						icon={ArrowLeftIcon}
 						active={activeItem === '/signup'}
 					>
 						Sign Up

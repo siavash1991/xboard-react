@@ -23,7 +23,7 @@ function App() {
 						<Routes>
 							<Route path="/" element={<XMain />} />
 							<Route
-								path="/user-profile"
+								path="#/user-profile"
 								element={<XUpdateUser />}
 							/>
 							<Route path="/users" element={<XUsers />} />

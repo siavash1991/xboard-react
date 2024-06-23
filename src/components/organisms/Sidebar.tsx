@@ -38,7 +38,7 @@ const XSidebar = () => {
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
 						key="dashboard"
-						href="/"
+						href="#/"
 						icon={ChartPieIcon}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
@@ -47,7 +47,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="profile"
-						href="/user-profile"
+						href="#/user-profile"
 						icon={UserCircleIcon}
 						active={activeItem === '/user-profile'}
 					>
@@ -55,7 +55,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="users"
-						href="/users"
+						href="#/users"
 						icon={UsersIcon}
 						active={activeItem === '/users'}
 					>
@@ -87,12 +87,12 @@ const XSidebar = () => {
 								activeItem === '/cards-default' ||
 								activeItem === '#/cards-default'
 							}
-							href="/cards-default"
+							href="#/cards-default"
 						>
 							Default
 						</Sidebar.Item>
 						<Sidebar.Item
-							href="/cards-advance"
+							href="#/cards-advance"
 							active={
 								activeItem === '/cards-advance' ||
 								activeItem === '#/cards-advance'

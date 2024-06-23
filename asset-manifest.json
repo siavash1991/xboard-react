@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/xboard-react/static/css/main.bcfce04d.css",
-    "main.js": "/xboard-react/static/js/main.64f6d3a5.js",
+    "main.js": "/xboard-react/static/js/main.40ac9ee6.js",
     "static/js/288.f646a5bd.chunk.js": "/xboard-react/static/js/288.f646a5bd.chunk.js",
     "static/js/677.f96c035f.chunk.js": "/xboard-react/static/js/677.f96c035f.chunk.js",
     "static/js/598.10272eec.chunk.js": "/xboard-react/static/js/598.10272eec.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/355.f68c6598.chunk.js": "/xboard-react/static/js/355.f68c6598.chunk.js",
     "static/js/525.c78d59f5.chunk.js": "/xboard-react/static/js/525.c78d59f5.chunk.js",
     "static/js/571.a100855d.chunk.js": "/xboard-react/static/js/571.a100855d.chunk.js",
-    "static/js/930.65e066d8.chunk.js": "/xboard-react/static/js/930.65e066d8.chunk.js",
+    "static/js/930.0d75f2cd.chunk.js": "/xboard-react/static/js/930.0d75f2cd.chunk.js",
     "static/media/apple-watch.png": "/xboard-react/static/media/apple-watch.54111663d71cc7315486.png",
     "static/media/image-4.jpg": "/xboard-react/static/media/image-4.473266ae6bbca8128cc2.jpg",
     "static/media/avatar.jpg": "/xboard-react/static/media/avatar.e3bd89d3de2701270896.jpg",
@@ -20,7 +20,7 @@
     "static/media/favicon.svg": "/xboard-react/static/media/favicon.66dca1074199d84439e47c8e7ac59782.svg",
     "index.html": "/xboard-react/index.html",
     "main.bcfce04d.css.map": "/xboard-react/static/css/main.bcfce04d.css.map",
-    "main.64f6d3a5.js.map": "/xboard-react/static/js/main.64f6d3a5.js.map",
+    "main.40ac9ee6.js.map": "/xboard-react/static/js/main.40ac9ee6.js.map",
     "288.f646a5bd.chunk.js.map": "/xboard-react/static/js/288.f646a5bd.chunk.js.map",
     "677.f96c035f.chunk.js.map": "/xboard-react/static/js/677.f96c035f.chunk.js.map",
     "598.10272eec.chunk.js.map": "/xboard-react/static/js/598.10272eec.chunk.js.map",
@@ -31,10 +31,10 @@
     "355.f68c6598.chunk.js.map": "/xboard-react/static/js/355.f68c6598.chunk.js.map",
     "525.c78d59f5.chunk.js.map": "/xboard-react/static/js/525.c78d59f5.chunk.js.map",
     "571.a100855d.chunk.js.map": "/xboard-react/static/js/571.a100855d.chunk.js.map",
-    "930.65e066d8.chunk.js.map": "/xboard-react/static/js/930.65e066d8.chunk.js.map"
+    "930.0d75f2cd.chunk.js.map": "/xboard-react/static/js/930.0d75f2cd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bcfce04d.css",
-    "static/js/main.64f6d3a5.js"
+    "static/js/main.40ac9ee6.js"
   ]
 }

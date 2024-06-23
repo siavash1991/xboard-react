@@ -62,7 +62,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 
 	return (
 		<div className="grid grid-cols-12 col-span-12 gap-4">
-			<div className="component-wrapper mb-7 col-span-12 md:col-span-8">
+			<div className="component-wrapper col-span-12 md:col-span-8">
 				<Card className="p-5 ">
 					<form
 						onSubmit={handleSubmit(onSubmit)}

@@ -10,7 +10,7 @@ const XUpdateProfile: React.FC = () => {
 
 	return (
 		<XBaseLayout>
-			<div className="content-wrapper grid grid-cols-12">
+			<div className="content-wrapper grid grid-cols-12 gap-4 mb-7">
 				<h1
 					className="col-span-12 text-2xl font-bold text-gray-900 dark:text-white mb-7"
 					data-testid="profile-heading"

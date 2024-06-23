@@ -9,8 +9,7 @@ const XSearch: React.FC<XSearchProps> = ({ className = '' }) => {
 			<div className="relative">
 				<input
 					type="text"
-					className=" bg-component-light dark:bg-gray-600 placeholder-gray-400 text-gray-500 text-sm border-white dark: border-gray-700 h-8 w-full p-2 pl-3 pr-10 rounded-md focus:outline-none focus:ring-0 focus:border-neutral-200 hover:cursor-pointer"
-					name=""
+					className=" bg-component-light dark:bg-gray-600 placeholder-gray-400 text-gray-500 text-sm border-white dark:border-gray-700 h-8 w-full p-2 pl-3 pr-10 rounded-md focus:outline-none focus:ring-0 focus:border-neutral-200 hover:cursor-pointer"
 					placeholder="Search"
 				/>
 				<span className="absolute top-1.5 right-2 pl-2">

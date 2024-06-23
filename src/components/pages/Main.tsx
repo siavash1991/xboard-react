@@ -1,6 +1,6 @@
 import React from 'react';
 import XBaseLayout from '../templates/BaseLayout';
-import XOverviewCards from '../molecules/OverviewCards';
+import XOverviewCards from '../organisms/OverviewCards';
 import XSimpleTable from '../molecules/SimpleTable';
 import XLineChart from '../molecules/LineChart';
 import { overview } from '../../assets/data/sampleData';

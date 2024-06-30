@@ -30,6 +30,8 @@ const customTheme: CustomFlowbiteTheme = {
 			base: 'relative my-1 flex items-center justify-center rounded-md p-2 text-sm font-normal text-sky-200 hover:transition-all duration-300 hover:bg-gray-800 dark:text-white dark:hover:bg-gray-700',
 			active: 'active-item bg-gray-100 dark:bg-gray-700 text-gray-800 hover:text-sky-200',
 			collapsed: {
+				insideCollapse:
+					'group w-full pl-4 bg-gray-500/50 transition duration-75',
 				noIcon: 'font-bold',
 			},
 			icon: {
@@ -37,9 +39,11 @@ const customTheme: CustomFlowbiteTheme = {
 			},
 		},
 		collapse: {
+			button: 'group flex w-full items-center rounded-lg p-2 text-sm font-normal text-sky-200 transition duration-75 hover:bg-gray-800 dark:text-white dark:hover:bg-gray-700',
 			icon: {
 				base: 'h-4 w-4',
 			},
+			list: 'p-3 pt-1 mt-1 rounded-lg',
 		},
 		cta: {
 			base: 'mt-10 rounded-lg p-4 bg-gray-100',

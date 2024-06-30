@@ -1,8 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Badge, Sidebar } from 'flowbite-react';
-import Logo from '../../assets/images/favicon.svg';
-
 import {
 	ArrowLeftIcon,
 	ArrowRightIcon,
@@ -12,14 +8,16 @@ import {
 	UserCircleIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
+import Logo from '../../assets/images/favicon.svg';
+import useActiveItem from '../../hooks/useActiveItem';
 
 const XSidebar = () => {
-	const { pathname } = useLocation();
-	const [activeItem, setActiveItem] = useState('');
+	const activeItem = useActiveItem();
 
-	useEffect(() => {
-		setActiveItem(pathname);
-	}, [pathname]);
+	const getActiveItemClassName = (isActive: boolean) =>
+		isActive
+			? 'button-open bg-gray-100 dark:bg-gray-700 text-gray-800 hover:text-sky-200'
+			: '';
 
 	return (
 		<Sidebar
@@ -81,22 +79,25 @@ const XSidebar = () => {
 						icon={ClipboardIcon}
 						label="Cards"
 						open={activeItem.includes('cards-')}
+						className={getActiveItemClassName(
+							activeItem.includes('/cards-')
+						)}
 					>
 						<Sidebar.Item
-							active={
-								activeItem === '/cards-default' ||
-								activeItem === '#/cards-default'
-							}
+							className={getActiveItemClassName(
+								activeItem === '/cards-default'
+							)}
+							active={activeItem === '/cards-default'}
 							href="#/cards-default"
 						>
 							Default
 						</Sidebar.Item>
 						<Sidebar.Item
+							className={getActiveItemClassName(
+								activeItem === '/cards-advance'
+							)}
+							active={activeItem === '/cards-advance'}
 							href="#/cards-advance"
-							active={
-								activeItem === '/cards-advance' ||
-								activeItem === '#/cards-advance'
-							}
 						>
 							Advance
 						</Sidebar.Item>
@@ -137,7 +138,7 @@ const XSidebar = () => {
 						>
 							<path
 								fillRule="evenodd"
-								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 111.414 1.414L11.414 10l4.293 4.293a1 1 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 01-1.414-1.414L8.586 10 4.293 5.707a1 1 010-1.414z"
 								clipRule="evenodd"
 							/>
 						</svg>
@@ -154,8 +155,8 @@ const XSidebar = () => {
 					Turn new navigation off
 				</a>
 			</Sidebar.CTA>
-			<Sidebar.Items className="absolute bottom-0 text-white text-sm p-4"></Sidebar.Items>
 		</Sidebar>
 	);
 };
+
 export default XSidebar;

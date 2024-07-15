@@ -3,7 +3,9 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import XLoadingSpinner from 'components/atoms/LoadingSpinner';
-
+import RedirectWithTrailingSlash from './utils/RedirectWithTrailingSlash';
+import XAdvanceCharts from 'components/pages/Charts/Advance';
+import XDefaultCharts from 'components/pages/Charts/Default';
 const XMain = lazy(() => import('./components/pages/Main'));
 const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));
 const XUsers = lazy(() => import('./components/pages/Users'));
@@ -19,6 +21,7 @@ function App() {
 		<div className="App">
 			<Provider store={store}>
 				<Router>
+					<RedirectWithTrailingSlash />
 					<Suspense fallback={<XLoadingSpinner />}>
 						<Routes>
 							<Route path="/" element={<XMain />} />
@@ -28,6 +31,14 @@ function App() {
 							/>
 							<Route path="/users" element={<XUsers />} />
 
+							<Route
+								path="/charts-advance"
+								element={<XAdvanceCharts />}
+							/>
+							<Route
+								path="/charts-default"
+								element={<XDefaultCharts />}
+							/>
 							<Route
 								path="/cards-advance"
 								element={<XAdvanceCards />}

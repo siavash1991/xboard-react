@@ -16,5 +16,9 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('flowbite/plugin'), require('tailwindcss/nesting')],
+	plugins: [
+		require('flowbite/plugin'),
+		require('tailwindcss/nesting'),
+		require('tailwindcss-dir'),
+	],
 };

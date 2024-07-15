@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Table } from 'flowbite-react';
-import Pagination from '../molecules/Pagination';
+import Pagination from '../atoms/Pagination';
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 interface User {
 	id: number;
@@ -25,7 +26,7 @@ const XUsersTable: React.FC<UsersTableProps> = ({ userData, usersPerPage }) => {
 
 	return (
 		<>
-			<div className="component-wrapper col-span-12 mb-1">
+			<ComponentWrapper className="col-span-12 mb-1">
 				<Table striped>
 					<Table.Head>
 						<Table.HeadCell>User ID</Table.HeadCell>
@@ -58,7 +59,7 @@ const XUsersTable: React.FC<UsersTableProps> = ({ userData, usersPerPage }) => {
 						))}
 					</Table.Body>
 				</Table>
-			</div>
+			</ComponentWrapper>
 			<Pagination
 				totalItems={userData.length}
 				itemsPerPage={usersPerPage}

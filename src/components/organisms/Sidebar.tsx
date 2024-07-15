@@ -67,14 +67,35 @@ const XSidebar = () => {
 					>
 						Forms
 					</Sidebar.Item>
-					<Sidebar.Item
-						key="charts"
-						href="/"
+
+					<Sidebar.Collapse
 						icon={ChartPieIcon}
-						active={activeItem === '/charts'}
+						label="Charts"
+						open={activeItem.includes('charts-')}
+						className={getActiveItemClassName(
+							activeItem.includes('/charts-')
+						)}
 					>
-						Charts
-					</Sidebar.Item>
+						<Sidebar.Item
+							className={getActiveItemClassName(
+								activeItem === '/charts-default'
+							)}
+							active={activeItem === '/charts-default'}
+							href="#/charts-default"
+						>
+							Default
+						</Sidebar.Item>
+						<Sidebar.Item
+							className={getActiveItemClassName(
+								activeItem === '/charts-advance'
+							)}
+							active={activeItem === '/charts-advance'}
+							href="#/charts-advance"
+						>
+							Advance
+						</Sidebar.Item>
+					</Sidebar.Collapse>
+
 					<Sidebar.Collapse
 						icon={ClipboardIcon}
 						label="Cards"

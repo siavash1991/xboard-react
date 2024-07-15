@@ -3,7 +3,7 @@ import XBaseLayout from '../templates/BaseLayout';
 
 const NotFound = () => {
 	return (
-		<XBaseLayout>
+		<XBaseLayout pageTitle="Page Not Found">
 			<div className="flex items-center justify-center h-screen">
 				<div className="text-center">
 					<h1 className="text-4xl font-bold text-gray-800 mb-4">

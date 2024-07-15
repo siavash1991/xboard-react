@@ -2,10 +2,12 @@ import React, { ReactNode } from 'react';
 import XFooter from '../organisms/Footer';
 import XSidebar from '../organisms/Sidebar';
 import XHeader from '../organisms/Header';
-import XBreadcrumb from '../molecules/Breadcrumb';
+import XBreadcrumb from '../atoms/Breadcrumb';
+import PageTitle from 'components/atoms/PageTitle';
 
 interface BaseLayoutProps {
 	children: ReactNode;
+	pageTitle?: string;
 }
 type BreadcrumbItem = {
 	href: string;
@@ -13,7 +15,10 @@ type BreadcrumbItem = {
 	label: string;
 };
 
-const XBaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
+const XBaseLayout: React.FC<BaseLayoutProps> = ({
+	children,
+	pageTitle = 'Title Missed!',
+}) => {
 	const breadcrumbItems: BreadcrumbItem[] = [
 		{ href: '/', label: 'Home' },
 		{ href: '/sample', label: 'Sample Page' },
@@ -25,7 +30,8 @@ const XBaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 			</aside>
 			<main className="page-content col-span-8 sm:col-span-9 md:col-span-9 lg:col-span-10 p-6">
 				<XHeader />
-				<XBreadcrumb items={breadcrumbItems} />
+				<XBreadcrumb className="rtl" items={breadcrumbItems} />
+				<PageTitle title={pageTitle} />
 				<div className="components">{children}</div>
 				<XFooter />
 			</main>

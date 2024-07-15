@@ -12,23 +12,17 @@ import XCryptoCard from 'components/molecules/Cards/Crypto';
 
 const XDefaultCards: React.FC = () => {
 	return (
-		<XBaseLayout>
-			<div className="content-wrapper grid grid-cols-12 gap-4 mb-7">
-				<h1
-					className="col-span-12 text-2xl font-bold text-gray-900 dark:text-white mb-7"
-					data-testid="profile-heading"
-				>
-					Default Cards
-				</h1>
-				<XDefaultCard className="col-span-4" />
-				<XWithCTAButtonCard className="col-span-4" />
-				<XWithImageCard className="col-span-4" />
-				<XHorizontalCard className="col-span-6" />
-				<XFormCard className="col-span-6" />
-				<XEcommerceCard className="col-span-4" />
-				<XCTACard className="col-span-4" />
-				<XPricingCard className="col-span-4" />
-				<XCryptoCard className="col-span-4" />
+		<XBaseLayout pageTitle="Default Cards">
+			<div className="content-wrapper columns-2 space-y-6 gap-6 mb-7">
+				<XDefaultCard className="break-inside-avoid" />
+				<XHorizontalCard className="break-inside-avoid" />
+				<XFormCard className="break-inside-avoid" />
+				<XCTACard className="break-inside-avoid" />
+				<XEcommerceCard className="break-inside-avoid" />
+				<XWithImageCard className="break-inside-avoid" />
+				<XWithCTAButtonCard className="break-inside-avoid" />
+				<XPricingCard className="break-inside-avoid" />
+				<XCryptoCard className="break-inside-avoid" />
 			</div>
 		</XBaseLayout>
 	);

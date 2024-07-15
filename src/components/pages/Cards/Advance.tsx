@@ -1,21 +1,21 @@
 import React from 'react';
 import XBaseLayout from '../../templates/BaseLayout';
 import XMonthlyCampaignStateCard from 'components/molecules/Cards/MonthlyCampaignState';
+import XActiveProjectCard from 'components/molecules/Cards/ActiveProject';
+import XEarningReportsCard from 'components/molecules/Cards/EarningReport';
+import XOrdersByCountriesCard from 'components/molecules/Cards/OrdersByCountries';
 
-const XDefaultCards: React.FC = () => {
+const XAdvanceCards: React.FC = () => {
 	return (
-		<XBaseLayout>
-			<div className="content-wrapper grid grid-cols-12 mb-7">
-				<h1
-					className="col-span-12 text-2xl font-bold text-gray-900 dark:text-white mb-7"
-					data-testid="profile-heading"
-				>
-					Advance Cards
-				</h1>
-				<XMonthlyCampaignStateCard className="bg-component-light dark:bg-gray-600 col-span-4" />
+		<XBaseLayout pageTitle="Advance Cards">
+			<div className="content-wrapper grid grid-cols-12 gap-6 mb-7">
+				<XMonthlyCampaignStateCard className="bg-component-light dark:bg-gray-600  col-span-12 md:col-span-6" />
+				<XActiveProjectCard className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
+				<XEarningReportsCard className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
+				<XOrdersByCountriesCard className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
 			</div>
 		</XBaseLayout>
 	);
 };
 
-export default XDefaultCards;
+export default XAdvanceCards;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'flowbite-react';
 import * as HeroIcons from '@heroicons/react/24/outline';
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 interface CardProps {
 	title: string;
@@ -27,7 +28,7 @@ const XCountCard: React.FC<CardProps> = ({
 	}
 
 	return (
-		<div className={`component-wrapper ${className}`}>
+		<ComponentWrapper className={`component-wrapper ${className}`}>
 			<Card href="#" className="gap-2">
 				<div className="flex items-center">
 					<IconComponent className="h-5 w-5 text-gray-500" />
@@ -39,7 +40,7 @@ const XCountCard: React.FC<CardProps> = ({
 					{content}
 				</p>
 			</Card>
-		</div>
+		</ComponentWrapper>
 	);
 };
 

@@ -11,6 +11,7 @@ import {
 	Button,
 	FileInput,
 } from 'flowbite-react';
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 interface UserUpdateFormProps {
 	username: string;
@@ -62,7 +63,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 
 	return (
 		<div className="grid grid-cols-12 col-span-12 gap-4">
-			<div className="component-wrapper col-span-12 md:col-span-8">
+			<ComponentWrapper className="col-span-12 md:col-span-8">
 				<Card className="p-5 ">
 					<form
 						onSubmit={handleSubmit(onSubmit)}
@@ -187,8 +188,8 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 						)}
 					</form>
 				</Card>
-			</div>
-			<div className="component-wrapper mb-7 h-fit  col-span-12 md:col-span-4">
+			</ComponentWrapper>
+			<ComponentWrapper className="h-fit  col-span-12 md:col-span-4">
 				<Card className="p-5 ">
 					<div className="mt-6">
 						<h3 className="text-lg font-bold mb-2 dark:text-white">
@@ -207,9 +208,8 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 						</Button>
 					</div>
 				</Card>
-			</div>
+			</ComponentWrapper>
 		</div>
 	);
 };
-
 export default XUserUpdateForm;

@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { signup } from '../../redux/authenticationSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 import { signUpSchema } from '../../assets/data/validationSchemas';
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 interface SignUpFormInputs {
 	username: string;
@@ -33,7 +34,7 @@ const UserSignUpForm: React.FC = () => {
 	};
 
 	return (
-		<div className="component-wrapper">
+		<ComponentWrapper>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className="rounded-lg bg-white dark:bg-gray-800 bg-white dark:bg-gray-800 space-y-6 p-10"
@@ -135,7 +136,7 @@ const UserSignUpForm: React.FC = () => {
 					{isLoading ? 'Signing up...' : 'Sign Up'}
 				</button>
 			</form>
-		</div>
+		</ComponentWrapper>
 	);
 };
 

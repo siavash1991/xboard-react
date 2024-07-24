@@ -1,10 +1,9 @@
 import React from 'react';
-import XBaseLayout from '../templates/BaseLayout';
-import XOverviewCards from '../organisms/OverviewCards';
-import XSimpleTable from '../molecules/SimpleTable';
-import XLineChart from '../molecules/LineChart';
-import { overview } from '../../assets/data/sampleData';
-import XBarChart from '../molecules/BarChart';
+import XBaseLayout from '@templates/BaseLayout';
+import XOverviewCards from '@organisms/OverviewCards';
+import XSimpleTable from '@molecules/SimpleTable';
+import XLineChart from '@molecules/LineChart';
+import { overview } from '@assets/data/sampleData';
 
 const XMain: React.FC = () => {
 	return (

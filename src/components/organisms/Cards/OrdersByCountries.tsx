@@ -228,7 +228,7 @@ const XOrdersByCountriesCard: React.FC<{ className?: string }> = ({
 					</Dropdown>
 				</div>
 
-				<Tabs.Group aria-label="Tabs" className="w-full">
+				<Tabs.Group aria-label="Tabs">
 					<Tabs.Item active title="New">
 						<div className="mt-4">{data.new.map(renderOrder)}</div>
 					</Tabs.Item>

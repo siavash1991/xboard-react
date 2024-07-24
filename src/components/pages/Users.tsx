@@ -1,7 +1,7 @@
 import React from 'react';
-import XBaseLayout from '../templates/BaseLayout';
-import { users } from '../../assets/data/sampleData';
-import XUsersTable from '../organisms/UsersTable';
+import XBaseLayout from '@templates/BaseLayout';
+import { users } from '@assets/data/sampleData';
+import XUsersTable from '@organisms/UsersTable';
 
 const XUsers: React.FC = () => {
 	return (

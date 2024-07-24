@@ -3,10 +3,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { login } from '../../redux/authenticationSlice';
-import { AppDispatch, RootState } from '../../redux/store';
-import { signInSchema } from '../../assets/data/validationSchemas';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import { login } from '@redux/authenticationSlice';
+import { AppDispatch, RootState } from '@redux/store';
+import { signInSchema } from '@assets/data/validationSchemas';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 
 interface SignInFormInputs {
 	username: string;

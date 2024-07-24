@@ -8,8 +8,8 @@ import {
 	ChevronUpIcon,
 } from '@heroicons/react/24/outline';
 import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import ApexCharts from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
-import XBarChart from 'components/molecules/BarChart';
 
 const XEarningReportsCard: React.FC<{ className?: string }> = ({
 	className = '',
@@ -76,6 +76,7 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 
 	const data = [
 		{
+			id: '1',
 			label: 'Net Profit',
 			value: '$1,619',
 			change: '18.6%',
@@ -84,6 +85,7 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 			color: 'bg-purple-100 text-purple-600',
 		},
 		{
+			id: '2',
 			label: 'Total Income',
 			value: '$3,571',
 			change: '39.6%',
@@ -92,6 +94,7 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 			color: 'bg-green-100 text-green-600',
 		},
 		{
+			id: '3',
 			label: 'Total Expenses',
 			value: '$430',
 			change: '52.8%',
@@ -126,8 +129,11 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 					</Dropdown>
 				</div>
 				<ul className="space-y-6">
-					{data.map((item, index) => (
-						<li key={index} className="flex items-center space-x-4">
+					{data.map((item) => (
+						<li
+							key={item.id}
+							className="flex items-center space-x-4"
+						>
 							<div
 								className={`badge rounded-lg p-2 ${item.color}`}
 							>
@@ -157,7 +163,12 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 						</li>
 					))}
 				</ul>
-				<XBarChart series={series} options={options} height={200} />
+				<ApexCharts
+					type="bar"
+					series={series}
+					options={options}
+					height={200}
+				/>
 			</Card>
 		</ComponentWrapper>
 	);

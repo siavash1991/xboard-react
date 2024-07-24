@@ -1,12 +1,11 @@
-// src/components/organisms/UserSignUpForm.tsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { signup } from '../../redux/authenticationSlice';
-import { AppDispatch, RootState } from '../../redux/store';
-import { signUpSchema } from '../../assets/data/validationSchemas';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import { signup } from '@redux/authenticationSlice';
+import { AppDispatch, RootState } from '@redux/store';
+import { signUpSchema } from '@assets/data/validationSchemas';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 
 interface SignUpFormInputs {
 	username: string;
@@ -37,7 +36,7 @@ const UserSignUpForm: React.FC = () => {
 		<ComponentWrapper>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="rounded-lg bg-white dark:bg-gray-800 bg-white dark:bg-gray-800 space-y-6 p-10"
+				className="rounded-lg bg-white dark:bg-gray-800 space-y-6 p-10"
 			>
 				{error && typeof error === 'string' && (
 					<div className="text-red-500">{error}</div>

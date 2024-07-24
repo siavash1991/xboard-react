@@ -1,5 +1,5 @@
 import React from 'react';
-import XBaseLayout from '../templates/BaseLayout';
+import XBaseLayout from '@templates/BaseLayout';
 
 const NotFound = () => {
 	return (

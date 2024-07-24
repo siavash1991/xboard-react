@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
-import XFooter from '../organisms/Footer';
-import XSidebar from '../organisms/Sidebar';
-import XHeader from '../organisms/Header';
-import XBreadcrumb from '../atoms/Breadcrumb';
-import PageTitle from 'components/atoms/PageTitle';
+import XFooter from '@organisms/Footer';
+import XSidebar from '@organisms/Sidebar';
+import XHeader from '@organisms/Header';
+import XBreadcrumb from '@atoms/Breadcrumb';
+import PageTitle from '@atoms/PageTitle';
 
 interface BaseLayoutProps {
 	children: ReactNode;

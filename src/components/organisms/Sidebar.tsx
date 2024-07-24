@@ -8,11 +8,13 @@ import {
 	UserCircleIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import Logo from '../../assets/images/favicon.svg';
-import useActiveItem from '../../hooks/useActiveItem';
+import Logo from '@assets/images/favicon.svg';
+import useActiveItem from '@hooks/useActiveItem';
+import { withBasePath } from '@shared/basePathHelper';
 
 const XSidebar = () => {
 	const activeItem = useActiveItem();
+	const basePath = withBasePath();
 
 	const getActiveItemClassName = (isActive: boolean) =>
 		isActive
@@ -25,7 +27,7 @@ const XSidebar = () => {
 			className="w-100 overflow-y-auto"
 		>
 			<Sidebar.Logo
-				href="#/"
+				href={`${basePath}/`}
 				img={Logo}
 				imgAlt="Flowbite logo"
 				data-testid="sidebar-logo"
@@ -36,7 +38,7 @@ const XSidebar = () => {
 				<Sidebar.ItemGroup>
 					<Sidebar.Item
 						key="dashboard"
-						href="#/"
+						href={`${basePath}/`}
 						icon={ChartPieIcon}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
@@ -45,7 +47,7 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="profile"
-						href="#/user-profile"
+						href={`${basePath}/user-profile`}
 						icon={UserCircleIcon}
 						active={activeItem === '/user-profile'}
 					>
@@ -53,17 +55,17 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="users"
-						href="#/users"
 						icon={UsersIcon}
 						active={activeItem === '/users'}
+						href={`${basePath}/users`}
 					>
 						Users
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="forms"
-						href="/"
 						icon={InformationCircleIcon}
 						active={activeItem === '/forms'}
+						href={`${basePath}/forms`}
 					>
 						Forms
 					</Sidebar.Item>
@@ -78,21 +80,21 @@ const XSidebar = () => {
 					>
 						<Sidebar.Item
 							className={getActiveItemClassName(
-								activeItem === '/charts-default'
+								activeItem === '/charts-chartjs'
 							)}
-							active={activeItem === '/charts-default'}
-							href="#/charts-default"
+							active={activeItem === '/charts-chartjs'}
+							href={`${basePath}/charts-chartjs`}
 						>
-							Default
+							ChartJs
 						</Sidebar.Item>
 						<Sidebar.Item
 							className={getActiveItemClassName(
-								activeItem === '/charts-advance'
+								activeItem === '/charts-apex'
 							)}
-							active={activeItem === '/charts-advance'}
-							href="#/charts-advance"
+							active={activeItem === '/charts-apex'}
+							href={`${basePath}/charts-apex`}
 						>
-							Advance
+							Apex Charts
 						</Sidebar.Item>
 					</Sidebar.Collapse>
 
@@ -109,7 +111,7 @@ const XSidebar = () => {
 								activeItem === '/cards-default'
 							)}
 							active={activeItem === '/cards-default'}
-							href="#/cards-default"
+							href={`${basePath}/cards-default`}
 						>
 							Default
 						</Sidebar.Item>
@@ -118,7 +120,7 @@ const XSidebar = () => {
 								activeItem === '/cards-advance'
 							)}
 							active={activeItem === '/cards-advance'}
-							href="#/cards-advance"
+							href={`${basePath}/cards-advance`}
 						>
 							Advance
 						</Sidebar.Item>
@@ -126,7 +128,7 @@ const XSidebar = () => {
 
 					<Sidebar.Item
 						key="signin"
-						href="#/signin"
+						href={`${basePath}/signin`}
 						icon={ArrowRightIcon}
 						active={activeItem === '/signin'}
 					>
@@ -134,9 +136,9 @@ const XSidebar = () => {
 					</Sidebar.Item>
 					<Sidebar.Item
 						key="signout"
-						href="#/signup"
 						icon={ArrowLeftIcon}
 						active={activeItem === '/signup'}
+						href={`${basePath}/signup`}
 					>
 						Sign Up
 					</Sidebar.Item>

@@ -1,7 +1,7 @@
 import React from 'react';
-import XBaseLayout from '../templates/BaseLayout';
-import XUserProfileForm from '../organisms/UserUpdateForm';
-import avatar from '../../assets/images/avatar.jpg';
+import XBaseLayout from '@templates/BaseLayout';
+import XUserProfileForm from '@organisms/UserUpdateForm';
+import avatar from '@assets/images/avatar.jpg';
 
 const XUpdateProfile: React.FC = () => {
 	const username = 'exampleUsername';

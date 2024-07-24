@@ -110,16 +110,26 @@ const customTheme: CustomFlowbiteTheme = {
 	},
 
 	tab: {
-		base: 'flex flex-col gap-2 siavash',
+		base: 'flex flex-col gap-2',
 		tablist: {
 			base: 'flex text-center border-none',
 			styles: {
-				default: 'flex-wrap border-none',
+				default:
+					'flex-wrap border-none flex-row flex-nowrap items-center justify-center',
 				fullWidth:
 					'grid w-full grid-flow-col divide-x divide-gray-200 rounded-none text-sm font-medium shadow dark:divide-gray-700 dark:text-gray-400',
 			},
 			tabitem: {
-				base: 'flex items-center justify-center rounded-t-lg p-4 text-sm font-medium first:ml-0 focus:outline-none focus:ring-1 focus:ring-cyan-100 disabled:cursor-not-allowed disabled:text-gray-400 disabled:dark:text-gray-500',
+				base: 'flex flex-1 flex-grow border-b border-blue-50 items-center justify-center rounded-t-lg p-4 text-sm font-medium first:ml-0 focus:outline-none focus:ring-1 focus:ring-cyan-100 disabled:cursor-not-allowed disabled:text-gray-400 disabled:dark:text-gray-500',
+				styles: {
+					default: {
+						base: 'rounded-t-lg',
+						active: {
+							on: 'bg-gray-100 text-cyan-600 dark:bg-gray-800 dark:text-cyan-500',
+							off: 'text-gray-500 hover:bg-gray-50 hover:text-gray-600 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300',
+						},
+					},
+				},
 			},
 		},
 	},

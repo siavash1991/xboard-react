@@ -8,6 +8,7 @@
 		font-family: 'Chakra Petch', system-ui, sans-serif;
 	}
 }
+
 body {
 	background-color: #e8f2fb;
 }
@@ -15,7 +16,7 @@ body {
 /* Custom scrollbar style */
 
 *:not(html) {
-	scrollbar-width: inherit;
+	scrollbar-width: thin; /* Change from inherit to thin for consistency */
 }
 
 *::-webkit-scrollbar {
@@ -31,32 +32,20 @@ body {
 	background-color: #e5e9ed;
 }
 
+/* Mozilla-specific scrollbar styling */
 *::-moz-scrollbar {
 	width: 3px;
 }
 
 *::-moz-scrollbar-thumb {
-	background-color: #95a2b3;
+	background-color: #a3d977; /* Ensure consistency with WebKit scrollbar thumb */
 }
 
 *::-moz-scrollbar-track {
 	background-color: #e5e9ed;
 }
 
-*::-webkit-scrollbar-thumb {
-	background-color: #0c1d39;
-}
-
-*::-moz-scrollbar-thumb {
-	background-color: #0c1d39;
-}
-
-.component-wrapper {
-	/* background-color: #eef7fd; */
-	padding-bottom: 0.4rem;
-	border-radius: 0.75rem;
-}
-
+/* Spinner Styles */
 .spinner-container {
 	display: flex;
 	justify-content: center;

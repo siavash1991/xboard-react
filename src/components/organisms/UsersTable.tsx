@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Table } from 'flowbite-react';
-import Pagination from '../atoms/Pagination';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import Pagination from '@atoms/Pagination';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 
 interface User {
 	id: number;

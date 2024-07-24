@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import XAuthLayout from '../templates/AuthLayout';
-import XUserSignInForm from '../organisms/UserSignInForm';
+import XAuthLayout from '@templates/AuthLayout';
+import XUserSignInForm from '@organisms/UserSignInForm';
 
-import Logo from '../../assets/images/favicon.svg';
+import Logo from '@assets/images/favicon.svg';
 
 const XSignIn: React.FC = () => {
 	return (

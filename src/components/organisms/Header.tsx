@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
-import UserAvatarInfo from '../molecules/UserAvatarInfo';
-import XSearch from '../atoms/Search';
-import XDirToggle from 'components/atoms/DirToggle';
-import XThemeToggle from 'components/atoms/ThemeToggle';
+import UserAvatarInfo from '@molecules/UserAvatarInfo';
+import XSearch from '@atoms/Search';
+import XDirToggle from '@atoms/DirToggle';
+import XThemeToggle from '@atoms/ThemeToggle';
 const XHeader = () => {
 	return (
 		<header className="container mx-auto mb-12">

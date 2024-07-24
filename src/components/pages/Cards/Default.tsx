@@ -1,14 +1,14 @@
 import React from 'react';
-import XBaseLayout from '../../templates/BaseLayout';
-import XDefaultCard from 'components/molecules/Cards/Default';
-import XWithCTAButtonCard from 'components/molecules/Cards/WithCTAButton';
-import XWithImageCard from 'components/molecules/Cards/Image';
-import XHorizontalCard from 'components/molecules/Cards/Horizontal';
-import XFormCard from 'components/molecules/Cards/Form';
-import XEcommerceCard from 'components/molecules/Cards/Ecommerce';
-import XCTACard from 'components/molecules/Cards/CTA';
-import XPricingCard from 'components/molecules/Cards/Pricing';
-import XCryptoCard from 'components/molecules/Cards/Crypto';
+import XBaseLayout from '@templates/BaseLayout';
+import XDefaultCard from '@organisms/Cards/Default';
+import XWithCTAButtonCard from '@organisms/Cards/WithCTAButton';
+import XWithImageCard from '@organisms/Cards/Image';
+import XHorizontalCard from '@organisms/Cards/Horizontal';
+import XFormCard from '@organisms/Cards/Form';
+import XEcommerceCard from '@organisms/Cards/Ecommerce';
+import XCTACard from '@organisms/Cards/CTA';
+import XPricingCard from '@organisms/Cards/Pricing';
+import XCryptoCard from '@organisms/Cards/Crypto';
 
 const XDefaultCards: React.FC = () => {
 	return (

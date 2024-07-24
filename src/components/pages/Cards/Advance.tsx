@@ -1,9 +1,9 @@
 import React from 'react';
-import XBaseLayout from '../../templates/BaseLayout';
-import XMonthlyCampaignStateCard from 'components/molecules/Cards/MonthlyCampaignState';
-import XActiveProjectCard from 'components/molecules/Cards/ActiveProject';
-import XEarningReportsCard from 'components/molecules/Cards/EarningReport';
-import XOrdersByCountriesCard from 'components/molecules/Cards/OrdersByCountries';
+import XBaseLayout from '@templates/BaseLayout';
+import XMonthlyCampaignStateCard from '@organisms/Cards/MonthlyCampaignState';
+import XActiveProjectCard from '@organisms/Cards/ActiveProject';
+import XEarningReportsCard from '@organisms/Cards/EarningReport';
+import XOrdersByCountriesCard from '@organisms/Cards/OrdersByCountries';
 
 const XAdvanceCards: React.FC = () => {
 	return (

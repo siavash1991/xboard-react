@@ -16,7 +16,7 @@
  * - Enables dynamic configuration updates without modifying multiple files.
  */
 const config = {
-	basePath: '/xboard-react',
+	basePath: '/xboard-react/#',
 };
 
 export default config;

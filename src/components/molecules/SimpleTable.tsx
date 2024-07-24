@@ -1,3 +1,4 @@
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 import { Checkbox, Table } from 'flowbite-react';
 import React from 'react';
 
@@ -6,7 +7,7 @@ interface XSimpleTableProps {
 }
 const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 	return (
-		<div className={`component-wrapper mb-7 ${className}`}>
+		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
 			<Table hoverable className="w-full">
 				<Table.Head>
 					<Table.HeadCell className="p-4">
@@ -177,7 +178,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 					</Table.Row>
 				</Table.Body>
 			</Table>
-		</div>
+		</ComponentWrapper>
 	);
 };
 export default XSimpleTable;

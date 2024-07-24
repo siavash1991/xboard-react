@@ -1,6 +1,18 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./src",
+		"paths": {
+			"@hooks/*": ["./hooks/*"],
+			"@redux/*": ["./redux/*"],
+			"@utils/*": ["./utils/*"],
+			"@assets/*": ["./assets/*"],
+			"@shared/*": ["./components/shared/*"],
+			"@atoms/*": ["./components/atoms/*"],
+			"@molecules/*": ["./components/molecules/*"],
+			"@organisms/*": ["./components/organisms/*"],
+			"@pages/*": ["./components/pages/*"],
+			"@templates/*": ["./components/templates/*"]
+		},
 		"target": "es2015",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
@@ -24,5 +36,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "__tests__", "**/*.ts"]
+	"include": ["src", "__tests__", "**/*.ts", "craco.config.js"]
 }

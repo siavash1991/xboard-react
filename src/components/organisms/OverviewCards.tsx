@@ -1,5 +1,5 @@
 import React from 'react';
-import XCountCard from '../molecules/CountCard';
+import XCountCard from '@molecules/CountCard';
 
 interface XCardsProps {
 	cardData: {

@@ -1,5 +1,6 @@
 import React, { useEffect, useId } from 'react';
 import Chart, { ChartConfiguration } from 'chart.js/auto';
+import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const data = [65, 59, 80, 81, 56, 55, 40];
@@ -116,11 +117,11 @@ const XLineChart: React.FC<XLineChartProps> = ({ className = '' }) => {
 	}, [chartId]);
 
 	return (
-		<div className={`component-wrapper mb-7 ${className}`}>
+		<ComponentWrapper className={`${className}`}>
 			<div className="bg-white dark:bg-gray-800 w-full rounded-md">
 				<canvas id={chartId} width="400" height="200"></canvas>
 			</div>
-		</div>
+		</ComponentWrapper>
 	);
 };
 

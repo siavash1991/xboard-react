@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, Dropdown } from 'flowbite-react';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 
 const projects = [
 	{
+		id: 1,
 		title: 'Laravel',
 		subtitle: 'eCommerce',
 		logo: 'images/cards/active-project/laravel-logo.png',
@@ -12,6 +13,7 @@ const projects = [
 		progressColor: 'bg-red-500',
 	},
 	{
+		id: 2,
 		title: 'Figma',
 		subtitle: 'App UI Kit',
 		logo: 'images/cards/active-project/figma-logo.png',
@@ -19,6 +21,7 @@ const projects = [
 		progressColor: 'bg-blue-500',
 	},
 	{
+		id: 3,
 		title: 'VueJs',
 		subtitle: 'Calendar App',
 		logo: 'images/cards/active-project/vue-logo.png',
@@ -26,6 +29,7 @@ const projects = [
 		progressColor: 'bg-green-500',
 	},
 	{
+		id: 4,
 		title: 'React',
 		subtitle: 'Dashboard',
 		logo: 'images/cards/active-project/react-logo.png',
@@ -33,6 +37,7 @@ const projects = [
 		progressColor: 'bg-teal-500',
 	},
 	{
+		id: 5,
 		title: 'Bootstrap',
 		subtitle: 'Website',
 		logo: 'images/cards/active-project/bootstrap-logo.png',
@@ -40,6 +45,7 @@ const projects = [
 		progressColor: 'bg-blue-500',
 	},
 	{
+		id: 6,
 		title: 'Sketch',
 		subtitle: 'Website Design',
 		logo: 'images/cards/active-project/sketch-logo.png',
@@ -74,8 +80,11 @@ const XActiveProjectCard = ({ className = '' }) => {
 					</Dropdown>
 				</div>
 				<ul className="space-y-5">
-					{projects.map((project, index) => (
-						<li key={index} className="flex items-center space-x-4">
+					{projects.map((project) => (
+						<li
+							key={project.id}
+							className="flex items-center space-x-4"
+						>
 							<div className="flex items-center w-1/2 space-x-4">
 								<img
 									src={project.logo}

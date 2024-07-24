@@ -4,7 +4,7 @@ const getBasePath = () => {
 	return Config.basePath;
 };
 
-export const withBasePath = (path: string): string => {
+export const withBasePath = () => {
 	const basePath = getBasePath();
-	return basePath + path;
+	return basePath;
 };

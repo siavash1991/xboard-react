@@ -1,20 +1,20 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import XLoadingSpinner from 'components/atoms/LoadingSpinner';
-import RedirectWithTrailingSlash from './utils/RedirectWithTrailingSlash';
-import XAdvanceCharts from 'components/pages/Charts/Advance';
-import XDefaultCharts from 'components/pages/Charts/Default';
-const XMain = lazy(() => import('./components/pages/Main'));
-const XUpdateUser = lazy(() => import('./components/pages/UpdateProfile'));
-const XUsers = lazy(() => import('./components/pages/Users'));
-const XDefaultCards = lazy(() => import('./components/pages/Cards/Default'));
-const XAdvanceCards = lazy(() => import('./components/pages/Cards/Advance'));
+import { store } from '@redux/store';
+import XLoadingSpinner from '@atoms/LoadingSpinner';
+import RedirectWithTrailingSlash from '@utils/RedirectWithTrailingSlash';
+import XApexCharts from '@pages/Charts/ApexCharts';
+import XChartJS from '@pages/Charts/ChartJS';
+const XMain = lazy(() => import('@pages/Main'));
+const XUpdateUser = lazy(() => import('@pages/UpdateProfile'));
+const XUsers = lazy(() => import('@pages/Users'));
+const XDefaultCards = lazy(() => import('@pages/Cards/Default'));
+const XAdvanceCards = lazy(() => import('@pages/Cards/Advance'));
 
-const XSignIn = lazy(() => import('./components/pages/SignIn'));
-const XSignUp = lazy(() => import('./components/pages/SignUp'));
-const NotFound = lazy(() => import('./components/pages/404'));
+const XSignIn = lazy(() => import('@pages/SignIn'));
+const XSignUp = lazy(() => import('@pages/SignUp'));
+const NotFound = lazy(() => import('@pages/404'));
 
 function App() {
 	return (
@@ -32,12 +32,12 @@ function App() {
 							<Route path="/users" element={<XUsers />} />
 
 							<Route
-								path="/charts-advance"
-								element={<XAdvanceCharts />}
+								path="/charts-apex"
+								element={<XApexCharts />}
 							/>
 							<Route
-								path="/charts-default"
-								element={<XDefaultCharts />}
+								path="/charts-chartjs"
+								element={<XChartJS />}
 							/>
 							<Route
 								path="/cards-advance"

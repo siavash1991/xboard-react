@@ -10,6 +10,7 @@ interface BaseLayoutProps {
 	pageTitle?: string;
 }
 type BreadcrumbItem = {
+	id: number;
 	href: string;
 	icon?: React.ReactNode;
 	label: string;
@@ -20,8 +21,8 @@ const XBaseLayout: React.FC<BaseLayoutProps> = ({
 	pageTitle = 'Title Missed!',
 }) => {
 	const breadcrumbItems: BreadcrumbItem[] = [
-		{ href: '/', label: 'Home' },
-		{ href: '/sample', label: 'Sample Page' },
+		{ id: 1, href: '/', label: 'Home' },
+		{ id: 2, href: '/sample', label: 'Sample Page' },
 	];
 	return (
 		<div className="min-h-screen grid grid-cols-12 bg-gradient-to-b from-pale-azure to-pale-ivory dark:from-gray-900 dark:to-gray-700">

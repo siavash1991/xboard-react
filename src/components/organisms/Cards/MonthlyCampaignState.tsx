@@ -12,6 +12,7 @@ import {
 import ComponentWrapper from 'components/atoms/ComponentWrapper';
 
 interface DataItem {
+	id: number;
 	label: string;
 	value: string;
 	change: string;
@@ -27,36 +28,42 @@ const XMonthlyCampaignStateCard: React.FC<XMonthlyCampaignStateCardProps> = ({
 }) => {
 	const data: DataItem[] = [
 		{
+			id: 1,
 			label: 'Emails',
 			value: '12,346',
 			change: '0.3%',
 			icon: 'mail',
 		},
 		{
+			id: 2,
 			label: 'Opened',
 			value: '8,734',
 			change: '2.1%',
 			icon: 'open',
 		},
 		{
+			id: 3,
 			label: 'Clicked',
 			value: '967',
 			change: '1.4%',
 			icon: 'click',
 		},
 		{
+			id: 4,
 			label: 'Subscribe',
 			value: '345',
 			change: '8.5k',
 			icon: 'subscribe',
 		},
 		{
+			id: 5,
 			label: 'Complaints',
 			value: '10',
 			change: '1.5%',
 			icon: 'complaint',
 		},
 		{
+			id: 6,
 			label: 'Unsubscribe',
 			value: '86',
 			change: '0.8%',
@@ -115,7 +122,7 @@ const XMonthlyCampaignStateCard: React.FC<XMonthlyCampaignStateCardProps> = ({
 					<ul className="space-y-6">
 						{data.map((item, index) => (
 							<li
-								key={index}
+								key={item.id}
 								className="flex items-center space-x-4"
 							>
 								<div

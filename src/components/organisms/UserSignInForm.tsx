@@ -35,7 +35,7 @@ const UserSignInForm: React.FC = () => {
 		<ComponentWrapper>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="rounded-lg bg-white dark:bg-gray-800 bg-white dark:bg-gray-800 space-y-6 p-10"
+				className="rounded-lg bg-white dark:bg-gray-800 space-y-6 p-10"
 			>
 				{error && typeof error === 'string' && (
 					<div className="text-red-500">{error}</div>

@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
 	darkMode: 'class',
 	content: [
@@ -20,5 +23,9 @@ module.exports = {
 		require('flowbite/plugin'),
 		require('tailwindcss/nesting'),
 		require('tailwindcss-dir'),
+
+		plugin(function ({ addVariant }) {
+			addVariant('semi-dark', '.semi-dark &');
+		}),
 	],
 };

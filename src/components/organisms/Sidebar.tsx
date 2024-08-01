@@ -69,7 +69,6 @@ const XSidebar = () => {
 					>
 						Forms
 					</Sidebar.Item>
-
 					<Sidebar.Collapse
 						icon={ChartPieIcon}
 						label="Charts"

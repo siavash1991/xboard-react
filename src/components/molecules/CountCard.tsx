@@ -28,7 +28,7 @@ const XCountCard: React.FC<CardProps> = ({
 	}
 
 	return (
-		<ComponentWrapper className={`component-wrapper ${className}`}>
+		<ComponentWrapper className={`${className}`}>
 			<Card href="#" className="gap-2">
 				<div className="flex items-center">
 					<IconComponent className="h-5 w-5 text-gray-500" />

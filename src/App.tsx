@@ -6,6 +6,7 @@ import XLoadingSpinner from '@atoms/LoadingSpinner';
 import RedirectWithTrailingSlash from '@utils/RedirectWithTrailingSlash';
 import XApexCharts from '@pages/Charts/ApexCharts';
 import XChartJS from '@pages/Charts/ChartJS';
+import XForms from '@pages/Forms';
 const XMain = lazy(() => import('@pages/Main'));
 const XUpdateUser = lazy(() => import('@pages/UpdateProfile'));
 const XUsers = lazy(() => import('@pages/Users'));
@@ -47,7 +48,7 @@ function App() {
 								path="/cards-default"
 								element={<XDefaultCards />}
 							/>
-
+							<Route path="/forms" element={<XForms />} />
 							<Route path="/signin" element={<XSignIn />} />
 							<Route path="/signup" element={<XSignUp />} />
 

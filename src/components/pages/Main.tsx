@@ -13,7 +13,7 @@ const XMain: React.FC = () => {
 					cardData={overview}
 					className="col-span-12 grid-cols-12 gap-4 w-full"
 				/>
-				<XSimpleTable className="bg-component-light dark:bg-gray-600 col-span-12" />
+				<XSimpleTable className="col-span-12" />
 				<div className="col-span-12 grid grid-cols-12 gap-4 mb-7">
 					<XLineChart className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" />
 					{/* <XBarChart className="bg-component-light dark:bg-gray-600 col-span-12 md:col-span-6" /> */}

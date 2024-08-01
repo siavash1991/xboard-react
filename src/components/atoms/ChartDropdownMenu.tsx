@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import useClickOutside from '@hooks/useClickOutside';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 
-interface ChartDropdownMenuProps {
+interface XChartDropdownMenuProps {
 	menuLabel?: string;
 	menuItems: { id: string; label: string; onClick: () => void }[];
 	menuIcon?: React.ReactElement;
 	arrowIcon?: React.ReactElement;
 }
 
-const ChartDropdownMenu: React.FC<ChartDropdownMenuProps> = ({
+const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 	menuIcon = <CalendarIcon className="h-5 w-5" />,
 	menuItems,
 	menuLabel = '',
@@ -85,4 +85,4 @@ const ChartDropdownMenu: React.FC<ChartDropdownMenuProps> = ({
 	);
 };
 
-export default ChartDropdownMenu;
+export default XChartDropdownMenu;

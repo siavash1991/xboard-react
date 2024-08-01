@@ -7,7 +7,7 @@ interface XSimpleTableProps {
 }
 const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
+		<ComponentWrapper fitContent={true} className={className}>
 			<Table hoverable className="w-full">
 				<Table.Head>
 					<Table.HeadCell className="p-4">

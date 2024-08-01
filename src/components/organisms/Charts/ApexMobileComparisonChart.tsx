@@ -6,9 +6,9 @@ import ChartDropdownMenu from '@atoms/ChartDropdownMenu';
 
 // Data for the bar chart
 const series = [{}];
-const XApexBalanceHorizontalCard: React.FC<{
-	className?: string;
-}> = ({ className = '' }) => {
+const XApexMobileComparisonCard: React.FC<{ className?: string }> = ({
+	className = '',
+}) => {
 	const menuItems = [
 		{
 			id: 'today',
@@ -55,7 +55,7 @@ const XApexBalanceHorizontalCard: React.FC<{
 	];
 
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
+		<ComponentWrapper className={className}>
 			<Card>
 				<div className="card-header flex items-center justify-between p-4">
 					<div>
@@ -73,4 +73,4 @@ const XApexBalanceHorizontalCard: React.FC<{
 	);
 };
 
-export default XApexBalanceHorizontalCard;
+export default XApexMobileComparisonCard;

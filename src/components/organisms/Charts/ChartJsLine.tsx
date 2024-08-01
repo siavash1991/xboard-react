@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card } from 'flowbite-react';
-import { ArrowUpIcon } from '@heroicons/react/24/outline';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XLineChart from '@molecules/ChartJs/LineChart';
 import colors from 'tailwindcss/colors';
 import { ChartOptions } from 'chart.js';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
 
+// Data for the line chart
 const labels = Array.from({ length: 10 }, (_, i) => i.toString());
 
 const data1 = [150, 200, 150, 300, 250, 200, 350, 300, 250, 390];
@@ -48,7 +49,7 @@ const chartOptions: ChartOptions<'line'> = {
 	plugins: {
 		legend: {
 			display: true,
-			align: 'start', // Ensure this is a valid value
+			align: 'start',
 			labels: {
 				usePointStyle: true,
 				boxWidth: 5,
@@ -78,37 +79,71 @@ const chartOptions: ChartOptions<'line'> = {
 	},
 };
 
+// Define menu items outside the component
+const menuItems = [
+	{
+		id: 'today',
+		label: 'Today',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'yesterday',
+		label: 'Yesterday',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'last7days',
+		label: 'Last 7 Days',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'last30days',
+		label: 'Last 30 Days',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'currentMonth',
+		label: 'Current Month',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'lastMonth',
+		label: 'Last Month',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+];
+
 const XChartJsLineCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
-			<Card>
-				<div className="card-header flex items-center justify-between p-4 ">
-					<div>
-						<h5 className="card-title text-lg font-semibold text-gray-900">
-							Statistics
-						</h5>
-						<p className="card-subtitle text-gray-600">
-							Commercial networks and enterprises
-						</p>
-					</div>
-					<div className="flex items-center">
-						<h5 className="text-gray-800 mr-4">$ 78,000</h5>
-						<span className="bg-gray-200 text-gray-800 px-2 py-1 rounded flex items-center">
-							<ArrowUpIcon className="h-3 w-3 text-green-500" />
-							<span className="ml-1 text-sm">37%</span>
-						</span>
-					</div>
-				</div>
-				<div className="card-body">
-					<XLineChart
-						data={chartData}
-						options={chartOptions}
-						height="500"
-					/>
-				</div>
-			</Card>
+		<ComponentWrapper className={className}>
+			<XComponentHeader
+				title="Statistics"
+				subtitle="Commercial networks and enterprises"
+				changePercentage="28"
+				value="$78,000"
+				isPositiveChange={true}
+			/>
+			<XComponentBody>
+				<XLineChart
+					data={chartData}
+					options={chartOptions}
+					height="500"
+				/>
+			</XComponentBody>
 		</ComponentWrapper>
 	);
 };

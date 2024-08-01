@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card } from 'flowbite-react';
-import { ArrowUpIcon } from '@heroicons/react/24/outline';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XBubbleChart from '@molecules/ChartJs/BubbleChart';
 import { ChartOptions } from 'chart.js';
 import colors from 'tailwindcss/colors';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
 
 // Define the type for the dataset configuration
 interface BubbleChartDataset {
@@ -112,33 +112,17 @@ const XChartJsBubbleCard: React.FC<XChartJsBubbleCardProps> = ({
 	className,
 }) => {
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
-			<Card>
-				<div className="card-header flex items-center justify-between p-4 ">
-					<div>
-						<h5 className="card-title text-lg font-semibold text-gray-900">
-							Statistics
-						</h5>
-						<p className="card-subtitle text-gray-600">
-							Commercial networks and enterprises
-						</p>
-					</div>
-					<div className="flex items-center">
-						<h5 className="text-gray-800 mr-4">$ 78,000</h5>
-						<span className="bg-gray-200 text-gray-800 px-2 py-1 rounded flex items-center">
-							<ArrowUpIcon className="h-3 w-3 text-green-500" />
-							<span className="ml-1 text-sm">37%</span>
-						</span>
-					</div>
-				</div>
-				<div className="card-body">
-					<XBubbleChart
-						data={bubbleChartData}
-						options={chartOptions}
-						height="480"
-					/>
-				</div>
-			</Card>
+		<ComponentWrapper className={className}>
+			<XComponentHeader
+				title="Statistics"
+				subtitle="Commercial networks and enterprises"
+				changePercentage="32"
+				value="$120,000"
+				isPositiveChange={true}
+			/>
+			<XComponentBody>
+				<XBubbleChart data={bubbleChartData} options={chartOptions} />
+			</XComponentBody>
 		</ComponentWrapper>
 	);
 };

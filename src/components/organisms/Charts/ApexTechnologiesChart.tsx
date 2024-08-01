@@ -1,10 +1,12 @@
 import React from 'react';
 import ApexCharts from 'react-apexcharts';
-import { Card } from 'flowbite-react';
 import ComponentWrapper from '@atoms/ComponentWrapper';
-import ChartDropdownMenu from '@atoms/ChartDropdownMenu';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { bubbleChartOptions } from '@shared/ApexChartsConfig';
 
+// Data for the bubble chart
 const series = [
 	{
 		name: 'Angular',
@@ -63,49 +65,28 @@ const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const menuItems = [
-		{
-			id: 'daily',
-			label: 'Daily',
-			onClick: () => {
-				/* handle click */
-			},
-		},
-		{
-			id: 'monthly',
-			label: 'Monthly',
-			onClick: () => {
-				/* handle click */
-			},
-		},
-		{
-			id: 'yearly',
-			label: 'Yearly',
-			onClick: () => {
-				/* handle click */
-			},
-		},
+		{ id: 'daily', label: 'Daily', onClick: () => {} },
+		{ id: 'monthly', label: 'Monthly', onClick: () => {} },
+		{ id: 'yearly', label: 'Yearly', onClick: () => {} },
 	];
 
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
-			<Card>
-				<div className="card-header flex items-center justify-between p-4">
-					<div>
-						<h5 className="card-title text-lg font-semibold text-gray-900">
-							New Technologies Data
-						</h5>
-					</div>
-					<ChartDropdownMenu menuItems={menuItems} />
-				</div>
-				<div className="card-body p-4">
-					<ApexCharts
-						options={bubbleChartOptions()}
-						series={series}
-						type="bubble"
-						height={350}
-					/>
-				</div>
-			</Card>
+		<ComponentWrapper className={className}>
+			<XComponentHeader
+				title="New Technologies Data"
+				menuItems={menuItems}
+				arrowIcon={
+					<ChevronDownIcon className="h-5 w-5 text-gray-600" />
+				}
+			/>
+			<XComponentBody>
+				<ApexCharts
+					options={bubbleChartOptions()}
+					series={series}
+					type="bubble"
+					height={350}
+				/>
+			</XComponentBody>
 		</ComponentWrapper>
 	);
 };

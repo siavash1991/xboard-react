@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card, Dropdown } from 'flowbite-react';
+import { Card } from 'flowbite-react';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import ComponentWrapper from '@atoms/ComponentWrapper';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
 
 const projects = [
 	{
@@ -55,30 +57,39 @@ const projects = [
 ];
 
 const XActiveProjectCard = ({ className = '' }) => {
+	const menuItems = [
+		{
+			id: 'Refresh',
+			label: 'refresh',
+			onClick: () => {
+				/* handle click */
+			},
+		},
+		{
+			id: 'Download',
+			label: 'download',
+			onClick: () => {
+				/* handle click */
+			},
+		},
+		{
+			id: 'viewAll',
+			label: 'View All',
+			onClick: () => {
+				/* handle click */
+			},
+		},
+	];
+
 	return (
 		<ComponentWrapper className={className}>
-			<Card>
-				<div className="card-header flex justify-between items-center mb-4">
-					<div>
-						<h5 className="text-lg font-semibold mb-1 text-gray-800 dark:text-white">
-							Active Project
-						</h5>
-						<p className="text-sm text-gray-500 dark:text-gray-400">
-							Average 72% Completed
-						</p>
-					</div>
-					<Dropdown
-						label={
-							<EllipsisVerticalIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
-						}
-						inline={true}
-						arrowIcon={false}
-					>
-						<Dropdown.Item>Refresh</Dropdown.Item>
-						<Dropdown.Item>Download</Dropdown.Item>
-						<Dropdown.Item>View All</Dropdown.Item>
-					</Dropdown>
-				</div>
+			<XComponentHeader
+				title="Active Project"
+				subtitle="Average 72% Completed"
+				menuItems={menuItems}
+				menuIcon={<EllipsisVerticalIcon />}
+			></XComponentHeader>
+			<XComponentBody>
 				<ul className="space-y-5">
 					{projects.map((project) => (
 						<li
@@ -120,7 +131,7 @@ const XActiveProjectCard = ({ className = '' }) => {
 						</li>
 					))}
 				</ul>
-			</Card>
+			</XComponentBody>
 		</ComponentWrapper>
 	);
 };

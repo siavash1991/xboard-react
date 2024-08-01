@@ -1,9 +1,12 @@
 import React from 'react';
-import { Card } from 'flowbite-react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XPolarChart from '@molecules/ChartJs/PolarChart';
 import { ChartOptions, LegendItem } from 'chart.js';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
 
+// Data for the polar chart
 const chartData = {
 	labels: ['Africa', 'Asia', 'Europe', 'America', 'Antarctica', 'Australia'],
 	datasets: [
@@ -24,6 +27,7 @@ const chartData = {
 	],
 };
 
+// Chart options for the polar chart
 const chartOptions: ChartOptions<'polarArea'> = {
 	responsive: true,
 	maintainAspectRatio: false,
@@ -69,25 +73,48 @@ const chartOptions: ChartOptions<'polarArea'> = {
 	},
 };
 
+// Define menu items outside the component
+const menuItems = [
+	{
+		id: 'monthly',
+		label: 'Monthly',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'quarterly',
+		label: 'Quarterly',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+	{
+		id: 'yearly',
+		label: 'Yearly',
+		onClick: () => {
+			/* handle click */
+		},
+	},
+];
+
 const XChartJsPolarCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
-			<Card>
-				<div className="card-header flex items-center justify-between p-4 ">
-					<h5 className="card-title text-lg font-semibold text-gray-900">
-						Average Skills
-					</h5>
-				</div>
-				<div className="card-body">
-					<XPolarChart
-						data={chartData}
-						options={chartOptions}
-						height={400}
-					/>
-				</div>
-			</Card>
+		<ComponentWrapper className={className}>
+			<XComponentHeader
+				title="Average Skills"
+				arrowIcon={<ChevronDownIcon className="w-5 h-5" />}
+				menuItems={menuItems}
+			/>
+			<XComponentBody>
+				<XPolarChart
+					data={chartData}
+					options={chartOptions}
+					height={400}
+				/>
+			</XComponentBody>
 		</ComponentWrapper>
 	);
 };

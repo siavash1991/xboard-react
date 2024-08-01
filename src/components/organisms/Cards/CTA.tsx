@@ -7,7 +7,7 @@ interface XCTACardProps {
 const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 	return (
 		<ComponentWrapper className={className}>
-			<Card href="#" className={`${className}`}>
+			<Card href="#" className={className}>
 				<h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
 					Work fast from anywhere
 				</h5>

@@ -1,15 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useClickOutside from '@hooks/useClickOutside';
-import { CalendarIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon } from '@heroicons/react/24/outline';
 
 interface ChartDropdownMenuProps {
-	buttonLabel?: string;
+	menuLabel?: string;
 	menuItems: { id: string; label: string; onClick: () => void }[];
+	menuIcon?: React.ReactElement;
+	arrowIcon?: React.ReactElement;
 }
 
 const ChartDropdownMenu: React.FC<ChartDropdownMenuProps> = ({
-	buttonLabel = '',
+	menuIcon = <CalendarIcon className="h-5 w-5" />,
 	menuItems,
+	menuLabel = '',
+	arrowIcon = '',
 }) => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const [dropdownPosition, setDropdownPosition] = useState<'left' | 'right'>(
@@ -48,9 +52,12 @@ const ChartDropdownMenu: React.FC<ChartDropdownMenuProps> = ({
 				onClick={toggleDropdown}
 				ref={buttonRef}
 			>
-				<CalendarIcon className="h-5 w-5" />
-				<ChevronDownIcon className="h-5 w-5" />
-				<span className="ml-2">{buttonLabel}</span>
+				{React.cloneElement(menuIcon, { className: 'h-5 w-5' })}
+				{arrowIcon &&
+					React.cloneElement(arrowIcon as React.ReactElement, {
+						className: 'h-5 w-5',
+					})}
+				{menuLabel && <span className="ml-2">{menuLabel}</span>}{' '}
 			</button>
 			<div
 				ref={dropdownRef}

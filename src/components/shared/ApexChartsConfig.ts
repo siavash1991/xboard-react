@@ -58,7 +58,6 @@ export const splineAreaChartOptions = (
 		show: false,
 	},
 	grid: {
-		borderColor: '#e0e0e0',
 		xaxis: {
 			lines: {
 				show: true,
@@ -221,7 +220,7 @@ export const bubbleChartOptions = (
 		opacity: 0.8,
 	},
 	grid: {
-		borderColor: '#e0e0e0',
+		borderColor: colors.gray[300],
 		xaxis: {
 			lines: {
 				show: true,
@@ -325,7 +324,7 @@ export const lineChartOptions = (
 		width: 3,
 	},
 	grid: {
-		borderColor: '#e0e0e0',
+		borderColor: colors.gray[300],
 		xaxis: { lines: { show: true } },
 	},
 
@@ -340,5 +339,111 @@ export const lineChartOptions = (
 	},
 	markers: {
 		size: 5,
+	},
+});
+
+export const horizontalBararChartOptions = (
+	colorsPalette?: string[],
+	categories?: string[]
+): ApexOptions => ({
+	chart: {
+		type: 'bar',
+		toolbar: { show: false },
+	},
+	colors: colorsPalette ?? undefined,
+
+	dataLabels: { enabled: false },
+	plotOptions: {
+		bar: {
+			horizontal: true,
+			barHeight: '35%',
+			borderRadius: 8,
+			borderRadiusApplication: 'end',
+		},
+	},
+
+	grid: {
+		padding: {
+			left: 0,
+		},
+		borderColor: colors.gray[300],
+		xaxis: {
+			lines: { show: false },
+		},
+	},
+	yaxis: {
+		labels: {
+			style: { fontSize: '0.8125rem', colors: colors.gray[400] },
+		},
+	},
+	xaxis: {
+		axisBorder: { show: false },
+		categories: categories ?? [],
+		labels: {
+			style: { fontSize: '0.8125rem', colors: colors.gray[400] },
+		},
+	},
+});
+
+export const candlestickChartOptions = (
+	colorsPalette?: string[],
+	categories?: string[]
+): ApexOptions => ({
+	chart: {
+		parentHeightOffset: 0,
+		toolbar: { show: false },
+	},
+	plotOptions: {
+		bar: {
+			columnWidth: '70%',
+		},
+		candlestick: {
+			colors: {
+				upward: colors.green[400],
+				downward: colors.red[400],
+			},
+		},
+	},
+	grid: {
+		padding: { top: 0 },
+
+		borderColor: colors.gray[300],
+		xaxis: {
+			lines: { show: true },
+		},
+	},
+	yaxis: {
+		tickAmount: 4,
+		axisBorder: {
+			show: false,
+		},
+
+		tooltip: { enabled: true },
+		crosshairs: {
+			stroke: { color: colors.gray[300] },
+		},
+		labels: {
+			style: {
+				fontSize: '12px',
+				colors: colors.gray[400],
+			},
+			formatter: (value) => Math.floor(value).toString(),
+		},
+		min: 0,
+		max: 500,
+	},
+	xaxis: {
+		type: 'datetime',
+		axisBorder: { show: false },
+		axisTicks: { color: colors.gray[300] },
+		crosshairs: {
+			stroke: { color: colors.gray[300] },
+		},
+		labels: {
+			style: {
+				fontSize: '12px',
+				colors: colors.gray[400],
+			},
+		},
 	},
 });

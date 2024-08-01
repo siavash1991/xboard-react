@@ -7,7 +7,7 @@ interface XPricingCardProps {
 const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 	return (
 		<ComponentWrapper className={className}>
-			<Card href="#" className={`${className}`}>
+			<Card href="#" className={className}>
 				<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
 					Standard plan
 				</h5>

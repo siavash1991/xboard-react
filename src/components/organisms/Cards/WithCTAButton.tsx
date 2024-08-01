@@ -10,7 +10,7 @@ const XWithCTAButtonCard: React.FC<XWithCTAButtonCardProps> = ({
 }) => {
 	return (
 		<ComponentWrapper className={className}>
-			<Card href="#" className={`${className}`}>
+			<Card href="#" className={className}>
 				<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					Noteworthy technology acquisitions 2021
 				</h5>

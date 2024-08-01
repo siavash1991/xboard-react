@@ -7,7 +7,7 @@ interface XCryptoCardProps {
 const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 	return (
 		<ComponentWrapper className={className}>
-			<Card href="#" className={`${className}`}>
+			<Card href="#" className={className}>
 				<h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
 					Connect wallet
 				</h5>

@@ -11,7 +11,7 @@ const XWithImageCard: React.FC<XWithImageCardProps> = ({ className = '' }) => {
 		<ComponentWrapper className={className}>
 			<Card
 				href="#"
-				className={`${className}`}
+				className={className}
 				imgAlt="Meaningful alt text for an image that is not purely decorative"
 				imgSrc={cardImg}
 			>

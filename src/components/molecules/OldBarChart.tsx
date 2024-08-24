@@ -102,7 +102,7 @@ const XBarChart: React.FC<XBarChartProps> = ({ className = '' }) => {
 	}, [chartId]);
 
 	return (
-		<ComponentWrapper className={`component-wrapper mb-7 ${className}`}>
+		<ComponentWrapper className={className}>
 			<div className="bg-white dark:bg-gray-800 w-full rounded-md">
 				<canvas id={chartId} width="400" height="200"></canvas>
 			</div>

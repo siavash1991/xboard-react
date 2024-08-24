@@ -79,7 +79,7 @@ const XBasicWithIcon: React.FC<XBasicWithIconProps> = ({ className = '' }) => {
 							<textarea
 								id="message"
 								placeholder="Hi, Do you have a moment to talk?"
-								className="bg-gray-50 text-sm pl-10 pr-4 py-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:border-blue-500 h-32"
+								className="bg-inherit placeholder:text-gray-400 text-sm pl-10 pr-4 py-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:border-blue-500 h-32"
 							/>
 						</div>
 					</div>

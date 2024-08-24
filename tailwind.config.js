@@ -11,10 +11,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				'component-light': '#eef7fd',
 				'pale-azure': '#f7f4f8',
 				'pale-ivory': '#f8eee3',
-				'component-light': '#eef7fd',
-				// 'component-dark': '#eef7fd',
 				danube: '#33539E',
 			},
 		},

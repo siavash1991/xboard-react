@@ -24,7 +24,7 @@ const XOverviewCards: React.FC<XCardsProps> = ({
 					title={card.title}
 					content={card.content}
 					iconName={card.iconName}
-					className=" bg-component-light dark:bg-gray-600 col-span-12 sm:col-span-6 lg:col-span-3"
+					className="col-span-12 sm:col-span-6 lg:col-span-3"
 				/>
 			))}
 		</div>

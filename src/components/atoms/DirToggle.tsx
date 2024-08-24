@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
-const XDirToggle = () => {
+interface XDirToggleProps {
+	className?: string;
+}
+const XDirToggle: React.FC<XDirToggleProps> = ({ className = '' }) => {
 	const [isRtl, setIsRtl] = useState(false);
 
 	useEffect(() => {
@@ -14,7 +16,7 @@ const XDirToggle = () => {
 	return (
 		<button
 			onClick={toggleDirection}
-			className="rounded-lg p-2 text-sm font-bold text-gray-500 hover:bg-gray-100 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700"
+			className={`text-sm font-bold text-gray-500 hover:bg-gray-100 rounded-lg p-2 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700  semi-dark:ring-gray-600  semi-dark:hover:bg-gray-600 ${className}`}
 		>
 			{isRtl ? 'LTR' : 'RTL'}
 		</button>

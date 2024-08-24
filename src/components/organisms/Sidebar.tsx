@@ -1,4 +1,7 @@
 import { Badge, Sidebar } from 'flowbite-react';
+import Logo from '@assets/images/favicon.svg';
+import useActiveItem from '@hooks/useActiveItem';
+import { withBasePath } from '@shared/basePathHelper';
 import {
 	ArrowLeftIcon,
 	ArrowRightIcon,
@@ -8,9 +11,6 @@ import {
 	UserCircleIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import Logo from '@assets/images/favicon.svg';
-import useActiveItem from '@hooks/useActiveItem';
-import { withBasePath } from '@shared/basePathHelper';
 
 const XSidebar = () => {
 	const activeItem = useActiveItem();

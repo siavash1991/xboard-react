@@ -6,8 +6,8 @@ const customTheme: CustomFlowbiteTheme = {
 			chevron:
 				'mx-1 h-4 w-4 text-gray-400 group-first:hidden md:mx-2  rtl:rotate-180',
 			href: {
-				off: 'flex items-center text-sm font-medium text-gray-400 dark:text-gray-400',
-				on: 'flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
+				off: 'flex items-center text-sm font-medium text-gray-400 dark:text-gray-2',
+				on: 'flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white dark:text-gray-100 semi-dark:text-gray-300',
 			},
 			icon: 'mr-2 h-4 w-4 rtl:rotate-180',
 		},
@@ -17,6 +17,11 @@ const customTheme: CustomFlowbiteTheme = {
 			base: 'overflow-hidden w-full text-left rtl:text-right text-sm text-gray-500 dark:text-gray-400 rounded-lg',
 			shadow: 'absolute ',
 			wrapper: 'relative',
+		},
+		head: {
+			cell: {
+				base: 'bg-gray-50 px-6 py-3 group-first/head:first:rounded-tl-lg group-first/head:last:rounded-tr-lg dark:bg-gray-700 semi-dark:bg-gray-200',
+			},
 		},
 	},
 	pagination: {
@@ -36,8 +41,8 @@ const customTheme: CustomFlowbiteTheme = {
 	},
 	card: {
 		root: {
-			base: 'flex h-full rounded-lg bg-white dark:bg-gray-800',
-			children: 'flex flex-col justify-center gap-4 p-6',
+			base: 'flex h-full rounded-lg',
+			children: 'flex flex-col justify-center gap-4 p-10 ',
 			horizontal: {
 				off: 'flex-col',
 				on: 'flex-col md:flex-row',
@@ -55,11 +60,11 @@ const customTheme: CustomFlowbiteTheme = {
 	sidebar: {
 		root: {
 			base: 'h-full x-sidebar',
-			inner: 'bg-danube dark:bg-gray-800 h-full overflow-y-auto overflow-x-hidden py-4 px-3',
+			inner: 'bg-blue-800 dark:bg-gray-800 semi-dark:bg-gray-700 h-full overflow-y-auto overflow-x-hidden py-4 px-3',
 		},
 		item: {
 			base: 'relative my-1 flex items-center justify-center rounded-md p-2 text-sm font-normal text-sky-200 hover:transition-all duration-300 hover:bg-gray-800 dark:text-white dark:hover:bg-gray-700',
-			active: 'active-item bg-gray-100 dark:bg-gray-700 text-gray-800 hover:text-sky-200',
+			active: 'active-item bg-gray-100 dark:bg-gray-700  semi-dark:bg-gray-300 text-gray-800 hover:text-sky-200',
 			collapsed: {
 				insideCollapse:
 					'group w-full pl-4 bg-gray-500/50 transition duration-75',

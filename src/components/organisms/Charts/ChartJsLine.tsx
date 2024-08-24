@@ -79,52 +79,6 @@ const chartOptions: ChartOptions<'line'> = {
 	},
 };
 
-// Define menu items outside the component
-const menuItems = [
-	{
-		id: 'today',
-		label: 'Today',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-	{
-		id: 'yesterday',
-		label: 'Yesterday',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-	{
-		id: 'last7days',
-		label: 'Last 7 Days',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-	{
-		id: 'last30days',
-		label: 'Last 30 Days',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-	{
-		id: 'currentMonth',
-		label: 'Current Month',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-	{
-		id: 'lastMonth',
-		label: 'Last Month',
-		onClick: () => {
-			/* handle click */
-		},
-	},
-];
-
 const XChartJsLineCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {

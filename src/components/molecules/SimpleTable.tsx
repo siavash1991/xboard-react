@@ -7,7 +7,7 @@ interface XSimpleTableProps {
 }
 const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper fitContent={true} className={className}>
+		<ComponentWrapper className={className}>
 			<Table hoverable className="w-full">
 				<Table.Head>
 					<Table.HeadCell className="p-4">
@@ -26,7 +26,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 					</Table.HeadCell>
 				</Table.Head>
 				<Table.Body className="divide-y">
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>
@@ -51,7 +51,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 							</a>
 						</Table.Cell>
 					</Table.Row>
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>
@@ -76,7 +76,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 							</a>
 						</Table.Cell>
 					</Table.Row>
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>
@@ -101,7 +101,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 							</a>
 						</Table.Cell>
 					</Table.Row>
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>
@@ -126,7 +126,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 							</a>
 						</Table.Cell>
 					</Table.Row>
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>
@@ -151,7 +151,7 @@ const XSimpleTable: React.FC<XSimpleTableProps> = ({ className = '' }) => {
 							</a>
 						</Table.Cell>
 					</Table.Row>
-					<Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+					<Table.Row>
 						<Table.Cell className="p-4">
 							<Checkbox />
 						</Table.Cell>

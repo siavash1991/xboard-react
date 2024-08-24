@@ -42,8 +42,8 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 				<span
 					className={`${
 						isPositiveChange
-							? 'bg-green-100 text-green-600'
-							: 'bg-red-100 text-red-600'
+							? 'bg-green-500 dark:bg-gray-500 text-green-600 dark:text-green-100'
+							: 'bg-red-100 dark:bg-red-200 text-red-600 dark:text-red-100'
 					} px-2 py-1 rounded flex items-center`}
 				>
 					{isPositiveChange ? (
@@ -59,7 +59,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 
 	return (
 		<div
-			className={`component-header flex items-center justify-between ${className}`}
+			className={`component-header flex items-center justify-between p-10 ${className}`}
 		>
 			<div className="component-title">
 				{title && (

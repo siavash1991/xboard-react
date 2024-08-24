@@ -10,9 +10,9 @@ const XUserAvatarInfo = () => {
 				size="md"
 			/>
 
-			<div className="hidden sm:block font-medium dark:text-white">
+			<div className="hidden sm:block font-medium dark:text-white semi-dark:text-gray-300">
 				<div>Jese Leos</div>
-				<div className="text-xs text-gray-500 dark:text-gray-400">
+				<div className="text-xs text-gray-500 dark:text-gray-400 semi-dark:text-gray-400">
 					Joined in 2014
 				</div>
 			</div>

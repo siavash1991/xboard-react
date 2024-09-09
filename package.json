@@ -10,6 +10,7 @@
 		"@hookform/resolvers": "^3.3.2",
 		"@reduxjs/toolkit": "^2.0.1",
 		"@testing-library/user-event": "^13.5.0",
+		"@tippyjs/react": "^4.2.6",
 		"@types/next": "^9.0.0",
 		"@types/node": "^16.18.62",
 		"@types/react": "^18.2.37",

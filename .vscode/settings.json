@@ -6,5 +6,10 @@
 	"workbench.list.horizontalScrolling": false,
 	"search.defaultViewMode": "list",
 	"problems.defaultViewMode": "tree",
-	"git.ignoreLimitWarning": true
+	"git.ignoreLimitWarning": true,
+	"emmet.preferences": {},
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/node_modules/**": true
+	}
 }

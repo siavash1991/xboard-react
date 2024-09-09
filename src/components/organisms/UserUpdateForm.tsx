@@ -12,6 +12,8 @@ import {
 	FileInput,
 } from 'flowbite-react';
 import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import XComponentHeader from '@atoms/ComponentHeader';
+import XComponentBody from '@atoms/ComponentBody';
 
 interface UserUpdateFormProps {
 	username: string;
@@ -64,120 +66,131 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 	return (
 		<div className="grid grid-cols-12 col-span-12 gap-4">
 			<ComponentWrapper className="col-span-12 md:col-span-8">
-				<form
-					onSubmit={handleSubmit(onSubmit)}
-					className="flex flex-col gap-4"
-					data-testid="user-profile-form"
-				>
-					<div>
-						<div className="mb-2 block">
-							<Label htmlFor="email" value="Your email" />
-						</div>
-						<TextInput
-							id="email"
-							type="email"
-							placeholder="name@xboard.com"
-							defaultValue={email}
-							{...register('email')}
-							helperText={
-								<span
-									data-testid="email-error"
-									className="font-medium text-red-500"
-								>
-									{errors.email?.message}
-								</span>
-							}
-							data-testid="email-input"
-							aria-invalid={!!errors.email}
-						/>
-					</div>
-					<div>
-						<div className="mb-2 block">
-							<Label htmlFor="username" value="Your username" />
-						</div>
-						<TextInput
-							id="username"
-							type="text"
-							placeholder="Your username"
-							defaultValue={username}
-							{...register('username')}
-							helperText={
-								<span
-									data-testid="username-error"
-									className="font-medium text-red-500"
-								>
-									{errors.username?.message}
-								</span>
-							}
-							data-testid="username-input"
-							aria-invalid={!!errors.username}
-						/>
-					</div>
-					<div id="fileUpload">
-						<div className="mb-2 block">
-							<Label htmlFor="file" value="Upload Picture" />
-						</div>
-						<FileInput
-							id="file"
-							{...register('file')}
-							onChange={(e) => handleFileChange(e.target.files)}
-						/>
-						<div className="text-gray-500 text-sm mt-1">
-							A profile picture is useful to confirm you are
-							logged into your account.
-						</div>
-						<Avatar
-							img={avatarPreview}
-							alt="Avatar Preview"
-							className="float-right mt-2"
-							data-testid="avatar-image"
-						/>
-					</div>
-					<div>
-						<div className="mb-2 block">
-							<Label htmlFor="password" value="Your password" />
-						</div>
-						<TextInput
-							id="password"
-							type="password"
-							{...register('password')}
-							data-testid="password-input"
-							aria-invalid={!!errors.password}
-						/>
-					</div>
-					<div>
-						<div className="mb-2 block">
-							<Label
-								htmlFor="confirmPassword"
-								value="Confirm password"
-								data-testid="confirm-password-input"
+				<XComponentHeader title="Update Information"></XComponentHeader>
+				<XComponentBody>
+					<form
+						onSubmit={handleSubmit(onSubmit)}
+						className="flex flex-col gap-4"
+						data-testid="user-profile-form"
+					>
+						<div>
+							<div className="mb-2 block">
+								<Label htmlFor="email" value="Your email" />
+							</div>
+							<TextInput
+								id="email"
+								type="email"
+								placeholder="name@xboard.com"
+								defaultValue={email}
+								{...register('email')}
+								helperText={
+									<span
+										data-testid="email-error"
+										className="font-medium text-red-500"
+									>
+										{errors.email?.message}
+									</span>
+								}
+								data-testid="email-input"
+								aria-invalid={!!errors.email}
 							/>
 						</div>
-						<TextInput
-							id="confirmPassword"
-							type="password"
-							{...register('confirmPassword')}
-							aria-invalid={!!errors.confirmPassword}
-						/>
-					</div>
-					<Button
-						className="w-fit"
-						type="submit"
-						data-testid="submit-button"
-					>
-						Update Profile
-					</Button>
-
-					{/* Display success message if isSuccess is true */}
-					{isSuccess && (
-						<div
-							data-testid="success-message"
-							className="text-green-500 mt-4"
-						>
-							Profile updated successfully
+						<div>
+							<div className="mb-2 block">
+								<Label
+									htmlFor="username"
+									value="Your username"
+								/>
+							</div>
+							<TextInput
+								id="username"
+								type="text"
+								placeholder="Your username"
+								defaultValue={username}
+								{...register('username')}
+								helperText={
+									<span
+										data-testid="username-error"
+										className="font-medium text-red-500"
+									>
+										{errors.username?.message}
+									</span>
+								}
+								data-testid="username-input"
+								aria-invalid={!!errors.username}
+							/>
 						</div>
-					)}
-				</form>
+						<div id="fileUpload">
+							<div className="mb-2 block">
+								<Label htmlFor="file" value="Upload Picture" />
+							</div>
+							<FileInput
+								id="file"
+								{...register('file')}
+								onChange={(e) =>
+									handleFileChange(e.target.files)
+								}
+							/>
+							<div className="text-gray-500 text-sm mt-1">
+								A profile picture is useful to confirm you are
+								logged into your account.
+							</div>
+							<Avatar
+								img={avatarPreview}
+								alt="Avatar Preview"
+								className="float-right mt-2"
+								data-testid="avatar-image"
+							/>
+						</div>
+						<div>
+							<div className="mb-2 block">
+								<Label
+									htmlFor="password"
+									value="Your password"
+								/>
+							</div>
+							<TextInput
+								id="password"
+								type="password"
+								{...register('password')}
+								data-testid="password-input"
+								aria-invalid={!!errors.password}
+							/>
+						</div>
+						<div>
+							<div className="mb-2 block">
+								<Label
+									htmlFor="confirmPassword"
+									value="Confirm password"
+									data-testid="confirm-password-input"
+								/>
+							</div>
+							<TextInput
+								id="confirmPassword"
+								type="password"
+								{...register('confirmPassword')}
+								aria-invalid={!!errors.confirmPassword}
+							/>
+						</div>
+						<Button
+							className="w-fit"
+							type="submit"
+							data-testid="submit-button"
+						>
+							Update Profile
+						</Button>
+
+						{/* Display success message if isSuccess is true */}
+						{isSuccess && (
+							<div
+								data-testid="success-message"
+								className="text-green-500 mt-4"
+							>
+								Profile updated successfully
+							</div>
+						)}
+					</form>
+				</XComponentBody>
 			</ComponentWrapper>
 			<Card className="h-fit p-4 col-span-12 md:col-span-4">
 				<div className="mt-2">

@@ -93,7 +93,7 @@ const XApexAreaCard: React.FC<{ className?: string }> = ({
 				arrowIcon={<ChevronDownIcon className="h-5 w-5" />}
 			></XComponentHeader>
 
-			<XComponentBody>
+			<XComponentBody className="p-5">
 				<ApexCharts
 					type="area"
 					series={series}

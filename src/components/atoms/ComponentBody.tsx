@@ -9,6 +9,10 @@ const XComponentBody: React.FC<XComponentBodyProps> = ({
 	className = '',
 	children,
 }) => {
-	return <div className="component-body p-10"> {children}</div>;
+	return (
+		<div className={`component-body p-10 pt-0 ${className}`}>
+			{children}
+		</div>
+	);
 };
 export default XComponentBody;

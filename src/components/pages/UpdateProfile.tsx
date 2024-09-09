@@ -9,7 +9,7 @@ const XUpdateProfile: React.FC = () => {
 	const avatarUrl = avatar;
 
 	return (
-		<XBaseLayout pageTitle="Update Profile">
+		<XBaseLayout pageTitle="User Profile">
 			<div className="content-wrapper grid grid-cols-12 gap-4 mb-7">
 				<XUserProfileForm
 					username={username}

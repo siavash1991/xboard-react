@@ -59,7 +59,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 
 	return (
 		<div
-			className={`component-header flex items-center justify-between p-10 ${className}`}
+			className={`component-header flex items-center justify-between px-10 py-7 ${className}`}
 		>
 			<div className="component-title">
 				{title && (

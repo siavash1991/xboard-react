@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Button, Textarea, TextInput } from 'flowbite-react';
+import { Label, Button, TextInput } from 'flowbite-react';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import {
 	EnvelopeIcon,
@@ -23,7 +23,7 @@ const XBasicWithIcon: React.FC<XBasicWithIconProps> = ({ className = '' }) => {
 				subtitle="Merged input group"
 			></XComponentHeader>
 			<XComponentBody>
-				<fieldset className="flex max-w-md flex-col gap-4">
+				<form className="flex max-w-md flex-col gap-4">
 					<div className="max-w-md">
 						<div className="mb-2 block">
 							<Label htmlFor="fullName" value="Full Name" />
@@ -90,7 +90,7 @@ const XBasicWithIcon: React.FC<XBasicWithIconProps> = ({ className = '' }) => {
 					>
 						Submit
 					</Button>
-				</fieldset>
+				</form>
 			</XComponentBody>
 		</ComponentWrapper>
 	);

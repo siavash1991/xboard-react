@@ -69,6 +69,14 @@ const XSidebar = () => {
 					>
 						Forms
 					</Sidebar.Item>
+					<Sidebar.Item
+						key="tables"
+						icon={InformationCircleIcon}
+						active={activeItem === '/tables'}
+						href={`${basePath}/tables`}
+					>
+						Tables
+					</Sidebar.Item>
 					<Sidebar.Collapse
 						icon={ChartPieIcon}
 						label="Charts"

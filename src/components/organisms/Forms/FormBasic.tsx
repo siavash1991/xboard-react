@@ -17,7 +17,7 @@ const XBasicForm: React.FC<XBasicFormProps> = ({ className = '' }) => {
 				subtitle="Default label"
 			></XComponentHeader>
 			<XComponentBody>
-				<fieldset className="flex max-w-md flex-col gap-4">
+				<form className="flex max-w-md flex-col gap-4">
 					<div className="max-w-md">
 						<div className="mb-2 block">
 							<Label htmlFor="fullName" value="Full Name" />
@@ -78,7 +78,7 @@ const XBasicForm: React.FC<XBasicFormProps> = ({ className = '' }) => {
 					>
 						Submit
 					</Button>
-				</fieldset>
+				</form>
 			</XComponentBody>
 		</ComponentWrapper>
 	);

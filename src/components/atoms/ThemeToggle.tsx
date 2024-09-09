@@ -1,4 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {
+	useState,
+	useEffect,
+	useLayoutEffect,
+	useCallback,
+} from 'react';
 import {
 	StarIcon,
 	MoonIcon,
@@ -28,7 +33,6 @@ const getSystemTheme = (): Theme => {
 };
 
 const updateDocumentTheme = (theme: Theme) => {
-	console.log('Applying Theme:', theme);
 	document.documentElement.classList.remove('dark', 'semi-dark', 'light');
 	if (theme !== 'system') {
 		document.documentElement.classList.add(theme);
@@ -41,7 +45,6 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 
 	const applyTheme = useCallback((theme: Theme) => {
 		const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
-		console.log('Effective Theme:', effectiveTheme);
 		updateDocumentTheme(effectiveTheme);
 		localStorage.setItem('color-theme', theme);
 		setCurrentTheme(theme);
@@ -56,26 +59,25 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 		}
 	};
 
-	useEffect(() => {
+	// Ensure the theme is applied before the page renders
+	useLayoutEffect(() => {
 		const savedTheme =
 			(localStorage.getItem('color-theme') as Theme) || 'system';
-		console.log('Saved Theme from localStorage:', savedTheme);
 		const initialTheme =
 			savedTheme === 'system' ? getSystemTheme() : savedTheme;
-		console.log('Initial Theme after System Check:', initialTheme);
 		updateDocumentTheme(initialTheme);
 		setCurrentTheme(savedTheme);
+	}, []);
 
-		// Listener for system theme changes
+	// Listen for system theme changes
+	useEffect(() => {
 		const mediaQueryList = window.matchMedia(
 			'(prefers-color-scheme: dark)'
 		);
 		const systemThemeChangeHandler = () => {
 			if (localStorage.getItem('color-theme') === 'system') {
 				const systemTheme = getSystemTheme();
-				console.log('System Theme Changed:', systemTheme);
 				updateDocumentTheme(systemTheme);
-				setCurrentTheme(systemTheme);
 			}
 		};
 

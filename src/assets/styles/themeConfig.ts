@@ -14,13 +14,14 @@ const customTheme: CustomFlowbiteTheme = {
 	},
 	table: {
 		root: {
-			base: 'overflow-hidden w-full text-left rtl:text-right text-sm text-gray-500 dark:text-gray-400 rounded-lg',
+			base: 'w-full text-left rtl:text-right text-sm text-gray-800 dark:text-gray-300 semi-dark:text-gray-200 overflow-hidden rounded-lg',
 			shadow: 'absolute ',
 			wrapper: 'relative',
 		},
 		head: {
+			base: 'text-gray-700 dark:text-gray-200 semi-dark:text-gray-300 bg-gray-50 dark:bg-gray-700 semi-dark:bg-gray-600',
 			cell: {
-				base: 'bg-gray-50 px-6 py-3 group-first/head:first:rounded-tl-lg group-first/head:last:rounded-tr-lg dark:bg-gray-700 semi-dark:bg-gray-200',
+				base: 'px-6 py-3',
 			},
 		},
 	},
@@ -98,7 +99,7 @@ const customTheme: CustomFlowbiteTheme = {
 			base: 'mb-7 flex items-center pl-1',
 			collapsed: {
 				on: 'hidden',
-				off: 'self-center whitespace-nowrap text-xl font-medium text-sky-200 dark:text-white',
+				off: 'self-center whitespace-nowrap text-3xl font-bold text-sky-200 dark:text-white',
 			},
 			img: 'mr-3 h-6 sm:h-7',
 		},

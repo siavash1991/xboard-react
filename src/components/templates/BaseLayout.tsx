@@ -1,14 +1,17 @@
 import React, { ReactNode } from 'react';
+import { useSelector } from 'react-redux';
 import XFooter from '@organisms/Footer';
 import XSidebar from '@organisms/Sidebar';
 import XHeader from '@organisms/Header';
 import XBreadcrumb from '@atoms/Breadcrumb';
 import PageTitle from '@atoms/PageTitle';
+import { RootState } from '../../redux/store';
 
 interface BaseLayoutProps {
 	children: ReactNode;
 	pageTitle?: string;
 }
+
 type BreadcrumbItem = {
 	id: number;
 	href: string;
@@ -24,16 +27,31 @@ const XBaseLayout: React.FC<BaseLayoutProps> = ({
 		{ id: 1, href: '/', label: 'Home' },
 		{ id: 2, href: '/sample', label: 'Sample Page' },
 	];
+
+	const isSidebarOpen = useSelector(
+		(state: RootState) => state.sidebar.isSidebarOpen
+	);
+
 	return (
-		<div className="min-h-screen grid grid-cols-12 bg-gradient-to-b from-pale-azure to-pale-ivory dark:from-gray-900 dark:to-gray-700 semi-dark:from-gray-800 semi-dark:to-gray-600">
-			<aside className="h-screen col-span-4 sm:col-span-3 md:col-span-3 lg:col-span-2 sticky top-0 max-w-xs min-w-fit">
+		<div className="min-h-screen grid grid-cols-12 bg-gradient-to-b from-pale-azure to-pale-ivory dark:from-gray-900 dark:to-gray-700 semi-dark:from-gray-800 semi-dark:to-gray-600 relative">
+			<aside
+				className={`md:col-span-4 lg:col-span-3 xl:col-span-2 fixed md:static top-0 bottom-0 left-0 w-64 md:w-auto z-10 bg-white dark:bg-gray-800 transition-transform transform md:translate-x-0 ${
+					isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+				} lg:translate-x-0`}
+			>
 				<XSidebar />
 			</aside>
-			<main className="page-content col-span-8 sm:col-span-9 md:col-span-9 lg:col-span-10 p-6">
+
+			<main
+				className={`col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10 p-6 transition-all duration-300 ease-in-out`}
+			>
 				<XHeader />
+
 				<XBreadcrumb items={breadcrumbItems} />
 				<PageTitle title={pageTitle} />
+
 				{children}
+
 				<XFooter />
 			</main>
 		</div>

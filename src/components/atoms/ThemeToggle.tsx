@@ -92,14 +92,14 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 	}, []);
 
 	return (
-		<div className="relative">
+		<div className={`relative  ${className}`}>
 			<button
 				type="button"
-				className={`rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600 ${className}`}
+				className="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600"
 				onClick={toggleDropdown}
 			>
 				{React.createElement(ICONS[currentTheme], {
-					className: 'w-5 h-5',
+					className: 'w-6 h-6',
 					fill: 'currentColor',
 				})}
 			</button>

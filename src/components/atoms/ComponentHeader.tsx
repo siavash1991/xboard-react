@@ -64,7 +64,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 			<div className="component-title">
 				{title && (
 					<h5
-						className={`text-lg text-gray-900 ${
+						className={`text-lg text-gray-900 dark:text-white semi-dark:text-gray-200 ${
 							boldSubtitle ? 'font-normal' : 'font-semibold'
 						}`}
 					>

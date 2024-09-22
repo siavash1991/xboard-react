@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Tabs } from 'flowbite-react';
+import { Tabs } from 'flowbite-react';
 import {
 	EllipsisVerticalIcon,
 	CheckCircleIcon,

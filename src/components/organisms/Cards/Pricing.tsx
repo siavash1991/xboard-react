@@ -6,17 +6,17 @@ interface XPricingCardProps {
 }
 const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper className={`break-inside-avoid $className`}>
 			<Card href="#" className={className}>
-				<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+				<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 					Standard plan
 				</h5>
-				<div className="flex items-baseline text-gray-900 dark:text-white">
+				<div className="flex items-baseline text-gray-900 dark:text-white semi-dark:text-gray-200">
 					<span className="text-3xl font-semibold">$</span>
 					<span className="text-5xl font-extrabold tracking-tight">
 						49
 					</span>
-					<span className="ml-1 rtl:ml-0 rtl:mr-1 text-xl font-normal text-gray-500 dark:text-gray-400">
+					<span className="ml-1 rtl:ml-0 rtl:mr-1 text-xl font-normal text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 						/month
 					</span>
 				</div>
@@ -34,7 +34,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 							2 team members
 						</span>
 					</li>
@@ -51,7 +51,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 							20GB Cloud storage
 						</span>
 					</li>
@@ -68,7 +68,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 							Integration help
 						</span>
 					</li>
@@ -85,7 +85,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-400">
 							Sketch Files
 						</span>
 					</li>
@@ -102,7 +102,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-400">
 							API Access
 						</span>
 					</li>
@@ -119,7 +119,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-400">
 							Complete documentation
 						</span>
 					</li>
@@ -136,7 +136,7 @@ const XPricingCard: React.FC<XPricingCardProps> = ({ className = '' }) => {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 semi-dark:text-gray-400">
 							24×7 phone & email support
 						</span>
 					</li>

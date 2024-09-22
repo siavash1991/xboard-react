@@ -65,7 +65,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 
 	return (
 		<div className="grid grid-cols-12 col-span-12 gap-4">
-			<ComponentWrapper className="col-span-12 md:col-span-8">
+			<ComponentWrapper className="col-span-12 sm:col-span-8 md:col-span-7 lg:col-span-9 xl:col-span-6">
 				<XComponentHeader title="Update Information"></XComponentHeader>
 				<XComponentBody>
 					<form
@@ -77,6 +77,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 							<div className="mb-2 block">
 								<Label htmlFor="email" value="Your email" />
 							</div>
+
 							<TextInput
 								id="email"
 								type="email"
@@ -131,14 +132,14 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 									handleFileChange(e.target.files)
 								}
 							/>
-							<div className="text-gray-500 text-sm mt-1">
+							<div className="text-gray-500 dark:text-gray-200 semi-dark:text-gray-400 text-sm mt-1">
 								A profile picture is useful to confirm you are
 								logged into your account.
 							</div>
 							<Avatar
 								img={avatarPreview}
 								alt="Avatar Preview"
-								className="float-right mt-2"
+								className="float-end mt-2"
 								data-testid="avatar-image"
 							/>
 						</div>
@@ -176,6 +177,7 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 							className="w-fit"
 							type="submit"
 							data-testid="submit-button"
+							gradientDuoTone="greenToBlue"
 						>
 							Update Profile
 						</Button>
@@ -192,8 +194,8 @@ const XUserUpdateForm: React.FC<UserUpdateFormProps> = ({
 					</form>
 				</XComponentBody>
 			</ComponentWrapper>
-			<Card className="h-fit p-4 col-span-12 md:col-span-4">
-				<div className="mt-2">
+			<Card className="bg-gray-200 dark:bg-gray-600 semi-dark:bg-gray-500 h-fit col-span-12 sm:col-span-4 md:col-span-5 lg:col-span-3 xl:col-span-6">
+				<div className="-m-2">
 					<h3 className="text-lg font-bold mb-2 dark:text-white">
 						Actions
 					</h3>

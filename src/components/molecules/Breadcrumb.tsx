@@ -1,6 +1,7 @@
 import { Breadcrumb } from 'flowbite-react';
 
 type BreadcrumbItem = {
+	id: number;
 	href?: string;
 	label: string;
 };
@@ -16,7 +17,7 @@ const XBreadcrumb: React.FC<XBreadcrumbProps> = ({ className = '', items }) => {
 			className={`mb-2 ${className}`}
 		>
 			{items.map((item, index) => (
-				<Breadcrumb.Item key={index} href={item.href}>
+				<Breadcrumb.Item key={item.id} href={item.href}>
 					{item.label}
 				</Breadcrumb.Item>
 			))}

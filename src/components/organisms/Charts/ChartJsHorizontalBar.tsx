@@ -5,6 +5,8 @@ import { ChartData, ChartOptions } from 'chart.js';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { getThemeColor } from '@utils/themeUtils';
+import useTheme from '@hooks/useTheme';
 
 // Data for the bar chart
 const chartData: ChartData<'bar'> = {
@@ -18,34 +20,6 @@ const chartData: ChartData<'bar'> = {
 			borderWidth: 1,
 		},
 	],
-};
-
-const chartOptions: ChartOptions<'bar'> = {
-	indexAxis: 'y',
-	responsive: true,
-	maintainAspectRatio: false,
-	scales: {
-		x: {
-			grid: {
-				display: true,
-			},
-		},
-		y: {
-			grid: {
-				display: false,
-			},
-		},
-	},
-	plugins: {
-		legend: {
-			display: false,
-		},
-	},
-	layout: {
-		padding: {
-			right: 20,
-		},
-	},
 };
 
 // Menu items for the dropdown
@@ -97,8 +71,40 @@ const menuItems = [
 const XChartJsHorizontalBarCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+
+	const chartOptions: ChartOptions<'bar'> = {
+		indexAxis: 'y',
+		responsive: true,
+		maintainAspectRatio: false,
+		scales: {
+			x: {
+				grid: {
+					display: true,
+					color: getThemeColor(currentTheme),
+				},
+			},
+			y: {
+				grid: {
+					display: false,
+				},
+			},
+		},
+		plugins: {
+			legend: {
+				display: false,
+			},
+		},
+		layout: {
+			padding: {
+				right: 20,
+			},
+		},
+	};
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Balance"
 				menuItems={menuItems}

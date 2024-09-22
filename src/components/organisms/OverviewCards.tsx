@@ -17,14 +17,16 @@ const XOverviewCards: React.FC<XCardsProps> = ({
 	className = '',
 }) => {
 	return (
-		<div className={`grid mb-7 ${className}`}>
+		<div
+			className={`col-span-12 grid grid-cols-12 gap-4 mb-7 ${className}`}
+		>
 			{cardData.map((card) => (
 				<XCountCard
 					key={card.id}
 					title={card.title}
 					content={card.content}
 					iconName={card.iconName}
-					className="col-span-12 sm:col-span-6 lg:col-span-3"
+					className="col-span-6 sm:col-span-6 lg:col-span-3"
 				/>
 			))}
 		</div>

@@ -6,6 +6,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import colors from 'tailwindcss/colors';
+import { getThemeColor } from '@utils/themeUtils';
+import useTheme from '@hooks/useTheme';
 
 // Data for the bar chart
 const labels = [
@@ -41,20 +43,6 @@ const data: ChartData<'bar'> = {
 	],
 };
 
-const options: ChartOptions<'bar'> = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: false,
-		},
-	},
-	layout: {
-		padding: {
-			right: 20,
-		},
-	},
-};
 const menuItems = [
 	{
 		id: 'today',
@@ -99,11 +87,61 @@ const menuItems = [
 		},
 	},
 ];
+
 const XChartJsBarCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	// Access theme inside the component
+	const currentTheme = useTheme();
+
+	// Chart.js configuration based on theme
+	const options: ChartOptions<'bar'> = {
+		responsive: true,
+		maintainAspectRatio: false,
+
+		scales: {
+			x: {
+				grid: {
+					display: true,
+					color: getThemeColor(currentTheme),
+				},
+				border: {
+					color: getThemeColor(currentTheme),
+				},
+				ticks: {
+					color: getThemeColor(currentTheme),
+				},
+			},
+			y: {
+				grid: {
+					display: true,
+					color: getThemeColor(currentTheme),
+				},
+				border: {
+					color: getThemeColor(currentTheme),
+				},
+				ticks: {
+					color: getThemeColor(currentTheme),
+				},
+			},
+		},
+
+		layout: {
+			padding: {
+				right: 20,
+			},
+		},
+		plugins: {
+			legend: {
+				display: false,
+			},
+		},
+	};
+
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Latest Statistics"
 				menuItems={menuItems}
@@ -112,7 +150,7 @@ const XChartJsBarCard: React.FC<{ className?: string }> = ({
 			<XComponentBody>
 				<XBarChart
 					data={data}
-					options={options}
+					options={options} // Pass dynamic options
 					className="chartjs"
 					height={250}
 				/>

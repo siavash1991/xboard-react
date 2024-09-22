@@ -2,9 +2,10 @@ import React from 'react';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XBubbleChart from '@molecules/ChartJs/BubbleChart';
 import { ChartOptions } from 'chart.js';
-import colors from 'tailwindcss/colors';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import { getThemeColor } from '@utils/themeUtils';
+import useTheme from '@hooks/useTheme';
 
 // Define the type for the dataset configuration
 interface BubbleChartDataset {
@@ -72,47 +73,50 @@ const bubbleChartData = {
 	] as BubbleChartDataset[],
 };
 
-const chartOptions: ChartOptions<'bubble'> = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: false,
-		},
-	},
-	scales: {
-		x: {
-			grid: {
-				display: true,
-				color: [colors.gray[200]],
-			},
-			border: {
-				color: colors.gray[200],
-			},
-			ticks: {
-				color: colors.gray[400],
-			},
-		},
-		y: {
-			grid: {
-				display: true,
-				color: [colors.gray[200]],
-			},
-			border: {
-				color: colors.gray[200],
-			},
-			ticks: {
-				color: colors.gray[400],
-			},
-		},
-	},
-};
-
 const XChartJsBubbleCard: React.FC<XChartJsBubbleCardProps> = ({
 	className,
 }) => {
+	const currentTheme = useTheme();
+
+	const chartOptions: ChartOptions<'bubble'> = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			legend: {
+				display: false,
+			},
+		},
+		scales: {
+			x: {
+				grid: {
+					display: true,
+					color: getThemeColor(currentTheme),
+				},
+				border: {
+					color: getThemeColor(currentTheme),
+				},
+				ticks: {
+					color: getThemeColor(currentTheme),
+				},
+			},
+			y: {
+				grid: {
+					display: true,
+					color: getThemeColor(currentTheme),
+				},
+				border: {
+					color: getThemeColor(currentTheme),
+				},
+				ticks: {
+					color: getThemeColor(currentTheme),
+				},
+			},
+		},
+	};
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Statistics"
 				subtitle="Commercial networks and enterprises"

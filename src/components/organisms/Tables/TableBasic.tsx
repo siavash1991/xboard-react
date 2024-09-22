@@ -27,7 +27,7 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XTableHoverableProps {
+interface XTableBasicProps {
 	className?: string;
 }
 
@@ -80,9 +80,7 @@ const tableData: Project[] = [
 	},
 ];
 
-const XTableHoverable: React.FC<XTableHoverableProps> = ({
-	className = '',
-}) => {
+const XTableBasic: React.FC<XTableBasicProps> = ({ className = '' }) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};
@@ -97,12 +95,14 @@ const XTableHoverable: React.FC<XTableHoverableProps> = ({
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
-				title="Hoverable rows"
+				title="Table Basic"
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"
 			/>
-			<XComponentBody className="text-nowrap !p-0">
+			<XComponentBody className="text-nowrap !p-0 overflow-x-auto">
 				<Table>
 					<Table.Head>
 						<Table.HeadCell className="px-10 py-4">
@@ -117,7 +117,7 @@ const XTableHoverable: React.FC<XTableHoverableProps> = ({
 						{tableData.map((item) => (
 							<Table.Row
 								key={item.id}
-								className="border-t dark:border-gray-600 semi-dark:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 semi-dark:hover:bg-gray-700"
+								className="border-t dark:border-gray-600 semi-dark:border-gray-500"
 							>
 								<Table.Cell className="py-4">
 									<img
@@ -125,7 +125,7 @@ const XTableHoverable: React.FC<XTableHoverableProps> = ({
 										alt={`${item.project}-logo`}
 										className="w-5 mx-4 float-left"
 									/>
-									<span className="leading-2 font-semibold">
+									<span className="leading-2 font-semibold pe-4">
 										{item.project}
 									</span>
 								</Table.Cell>
@@ -169,4 +169,4 @@ const XTableHoverable: React.FC<XTableHoverableProps> = ({
 	);
 };
 
-export default XTableHoverable;
+export default XTableBasic;

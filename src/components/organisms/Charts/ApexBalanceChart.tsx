@@ -4,6 +4,8 @@ import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { lineChartOptions } from '@shared/ApexChartsConfig';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 // Define types for series and menu items
 interface ChartSeries {
@@ -22,8 +24,12 @@ const series: ChartSeries[] = [
 const XApexBalanceCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Balance"
 				subtitle="Commercial networks & enterprises"
@@ -33,7 +39,9 @@ const XApexBalanceCard: React.FC<{ className?: string }> = ({
 			/>
 			<XComponentBody>
 				<ApexCharts
-					options={lineChartOptions(['#FFA500'])}
+					options={lineChartOptions(currentTheme, currentDir, [
+						'#FFA500',
+					])}
 					series={series}
 					type="line"
 					height={300}

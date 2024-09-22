@@ -6,12 +6,14 @@ interface XCryptoCardProps {
 }
 const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`md:col-span-6 break-inside-avoid $className`}
+		>
 			<Card href="#" className={className}>
-				<h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+				<h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white semi-dark:text-gray-200">
 					Connect wallet
 				</h5>
-				<p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+				<p className="text-sm font-normal text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 					Connect with one of our available wallet providers or create
 					a new one.
 				</p>
@@ -19,7 +21,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 					<li>
 						<a
 							href="/"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 semi-dark:bg-gray-800 semi-dark:text-gray-200 semi-dark:hover:bg-gray-500"
 						>
 							<svg
 								className="h-4"
@@ -147,7 +149,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 							<span className="ml-3 rtl:ml-0 rtl:mr-3 flex-1 whitespace-nowrap">
 								MetaMask
 							</span>
-							<span className="ml-3 inline-flex items-center justify-center rounded bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400">
+							<span className="ml-3 inline-flex items-center justify-center rounded bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400 semi-dark:bg-gray-600 semi-dark:text-gray-300">
 								Popular
 							</span>
 						</a>
@@ -155,7 +157,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 					<li>
 						<a
 							href="/"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 semi-dark:bg-gray-800 semi-dark:text-gray-200 semi-dark:hover:bg-gray-500"
 						>
 							<svg
 								className="h-5"
@@ -180,7 +182,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 					<li>
 						<a
 							href="/"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 semi-dark:bg-gray-800 semi-dark:text-gray-200 semi-dark:hover:bg-gray-500"
 						>
 							<svg
 								className="h-5"
@@ -228,7 +230,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 					<li>
 						<a
 							href="/"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 semi-dark:bg-gray-800 semi-dark:text-gray-200 semi-dark:hover:bg-gray-500"
 						>
 							<svg
 								className="h-5"
@@ -287,7 +289,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 					<li>
 						<a
 							href="/"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 semi-dark:bg-gray-800 semi-dark:text-gray-200 semi-dark:hover:bg-gray-500"
 						>
 							<svg
 								className="h-4"
@@ -313,7 +315,7 @@ const XCryptoCard: React.FC<XCryptoCardProps> = ({ className = '' }) => {
 				<div>
 					<a
 						href="/"
-						className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400"
+						className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400 semi-dark:text-gray-300"
 					>
 						<svg
 							className="mr-2 rtl:mr-0 rtl:ml-2 h-3 w-3"

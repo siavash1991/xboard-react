@@ -27,7 +27,7 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XTableStripedProps {
+interface XCaptionTableProps {
 	className?: string;
 }
 
@@ -80,7 +80,7 @@ const tableData: Project[] = [
 	},
 ];
 
-const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
+const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};
@@ -95,9 +95,11 @@ const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
-				title="Striped rows"
+				title="Table Caption"
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"
 			/>
 			<XComponentBody className="text-nowrap !p-0">
@@ -112,14 +114,10 @@ const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
 						<Table.HeadCell>Actions</Table.HeadCell>
 					</Table.Head>
 					<Table.Body>
-						{tableData.map((item, index) => (
+						{tableData.map((item) => (
 							<Table.Row
 								key={item.id}
-								className={`border-t dark:border-gray-600 semi-dark:border-gray-500 ${
-									index % 2 === 0
-										? 'bg-white dark:bg-gray-700 semi-dark:bg-gray-600'
-										: 'bg-gray-100 dark:bg-gray-800 semi-dark:bg-gray-700'
-								}`}
+								className="border-t dark:border-gray-600 semi-dark:border-gray-500"
 							>
 								<Table.Cell className="py-4">
 									<img
@@ -165,10 +163,18 @@ const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
 							</Table.Row>
 						))}
 					</Table.Body>
+
+					{/* Manually adding the Table Footer */}
+					<caption
+						className="caption-bottom p-4 ps-10 text-start border-t dark:border-gray-600
+						semi-dark:border-gray-500"
+					>
+						List of Projects
+					</caption>
 				</Table>
 			</XComponentBody>
 		</ComponentWrapper>
 	);
 };
 
-export default XTableStriped;
+export default XCaptionTable;

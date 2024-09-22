@@ -6,6 +6,7 @@ import { RootState, AppDispatch } from '../../redux/store'; // Adjust the path a
 
 const XSidebarToggle: React.FC = () => {
 	const dispatch: AppDispatch = useDispatch();
+
 	const isSidebarOpen = useSelector(
 		(state: RootState) => state.sidebar.isSidebarOpen
 	);
@@ -27,7 +28,7 @@ const XSidebarToggle: React.FC = () => {
 		<>
 			<button
 				onClick={() => dispatch(toggleSidebar())}
-				className="md:hidden relative z-10 block text-gray-600 focus:outline-none rounded-lg p-2 ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600"
+				className="md:hidden relative z-20 block text-gray-600 focus:outline-none rounded-lg p-2 ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600"
 				aria-label="Toggle Sidebar"
 				aria-expanded={isSidebarOpen}
 				aria-controls="sidebar"
@@ -41,7 +42,7 @@ const XSidebarToggle: React.FC = () => {
 
 			{isSidebarOpen && (
 				<div
-					className="fixed inset-0 bg-black bg-opacity-90 md:hidden z-2"
+					className="fixed inset-0 bg-black bg-opacity-90 md:hidden z-10"
 					role="button"
 					tabIndex={0}
 					aria-label="Close Sidebar Overlay"

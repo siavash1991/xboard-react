@@ -5,6 +5,8 @@ import colors from 'tailwindcss/colors';
 import { ChartOptions } from 'chart.js';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import useTheme from '@hooks/useTheme';
+import { getThemeColor } from '@utils/themeUtils';
 
 // Data for the line chart
 const labels = Array.from({ length: 10 }, (_, i) => i.toString());
@@ -43,47 +45,51 @@ const chartData = {
 	],
 };
 
-const chartOptions: ChartOptions<'line'> = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: true,
-			align: 'start',
-			labels: {
-				usePointStyle: true,
-				boxWidth: 5,
-				boxHeight: 5,
-				pointStyle: 'circle',
-				color: '#000',
-				font: {
-					size: 11,
-				},
-				padding: 40,
-			},
-		},
-	},
-	scales: {
-		x: {
-			grid: {
-				display: true,
-			},
-		},
-		y: {
-			grid: {
-				display: true,
-			},
-			min: 0,
-			max: 400,
-		},
-	},
-};
-
 const XChartJsLineCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+
+	const chartOptions: ChartOptions<'line'> = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			legend: {
+				display: true,
+				align: 'start',
+				labels: {
+					usePointStyle: true,
+					boxWidth: 5,
+					boxHeight: 5,
+					pointStyle: 'circle',
+					color: getThemeColor(currentTheme),
+					font: {
+						size: 11,
+					},
+					padding: 40,
+				},
+			},
+		},
+		scales: {
+			x: {
+				grid: {
+					display: true,
+				},
+			},
+			y: {
+				grid: {
+					display: true,
+				},
+				min: 0,
+				max: 400,
+			},
+		},
+	};
+
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Statistics"
 				subtitle="Commercial networks and enterprises"

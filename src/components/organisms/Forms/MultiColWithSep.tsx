@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { Label, Button, TextInput, Select } from 'flowbite-react';
-import ReactSelect, {
-	MultiValue,
-	ActionMeta,
-	StylesConfig,
-} from 'react-select';
-
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
-import { blue } from 'tailwindcss/colors';
 import XFlatPickr from '@molecules/FlatPicker';
+import useTheme from '@hooks/useTheme';
+import reactSelectStyles from '@utils/reactSelectStyles';
+
+import ReactSelect, { MultiValue, ActionMeta } from 'react-select';
 
 interface XMultiColWithSepProps {
 	className?: string;
@@ -28,32 +25,11 @@ const languageOptions: OptionType[] = [
 	{ value: 'german', label: 'German' }, // Add more language options as needed
 ];
 
-// Define custom styles using StylesConfig
-const customSelectStyles: StylesConfig<OptionType, true> = {
-	indicatorsContainer: () => ({
-		display: 'none',
-	}),
-	multiValueRemove: (base) => ({
-		...base,
-		backgroundColor: blue[100],
-		borderTopRightRadius: '10px',
-		borderBottomRightRadius: '10px',
-		':hover': {
-			backgroundColor: blue[300],
-		},
-		paddingRight: '5px',
-	}),
-	multiValue: (base) => ({
-		...base,
-		borderRadius: '10px',
-		paddingLeft: '10px',
-		backgroundColor: blue[100],
-	}),
-};
-
 const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+
 	const [selectedLanguages, setSelectedLanguages] = useState<
 		MultiValue<OptionType>
 	>([]);
@@ -67,12 +43,16 @@ const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 	};
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader title="Multi Column with Form Separator" />
 			<XComponentBody>
 				<form className="space-y-6">
-					<h6>1. Account Details</h6>
-					<div className="grid md:grid-cols-2 gap-6">
+					<h6 className="text-gray-800 dark:text-white semi-dark:text-gray-200">
+						1. Account Details
+					</h6>
+					<div className="grid md:grid-cols-2 gap-6 pb-7">
 						<div>
 							<Label
 								htmlFor="multicol-username"
@@ -93,7 +73,7 @@ const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 									placeholder="john.doe"
 									aria-describedby="multicol-email2"
 								/>
-								<span className="absolute inset-y-0 right-0 flex items-center pr-3">
+								<span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-800 dark:text-white semi-dark:text-gray-200">
 									@example.com
 								</span>
 							</div>
@@ -133,8 +113,10 @@ const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 							</div>
 						</div>
 					</div>
-					<hr className="my-6 mx-n4" />
-					<h6>2. Personal Info</h6>
+					<hr className="dark:border-gray-600 semi-dark:border-gray-500 mx-n4" />
+					<h6 className="text-gray-800 dark:text-white semi-dark:text-gray-200 pt-7">
+						2. Personal Info
+					</h6>
 					<div className="grid md:grid-cols-2 gap-6">
 						<div>
 							<Label
@@ -212,9 +194,10 @@ const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 								options={languageOptions}
 								value={selectedLanguages}
 								onChange={handleLanguageChange}
-								className="mt-1 block w-full "
+								placeholder="Select"
+								className="block w-full rounded-lg"
 								classNamePrefix="react-select"
-								styles={customSelectStyles}
+								styles={reactSelectStyles(currentTheme)}
 							/>
 						</div>
 						<div>
@@ -242,8 +225,8 @@ const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({
 							/>
 						</div>
 					</div>
-					<div className="pt-6 flex">
-						<Button type="submit" gradientDuoTone="purpleToBlue">
+					<div className="pt-6 flex space-x-4 rtl:space-x-reverse">
+						<Button type="submit" gradientDuoTone="greenToBlue">
 							Submit
 						</Button>
 						<Button type="reset" color="gray" className="ml-4">

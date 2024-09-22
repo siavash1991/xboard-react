@@ -27,7 +27,7 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XBasicTableProps {
+interface XTableStripedProps {
 	className?: string;
 }
 
@@ -80,7 +80,7 @@ const tableData: Project[] = [
 	},
 ];
 
-const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
+const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};
@@ -97,11 +97,11 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 	return (
 		<ComponentWrapper className={className}>
 			<XComponentHeader
-				title="Table Header and Footer"
+				title="Striped rows"
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"
 			/>
-			<XComponentBody className="text-nowrap !p-0">
-				<Table>
+			<XComponentBody className="text-nowrap !p-0 overflow-x-auto">
+				<Table striped>
 					<Table.Head>
 						<Table.HeadCell className="px-10 py-4">
 							Project
@@ -148,7 +148,7 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 								</Table.Cell>
 								<Table.Cell>
 									<span
-										className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1 `}
+										className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1`}
 									>
 										{item.status}
 									</span>
@@ -161,23 +161,10 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 							</Table.Row>
 						))}
 					</Table.Body>
-					{/* Manually adding the Table Footer */}
-					<tfoot
-						className="border-t dark:border-gray-600 
- 						text-gray-700 dark:text-gray-200 semi-dark:text-gray-300 bg-gray-50 dark:bg-gray-700 semi-dark:bg-gray-600"
-					>
-						<tr>
-							<th className="py-4 px-10 rounded-b-lg">Project</th>
-							<th className="px-6">Client</th>
-							<th className="px-6">Users</th>
-							<th className="px-6">Status</th>
-							<th className="px-6">Actions</th>
-						</tr>
-					</tfoot>
 				</Table>
 			</XComponentBody>
 		</ComponentWrapper>
 	);
 };
 
-export default XHeaderFooterTable;
+export default XTableStriped;

@@ -115,7 +115,9 @@ const XMonthlyCampaignStateCard: React.FC<XMonthlyCampaignStateCardProps> = ({
 	className = '',
 }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 $className`}
+		>
 			<XComponentHeader
 				title="Monthly Campaign State"
 				subtitle="8.52k Social Visitors"
@@ -139,13 +141,15 @@ const XMonthlyCampaignStateCard: React.FC<XMonthlyCampaignStateCardProps> = ({
 								{getIconComponent(item.icon)}
 							</div>
 							<div className="flex justify-between w-full flex-wrap ml-4">
-								<h6 className="text-sm font-semibold mb-0">
+								<h6 className="text-sm dark:text-white semi-dark:text-gray-200 font-semibold mb-0">
 									{item.label}
 								</h6>
 								<div className="flex">
-									<p className="mb-0">{item.value}</p>
+									<p className="dark:text-white semi-dark:text-gray-200 mb-0">
+										{item.value}
+									</p>
 									<p
-										className={`ml-4 ${
+										className={`ms-4 ${
 											index % 2 === 0
 												? 'text-green-500'
 												: 'text-blue-500'

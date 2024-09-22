@@ -1,6 +1,10 @@
+import { getThemeColor } from '@utils/themeUtils';
 import { ApexOptions } from 'apexcharts';
 import colors from 'tailwindcss/colors';
+
 export const splineAreaChartOptions = (
+	theme: 'light' | 'dark' | 'semi-dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -9,8 +13,11 @@ export const splineAreaChartOptions = (
 		toolbar: {
 			show: false,
 		},
+		height: '400px',
+		width: '100%',
+		offsetY: 0,
+		offsetX: -10,
 	},
-
 	colors: colorsPalette ?? undefined,
 	xaxis: {
 		categories: categories ?? undefined,
@@ -42,7 +49,6 @@ export const splineAreaChartOptions = (
 			},
 			formatter: (value) => Math.floor(value).toString(),
 		},
-
 		min: 0,
 		max: 400,
 	},
@@ -58,10 +64,17 @@ export const splineAreaChartOptions = (
 		show: false,
 	},
 	grid: {
+		borderColor: getThemeColor(theme),
 		xaxis: {
 			lines: {
 				show: true,
 			},
+		},
+		padding: {
+			left: direction === 'ltr' ? 10 : 40,
+			right: 0,
+			top: 0,
+			bottom: 15,
 		},
 	},
 	tooltip: {
@@ -73,12 +86,131 @@ export const splineAreaChartOptions = (
 		position: 'top',
 		horizontalAlign: 'left',
 	},
+
 	markers: {
 		size: 0,
 	},
+	// Add responsive settings based on Tailwind's screen sizes
+	responsive: [
+		{
+			breakpoint: 2560, // Tailwind's `lg` (large screens)
+			options: {
+				chart: {
+					height: '500px',
+					width: '100%',
+					offsetX: -15,
+				},
+				legend: {
+					offsetX: 15,
+				},
+			},
+		},
+		{
+			breakpoint: 1024, // Tailwind's `lg` (large screens)
+			options: {
+				chart: {
+					height: '400px',
+					width: '100%',
+					offsetX: -10,
+				},
+				legend: {
+					position: 'bottom', // Keep legend at top for larger screens
+					horizontalAlign: 'center',
+					offsetX: 15,
+				},
+			},
+		},
+		{
+			breakpoint: 768, // Tailwind's `md` (medium screens)
+			options: {
+				chart: {
+					height: '400px',
+					width: '100%',
+					offsetX: -10,
+				},
+				legend: {
+					position: 'bottom', // Move legend below chart for medium screens
+					horizontalAlign: 'center',
+					offsetX: 15,
+				},
+				xaxis: {
+					labels: {
+						style: {
+							fontSize: '10px', // Slightly smaller font size for labels
+						},
+					},
+				},
+				yaxis: {
+					labels: {
+						style: {
+							fontSize: '10px',
+						},
+					},
+				},
+			},
+		},
+		{
+			breakpoint: 640, // Tailwind's `sm` (small screens)
+			options: {
+				chart: {
+					height: '400px',
+					width: '100%',
+				},
+				legend: {
+					position: 'bottom', // Keep legend below chart for small screens
+					horizontalAlign: 'center',
+				},
+				xaxis: {
+					labels: {
+						style: {
+							fontSize: '8px', // Further reduction for small screens
+						},
+					},
+				},
+				yaxis: {
+					labels: {
+						style: {
+							fontSize: '8px',
+						},
+					},
+				},
+			},
+		},
+		{
+			breakpoint: 475, // Tailwind's approximation for mobile (`sm` breakpoint and below)
+			options: {
+				chart: {
+					height: '300px',
+					width: '100%',
+				},
+				legend: {
+					position: 'bottom',
+					fontSize: '10px', // Smaller legend font size for mobile
+					horizontalAlign: 'center',
+					offsetX: 15,
+				},
+				xaxis: {
+					labels: {
+						style: {
+							fontSize: '8px', // Smallest font size for mobile screens
+						},
+					},
+				},
+				yaxis: {
+					labels: {
+						style: {
+							fontSize: '8px',
+						},
+					},
+				},
+			},
+		},
+	],
 });
 
 export const barChartOptions = (
+	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -119,8 +251,15 @@ export const barChartOptions = (
 		},
 	},
 	grid: {
+		borderColor: getThemeColor(theme),
 		xaxis: {
 			lines: { show: true },
+		},
+		padding: {
+			left: direction === 'ltr' ? 10 : 40,
+			right: 0,
+			top: 0,
+			bottom: 15,
 		},
 	},
 	xaxis: {
@@ -172,6 +311,8 @@ export const barChartOptions = (
 });
 
 export const bubbleChartOptions = (
+	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -220,7 +361,8 @@ export const bubbleChartOptions = (
 		opacity: 0.8,
 	},
 	grid: {
-		borderColor: colors.gray[300],
+		borderColor: getThemeColor(theme),
+
 		xaxis: {
 			lines: {
 				show: true,
@@ -230,6 +372,12 @@ export const bubbleChartOptions = (
 			lines: {
 				show: true,
 			},
+		},
+		padding: {
+			left: direction === 'ltr' ? 10 : 40,
+			right: 0,
+			top: 0,
+			bottom: 15,
 		},
 	},
 	legend: {
@@ -268,6 +416,8 @@ export const bubbleChartOptions = (
 });
 
 export const lineChartOptions = (
+	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -324,8 +474,14 @@ export const lineChartOptions = (
 		width: 3,
 	},
 	grid: {
-		borderColor: colors.gray[300],
+		borderColor: getThemeColor(theme),
 		xaxis: { lines: { show: true } },
+		padding: {
+			left: direction === 'ltr' ? 10 : 40,
+			right: 0,
+			top: 0,
+			bottom: 15,
+		},
 	},
 
 	tooltip: {
@@ -343,6 +499,8 @@ export const lineChartOptions = (
 });
 
 export const horizontalBararChartOptions = (
+	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -364,9 +522,10 @@ export const horizontalBararChartOptions = (
 
 	grid: {
 		padding: {
-			left: 0,
+			left: direction === 'ltr' ? 40 : 0,
 		},
-		borderColor: colors.gray[300],
+
+		borderColor: getThemeColor(theme),
 		xaxis: {
 			lines: { show: false },
 		},
@@ -386,6 +545,8 @@ export const horizontalBararChartOptions = (
 });
 
 export const candlestickChartOptions = (
+	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
 ): ApexOptions => ({
@@ -405,9 +566,8 @@ export const candlestickChartOptions = (
 		},
 	},
 	grid: {
-		padding: { top: 0 },
-
-		borderColor: colors.gray[300],
+		padding: { top: 0, left: direction === 'ltr' ? 15 : 40 },
+		borderColor: getThemeColor(theme),
 		xaxis: {
 			lines: { show: true },
 		},

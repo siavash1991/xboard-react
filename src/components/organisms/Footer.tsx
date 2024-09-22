@@ -1,5 +1,5 @@
 import { Footer } from 'flowbite-react';
-import Logo from '@assets/images/favicon.svg';
+import Logo from '@assets/images/logo.svg';
 import { withBasePath } from '@shared/basePathHelper';
 
 const XFooter = () => {

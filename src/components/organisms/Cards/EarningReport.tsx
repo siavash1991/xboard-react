@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'flowbite-react';
 import {
 	EllipsisVerticalIcon,
 	ChartPieIcon,
@@ -122,7 +121,9 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 $className`}
+		>
 			<XComponentHeader
 				title="Earning Reports"
 				subtitle="Weekly Earnings Overview"
@@ -143,20 +144,20 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 							</div>
 							<div className="flex w-full justify-between items-center ml-4 ">
 								<div>
-									<h6 className="text-sm font-semibold mb-0 text-gray-800 dark:text-white">
+									<h6 className="text-sm font-semibold mb-0 text-gray-800 dark:text-white semi-dark:text-gray-200">
 										{item.label}
 									</h6>
-									<small className="text-gray-500 dark:text-gray-400">
+									<small className="text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 										{item.subtitle}
 									</small>
 								</div>
 								<div className="flex items-center">
-									<p className="font-medium text-gray-800 dark:text-white">
+									<p className="font-medium text-gray-800 dark:text-white semi-dark:text-gray-200">
 										{item.value}
 									</p>
 									<div className="flex items-center ml-4 space-x-2">
 										<ChevronUpIcon className="w-4 h-4 text-green-500" />
-										<small className="text-gray-500 dark:text-gray-400">
+										<small className="text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 											{item.change}
 										</small>
 									</div>

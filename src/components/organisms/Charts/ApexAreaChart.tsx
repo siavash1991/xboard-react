@@ -6,8 +6,11 @@ import colors from 'tailwindcss/colors';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 const colorsPalette = [colors.cyan[300], colors.cyan[400], colors.cyan[500]];
+
 const series = [
 	{
 		name: 'Visits',
@@ -22,6 +25,7 @@ const series = [
 		data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220],
 	},
 ];
+
 const categories = [
 	'7/12',
 	'8/12',
@@ -37,6 +41,7 @@ const categories = [
 	'18/12',
 	'19/12',
 ];
+
 const menuItems = [
 	{
 		id: 'today',
@@ -81,11 +86,16 @@ const menuItems = [
 		},
 	},
 ];
+
 const XApexAreaCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Last updates"
 				subtitle="Commercial networks"
@@ -97,8 +107,13 @@ const XApexAreaCard: React.FC<{ className?: string }> = ({
 				<ApexCharts
 					type="area"
 					series={series}
-					options={splineAreaChartOptions(colorsPalette, categories)}
-					height={400}
+					options={splineAreaChartOptions(
+						currentTheme,
+						currentDir,
+						colorsPalette,
+						categories
+					)}
+					width="100%"
 					className="chartjs"
 				/>
 			</XComponentBody>

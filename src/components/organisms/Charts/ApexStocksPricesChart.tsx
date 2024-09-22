@@ -5,6 +5,8 @@ import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { candlestickChartOptions } from '@shared/ApexChartsConfig';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 // Updated series data for the candlestick chart
 const series = [
@@ -69,6 +71,9 @@ const series = [
 const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
+
 	const menuItems = [
 		{ id: 'today', label: 'Today', onClick: () => {} },
 		{ id: 'yesterday', label: 'Yesterday', onClick: () => {} },
@@ -79,7 +84,9 @@ const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Stocks Prices"
 				subtitle="$50,863.98"
@@ -91,7 +98,7 @@ const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 			/>
 			<XComponentBody>
 				<ApexCharts
-					options={candlestickChartOptions()}
+					options={candlestickChartOptions(currentTheme, currentDir)}
 					series={series}
 					type="candlestick"
 					height={450}

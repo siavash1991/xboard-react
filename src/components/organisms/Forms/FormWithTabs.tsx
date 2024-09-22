@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Label, Button, TextInput, Select } from 'flowbite-react';
-import ReactSelect, {
-	MultiValue,
-	ActionMeta,
-	StylesConfig,
-} from 'react-select';
-
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
-import { blue } from 'tailwindcss/colors';
 import XFlatPickr from '@molecules/FlatPicker';
+import useTheme from '@hooks/useTheme';
+import reactSelectStyles from '@utils/reactSelectStyles';
+import ReactSelect, { MultiValue, ActionMeta } from 'react-select';
 
 interface XFormWithTabsProps {
 	className?: string;
@@ -28,29 +24,8 @@ const languageOptions: OptionType[] = [
 	{ value: 'german', label: 'German' },
 ];
 
-const customSelectStyles: StylesConfig<OptionType, true> = {
-	indicatorsContainer: () => ({
-		display: 'none',
-	}),
-	multiValueRemove: (base) => ({
-		...base,
-		backgroundColor: blue[100],
-		borderTopRightRadius: '10px',
-		borderBottomRightRadius: '10px',
-		':hover': {
-			backgroundColor: blue[300],
-		},
-		paddingRight: '5px',
-	}),
-	multiValue: (base) => ({
-		...base,
-		borderRadius: '10px',
-		paddingLeft: '10px',
-		backgroundColor: blue[100],
-	}),
-};
-
 const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
+	const currentTheme = useTheme();
 	const [selectedLanguages, setSelectedLanguages] = useState<
 		MultiValue<OptionType>
 	>([]);
@@ -69,43 +44,42 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 	};
 
 	return (
-		<ComponentWrapper className={className}>
-			<XComponentHeader title="Multi Column with Form Separator" />
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid ${className}`}
+		>
+			<XComponentHeader title="Form with Tabs" />
 			<XComponentBody>
-				<div className="nav-align-top flex space-x-2 mb-7 border-b-gray-300 border-b-2">
-					<Button
-						type="button"
-						className={`nav-link rounded-b-none ${
-							activeTab === 'personal'
-								? 'bg-gray-200 hover:!bg-gray-200 text-gray-700 focus:ring-0 border-b-gray-300 border-b'
-								: 'bg-gray-100 hover:!bg-gray-200 text-gray-500 border-b-4'
-						}`}
-						onClick={() => handleTabChange('personal')}
-					>
-						Personal Info
-					</Button>
-					<Button
-						type="button"
-						className={`nav-link rounded-b-none ${
-							activeTab === 'account'
-								? 'bg-gray-200 hover:!bg-gray-200 text-gray-700 focus:ring-0 border-b-gray-300 border-b'
-								: 'bg-gray-100 hover:!bg-gray-200 text-gray-500 border-b-4'
-						}`}
-						onClick={() => handleTabChange('account')}
-					>
-						Account Details
-					</Button>
-					<Button
-						type="button"
-						className={`nav-link rounded-b-none ${
-							activeTab === 'social'
-								? 'bg-gray-200 hover:!bg-gray-200 text-gray-700 focus:ring-0 border-b-gray-300 border-b'
-								: 'bg-gray-100 hover:!bg-gray-200 text-gray-500 border-b-4'
-						}`}
-						onClick={() => handleTabChange('social')}
-					>
-						Social Links
-					</Button>
+				<div className="nav-align-top flex space-x-2 mb-7 border-b-gray-500 border-b-2">
+					{['personal', 'account', 'social'].map((tab) => {
+						// Extracted the tab label logic
+						const tabLabel = () => {
+							switch (tab) {
+								case 'personal':
+									return 'Personal Info';
+								case 'account':
+									return 'Account Details';
+								case 'social':
+									return 'Social Links';
+								default:
+									return '';
+							}
+						};
+
+						return (
+							<Button
+								key={tab}
+								type="button"
+								className={`nav-link rounded-b-none ${
+									activeTab === tab
+										? 'bg-gray-200 hover:!bg-gray-200 text-gray-700 focus:ring-0 border-b-gray-500 border-b dark:bg-gray-500 dark:hover:!bg-gray-400 dark:text-gray-400 dark:border-b-gray-500 semi-dark:bg-gray-500 semi-dark:hover:!bg-gray-400 semi-dark:text-gray-200 semi-dark:border-b-gray-500'
+										: 'bg-gray-100 hover:!bg-gray-200 text-gray-500 border-b-4 dark:bg-gray-400 dark:hover:!bg-gray-200 dark:text-gray-500 semi-dark:bg-gray-400 semi-dark:hover:!bg-gray-200 semi-dark:text-gray-600'
+								}`}
+								onClick={() => handleTabChange(tab)}
+							>
+								{tabLabel()}
+							</Button>
+						);
+					})}
 				</div>
 
 				<div className="tab-content p-0">
@@ -114,6 +88,7 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 							className="tab-pane fade show active"
 							role="tabpanel"
 						>
+							{/* Personal Info Form */}
 							<form className="space-y-6">
 								<div className="grid md:grid-cols-2 gap-6">
 									<div>
@@ -145,73 +120,10 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 										/>
 										<Select id="formtabs-country">
 											<option value="">Select</option>
-											<option value="Australia">
-												Australia
-											</option>
-											<option value="Bangladesh">
-												Bangladesh
-											</option>
-											<option value="Belarus">
-												Belarus
-											</option>
-											<option value="Brazil">
-												Brazil
-											</option>
-											<option value="Canada">
-												Canada
-											</option>
-											<option value="China">China</option>
-											<option value="France">
-												France
-											</option>
-											<option value="Germany">
-												Germany
-											</option>
-											<option value="India">India</option>
-											<option value="Indonesia">
-												Indonesia
-											</option>
-											<option value="Israel">
-												Israel
-											</option>
-											<option value="Italy">Italy</option>
-											<option value="Japan">Japan</option>
-											<option value="Korea">
-												Korea, Republic of
-											</option>
-											<option value="Mexico">
-												Mexico
-											</option>
-											<option value="Philippines">
-												Philippines
-											</option>
-											<option value="Russia">
-												Russian Federation
-											</option>
-											<option value="South Africa">
-												South Africa
-											</option>
-											<option value="Thailand">
-												Thailand
-											</option>
-											<option value="Turkey">
-												Turkey
-											</option>
-											<option value="Ukraine">
-												Ukraine
-											</option>
-											<option value="United Arab Emirates">
-												United Arab Emirates
-											</option>
-											<option value="United Kingdom">
-												United Kingdom
-											</option>
-											<option value="United States">
-												United States
-											</option>
+											{/* Add country options here */}
 										</Select>
 									</div>
-									<div className="col-md-6 select2-primary">
+									<div>
 										<Label
 											htmlFor="formtabs-language"
 											value="Language"
@@ -222,9 +134,12 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 											options={languageOptions}
 											value={selectedLanguages}
 											onChange={handleLanguageChange}
+											placeholder="Select"
 											className="mt-1 block w-full"
 											classNamePrefix="react-select"
-											styles={customSelectStyles}
+											styles={reactSelectStyles(
+												currentTheme
+											)}
 										/>
 									</div>
 									<div>
@@ -236,13 +151,10 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 											id="multicol-birthdate"
 											value={birthDate}
 											onChange={setBirthDate}
-											options={{
-												dateFormat: 'Y-m-d',
-											}}
-											placeholder="YYYY - MM - DD"
+											options={{ dateFormat: 'Y-m-d' }}
+											placeholder="YYYY-MM-DD"
 										/>
 									</div>
-
 									<div>
 										<Label
 											htmlFor="formtabs-phone"
@@ -255,10 +167,10 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 										/>
 									</div>
 								</div>
-								<div className="pt-6 flex space-x-4">
+								<div className="pt-6 flex space-x-4 rtl:space-x-reverse">
 									<Button
 										type="submit"
-										gradientDuoTone="purpleToBlue"
+										gradientDuoTone="greenToBlue"
 									>
 										Submit
 									</Button>
@@ -273,11 +185,13 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 							</form>
 						</div>
 					)}
+
 					{activeTab === 'account' && (
 						<div
 							className="tab-pane fade show active"
 							role="tabpanel"
 						>
+							{/* Account Details Form */}
 							<form className="space-y-6">
 								<div className="grid md:grid-cols-2 gap-6">
 									<div>
@@ -301,46 +215,39 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 												id="formtabs-email"
 												type="text"
 												placeholder="john.doe"
-												aria-describedby="formtabs-email2"
 											/>
-											<span className="absolute inset-y-0 right-0 flex items-center pr-3">
+											<span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-800 dark:text-white semi-dark:text-gray-200">
 												@example.com
 											</span>
 										</div>
 									</div>
 									<div>
-										<div className="relative">
-											<Label
-												htmlFor="formtabs-password"
-												value="Password"
-											/>
-											<TextInput
-												id="formtabs-password"
-												type="password"
-												placeholder="••••••••"
-												aria-describedby="formtabs-password2"
-											/>
-										</div>
+										<Label
+											htmlFor="formtabs-password"
+											value="Password"
+										/>
+										<TextInput
+											id="formtabs-password"
+											type="password"
+											placeholder="••••••••"
+										/>
 									</div>
 									<div>
-										<div className="relative">
-											<Label
-												htmlFor="formtabs-password-confirm"
-												value="Confirm Password"
-											/>
-											<TextInput
-												id="formtabs-password-confirm"
-												type="password"
-												placeholder="••••••••"
-												aria-describedby="formtabs-password-confirm2"
-											/>
-										</div>
+										<Label
+											htmlFor="formtabs-password-confirm"
+											value="Confirm Password"
+										/>
+										<TextInput
+											id="formtabs-password-confirm"
+											type="password"
+											placeholder="••••••••"
+										/>
 									</div>
 								</div>
-								<div className="pt-6 flex space-x-4">
+								<div className="pt-6 flex space-x-4 rtl:space-x-reverse">
 									<Button
 										type="submit"
-										gradientDuoTone="purpleToBlue"
+										gradientDuoTone="greenToBlue"
 									>
 										Submit
 									</Button>
@@ -355,66 +262,72 @@ const XFormWithTabs: React.FC<XFormWithTabsProps> = ({ className = '' }) => {
 							</form>
 						</div>
 					)}
+
 					{activeTab === 'social' && (
 						<div
 							className="tab-pane fade show active"
 							role="tabpanel"
 						>
+							{/* Social Links Form */}
 							<form className="space-y-6">
 								<div className="grid md:grid-cols-2 gap-6">
 									<div>
 										<Label
 											htmlFor="formtabs-facebook"
-											value="Facebook URL"
+											value="Facebook"
 										/>
 										<TextInput
 											id="formtabs-facebook"
 											type="text"
-											placeholder="https://facebook.com/yourprofile"
+											placeholder="https://facebook.com/..."
 										/>
 									</div>
 									<div>
 										<Label
 											htmlFor="formtabs-twitter"
-											value="Twitter URL"
+											value="Twitter"
 										/>
 										<TextInput
 											id="formtabs-twitter"
 											type="text"
-											placeholder="https://twitter.com/yourprofile"
+											placeholder="https://twitter.com/..."
+										/>
+									</div>
+									<div>
+										<Label
+											htmlFor="formtabs-instagram"
+											value="Instagram"
+										/>
+										<TextInput
+											id="formtabs-instagram"
+											type="text"
+											placeholder="https://instagram.com/..."
 										/>
 									</div>
 									<div>
 										<Label
 											htmlFor="formtabs-linkedin"
-											value="LinkedIn URL"
+											value="LinkedIn"
 										/>
 										<TextInput
 											id="formtabs-linkedin"
 											type="text"
-											placeholder="https://linkedin.com/in/yourprofile"
-										/>
-									</div>
-									<div>
-										<Label
-											htmlFor="formtabs-github"
-											value="GitHub URL"
-										/>
-										<TextInput
-											id="formtabs-github"
-											type="text"
-											placeholder="https://github.com/yourprofile"
+											placeholder="https://linkedin.com/..."
 										/>
 									</div>
 								</div>
-								<div className="pt-6 flex space-x-4">
+								<div className="pt-6 flex space-x-4 rtl:space-x-reverse">
 									<Button
 										type="submit"
-										gradientDuoTone="purpleToBlue"
+										gradientDuoTone="greenToBlue"
 									>
 										Submit
 									</Button>
-									<Button type="reset" color="gray">
+									<Button
+										type="reset"
+										color="gray"
+										className="ml-4"
+									>
 										Cancel
 									</Button>
 								</div>

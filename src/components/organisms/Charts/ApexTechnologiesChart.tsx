@@ -5,6 +5,8 @@ import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { bubbleChartOptions } from '@shared/ApexChartsConfig';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 // Data for the bubble chart
 const series = [
@@ -64,6 +66,8 @@ const series = [
 const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
 	const menuItems = [
 		{ id: 'daily', label: 'Daily', onClick: () => {} },
 		{ id: 'monthly', label: 'Monthly', onClick: () => {} },
@@ -71,7 +75,9 @@ const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="New Technologies Data"
 				menuItems={menuItems}
@@ -81,7 +87,7 @@ const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
 			/>
 			<XComponentBody>
 				<ApexCharts
-					options={bubbleChartOptions()}
+					options={bubbleChartOptions(currentTheme, currentDir)}
 					series={series}
 					type="bubble"
 					height={350}

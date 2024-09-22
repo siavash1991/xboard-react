@@ -7,7 +7,7 @@ interface XEcommerceCardProps {
 }
 const XEcommerceCard: React.FC<XEcommerceCardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper className={`break-inside-avoid $className`}>
 			<Card
 				href="/"
 				className={`p-5 ${className}`}
@@ -15,7 +15,7 @@ const XEcommerceCard: React.FC<XEcommerceCardProps> = ({ className = '' }) => {
 				imgSrc={ecommerceCardImg}
 			>
 				<a href="/">
-					<h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+					<h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white semi-dark:text-gray-200">
 						Apple Watch Series 7 GPS, Aluminium Case, Starlight
 						Sport
 					</h5>
@@ -66,7 +66,7 @@ const XEcommerceCard: React.FC<XEcommerceCardProps> = ({ className = '' }) => {
 					</span>
 				</div>
 				<div className="flex items-center justify-between">
-					<span className="text-3xl font-bold text-gray-900 dark:text-white">
+					<span className="text-3xl font-bold text-gray-900 dark:text-white semi-dark:text-gray-200">
 						$599
 					</span>
 					<a

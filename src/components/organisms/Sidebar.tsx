@@ -1,7 +1,9 @@
 import { Badge, Sidebar } from 'flowbite-react';
-import Logo from '@assets/images/favicon.svg';
+import Logo from '@assets/images/logo.svg';
 import useActiveItem from '@hooks/useActiveItem';
 import { withBasePath } from '@shared/basePathHelper';
+import { useDispatch } from 'react-redux'; // Import useDispatch
+import { toggleSidebar } from '../../redux/sidebarSlice'; // Import toggleSidebar action
 import {
 	ArrowLeftIcon,
 	ArrowRightIcon,
@@ -15,11 +17,17 @@ import {
 const XSidebar = () => {
 	const activeItem = useActiveItem();
 	const basePath = withBasePath();
+	const dispatch = useDispatch(); // Initialize dispatch
 
 	const getActiveItemClassName = (isActive: boolean) =>
 		isActive
 			? 'button-open bg-gray-100 dark:bg-gray-700 text-gray-800 hover:text-sky-200'
 			: '';
+
+	// Function to handle item click and close the sidebar
+	const handleItemClick = () => {
+		dispatch(toggleSidebar()); // Dispatch action to close sidebar
+	};
 
 	return (
 		<Sidebar
@@ -42,6 +50,7 @@ const XSidebar = () => {
 						icon={ChartPieIcon}
 						active={activeItem === '/'}
 						data-testid="dashboard-item"
+						onClick={handleItemClick}
 					>
 						Dashboard
 					</Sidebar.Item>
@@ -50,6 +59,7 @@ const XSidebar = () => {
 						href={`${basePath}/user-profile`}
 						icon={UserCircleIcon}
 						active={activeItem === '/user-profile'}
+						onClick={handleItemClick}
 					>
 						Profile
 					</Sidebar.Item>
@@ -58,6 +68,7 @@ const XSidebar = () => {
 						icon={UsersIcon}
 						active={activeItem === '/users'}
 						href={`${basePath}/users`}
+						onClick={handleItemClick}
 					>
 						Users
 					</Sidebar.Item>
@@ -66,6 +77,7 @@ const XSidebar = () => {
 						icon={InformationCircleIcon}
 						active={activeItem === '/forms'}
 						href={`${basePath}/forms`}
+						onClick={handleItemClick}
 					>
 						Forms
 					</Sidebar.Item>
@@ -74,6 +86,7 @@ const XSidebar = () => {
 						icon={InformationCircleIcon}
 						active={activeItem === '/tables'}
 						href={`${basePath}/tables`}
+						onClick={handleItemClick}
 					>
 						Tables
 					</Sidebar.Item>
@@ -91,6 +104,7 @@ const XSidebar = () => {
 							)}
 							active={activeItem === '/charts-chartjs'}
 							href={`${basePath}/charts-chartjs`}
+							onClick={handleItemClick}
 						>
 							ChartJs
 						</Sidebar.Item>
@@ -100,6 +114,7 @@ const XSidebar = () => {
 							)}
 							active={activeItem === '/charts-apex'}
 							href={`${basePath}/charts-apex`}
+							onClick={handleItemClick}
 						>
 							Apex Charts
 						</Sidebar.Item>
@@ -119,6 +134,7 @@ const XSidebar = () => {
 							)}
 							active={activeItem === '/cards-default'}
 							href={`${basePath}/cards-default`}
+							onClick={handleItemClick}
 						>
 							Default
 						</Sidebar.Item>
@@ -128,6 +144,7 @@ const XSidebar = () => {
 							)}
 							active={activeItem === '/cards-advance'}
 							href={`${basePath}/cards-advance`}
+							onClick={handleItemClick}
 						>
 							Advance
 						</Sidebar.Item>
@@ -138,6 +155,7 @@ const XSidebar = () => {
 						href={`${basePath}/signin`}
 						icon={ArrowRightIcon}
 						active={activeItem === '/signin'}
+						onClick={handleItemClick}
 					>
 						Sign In
 					</Sidebar.Item>
@@ -146,6 +164,7 @@ const XSidebar = () => {
 						icon={ArrowLeftIcon}
 						active={activeItem === '/signup'}
 						href={`${basePath}/signup`}
+						onClick={handleItemClick}
 					>
 						Sign Up
 					</Sidebar.Item>
@@ -158,6 +177,7 @@ const XSidebar = () => {
 						aria-label="Close"
 						className="-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-gray-100 p-1 text-cyan-900 hover:bg-gray-200 focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
 						type="button"
+						onClick={handleItemClick} // Close sidebar on button click
 					>
 						<svg
 							aria-hidden
@@ -181,6 +201,7 @@ const XSidebar = () => {
 				<a
 					className="text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300"
 					href="#/"
+					onClick={handleItemClick} // Close sidebar on link click
 				>
 					Turn new navigation off
 				</a>

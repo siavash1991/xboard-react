@@ -1,4 +1,4 @@
-import type { CustomFlowbiteTheme } from 'flowbite-react';
+import { type CustomFlowbiteTheme } from 'flowbite-react';
 
 const customTheme: CustomFlowbiteTheme = {
 	breadcrumb: {
@@ -24,19 +24,24 @@ const customTheme: CustomFlowbiteTheme = {
 				base: 'px-6 py-3',
 			},
 		},
+		row: {
+			hovered: 'hover:bg-gray-50 dark:hover:bg-gray-600',
+			striped:
+				'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700 odd:semi-dark:bg-gray-700 even:semi-dark:bg-gray-600',
+		},
 	},
 	pagination: {
 		pages: {
 			previous: {
-				base: 'ml-0 rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white',
+				base: 'ml-0 rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white semi-dark:border-gray-500 semi-dark:bg-gray-500 semi-dark:text-gray-100 enabled:semi-dark:hover:bg-gray-500 enabled:semi-dark:hover:text-white',
 				icon: 'h-5 w-5 rtl:rotate-180 mt-1',
 			},
 			next: {
-				base: 'rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white ',
+				base: 'rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white semi-dark:border-gray-500 semi-dark:bg-gray-500 semi-dark:text-gray-100 enabled:semi-dark:hover:bg-gray-500 enabled:semi-dark:hover:text-white ',
 				icon: 'h-5 w-5 rtl:rotate-180 mt-1',
 			},
 			selector: {
-				base: 'w-12 border border-gray-300 bg-white py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white',
+				base: 'w-12 border border-gray-300 bg-white py-2 leading-normal text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 enabled:dark:hover:bg-gray-700 enabled:dark:hover:text-white semi-dark:border-gray-600 semi-dark:bg-gray-600 semi-dark:text-gray-400 enabled:semi-dark:hover:bg-gray-700 enabled:semi-dark:hover:text-white',
 			},
 		},
 	},
@@ -48,7 +53,7 @@ const customTheme: CustomFlowbiteTheme = {
 				off: 'flex-col',
 				on: 'flex-col md:flex-row',
 			},
-			href: 'hover:bg-white dark:hover:bg-gray-700',
+			href: 'hover:bg-white dark:hover:bg-gray-700 semi-dark:hover:bg-gray-700',
 		},
 		img: {
 			base: '',
@@ -101,17 +106,12 @@ const customTheme: CustomFlowbiteTheme = {
 				on: 'hidden',
 				off: 'self-center whitespace-nowrap text-3xl font-bold text-sky-200 dark:text-white',
 			},
-			img: 'mr-3 h-6 sm:h-7',
+			img: 'mr-3 w-10 sm:w-7',
 		},
 	},
 	avatar: {
 		root: {
 			base: 'flex items-center justify-center space-x-4 rounded-lg',
-		},
-	},
-	fileInput: {
-		root: {
-			base: 'flex',
 		},
 	},
 
@@ -139,17 +139,113 @@ const customTheme: CustomFlowbiteTheme = {
 			},
 		},
 	},
+	fileInput: {
+		root: {
+			base: 'flex',
+		},
+		field: {
+			input: {
+				colors: {
+					gray: 'border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 semi-dark:border-gray-500 semi-dark:bg-gray-600 semi-dark:text-white semi-dark:placeholder-gray-300 semi-dark:focus:border-cyan-400 semi-dark:focus:ring-cyan-400',
+				},
+			},
+		},
+	},
+	textInput: {
+		field: {
+			base: 'relative w-full',
+			icon: {
+				base: 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3',
+				svg: 'h-5 w-5 text-gray-500 dark:text-gray-400',
+			},
+			rightIcon: {
+				base: 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3',
+				svg: 'h-5 w-5 text-gray-500 dark:text-gray-400',
+			},
+			input: {
+				base: 'bg-gray-200 block w-full border disabled:cursor-not-allowed disabled:opacity-50',
+				colors: {
+					gray: 'border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 semi-dark:border-gray-500 semi-dark:bg-gray-600 semi-dark:text-gray-300 semi-dark:placeholder-gray-400 semi-dark:focus:border-cyan-400 semi-dark:focus:ring-cyan-400',
+				},
+			},
+		},
+	},
+	label: {
+		root: {
+			base: 'text-sm font-medium',
+			disabled: 'opacity-50',
+			colors: {
+				default:
+					'text-gray-900 dark:text-white semi-dark:text-gray-300',
+				info: 'text-cyan-500 dark:text-cyan-600',
+				failure: 'text-red-700 dark:text-red-500',
+				warning: 'text-yellow-500 dark:text-yellow-600',
+				success: 'text-green-700 dark:text-green-500',
+			},
+		},
+	},
+	textarea: {
+		colors: {
+			gray: 'border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 semi-dark:border-gray-500 semi-dark:bg-gray-600 semi-dark:text-white semi-dark:placeholder-gray-300 semi-dark:focus:border-cyan-500 semi-dark:focus:ring-cyan-500',
+		},
+		withShadow: {
+			on: 'shadow-sm dark:shadow-sm-light semi-dark:shadow-sm-light',
+		},
+	},
+	select: {
+		base: 'flex',
+		addon: 'inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400',
+		field: {
+			base: 'relative w-full',
+			icon: {
+				base: 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3',
+				svg: 'h-5 w-5 text-gray-500 dark:text-gray-400',
+			},
+			select: {
+				base: 'block w-full border disabled:cursor-not-allowed disabled:opacity-50',
+				withIcon: {
+					on: 'pl-10',
+					off: '',
+				},
+				withAddon: {
+					on: 'rounded-r-lg',
+					off: 'rounded-lg',
+				},
+				withShadow: {
+					on: 'shadow-sm dark:shadow-sm-light',
+					off: '',
+				},
+				sizes: {
+					sm: 'p-2 sm:text-xs',
+					md: 'p-2.5 text-sm',
+					lg: 'p-4 sm:text-base',
+				},
+				colors: {
+					gray: 'border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 semi-dark:border-gray-500 semi-dark:bg-gray-600 semi-dark:text-white semi-dark:placeholder-gray-800 semi-dark:focus:border-cyan-500 semi-dark:focus:ring-cyan-500',
+					info: 'border-cyan-500 bg-cyan-50 text-cyan-900 placeholder-cyan-700 focus:border-cyan-500 focus:ring-cyan-500 dark:border-cyan-400 dark:bg-cyan-100 dark:focus:border-cyan-500 dark:focus:ring-cyan-500',
+					failure:
+						'border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500 dark:border-red-400 dark:bg-red-100 dark:focus:border-red-500 dark:focus:ring-red-500',
+					warning:
+						'border-yellow-500 bg-yellow-50 text-yellow-900 placeholder-yellow-700 focus:border-yellow-500 focus:ring-yellow-500 dark:border-yellow-400 dark:bg-yellow-100 dark:focus:border-yellow-500 dark:focus:ring-yellow-500',
+					success:
+						'border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100 dark:focus:border-green-500 dark:focus:ring-green-500',
+				},
+			},
+		},
+	},
+
 	footer: {
 		root: {
-			base: 'w-full rounded-lg bg-white dark:bg-gray-800 md:flex md:items-center md:justify-between',
+			base: 'w-full rounded-lg bg-white dark:bg-gray-700 semi-dark:bg-gray-600 md:flex md:items-center md:justify-between',
 		},
 		groupLink: {
 			link: {
-				base: 'last:mr-0 mr-6 me-4 rtl:last:mr-6 rtl:last:ml-0',
+				base: 'dark:text-white semi-dark:text-white last:mr-0 mr-6 me-4 rtl:last:mr-6 rtl:last:ml-0',
 			},
 		},
 		brand: {
-			img: 'mr-3 h-8 rtl:mr-0 rtl:ml-3',
+			img: 'bg-gray-800 dark:bg-gray-700 semi-dark:bg-gray-600 mr-3 h-8 rtl:mr-0 rtl:ml-3',
+			span: 'dark:text-white semi-dark:text-white self-center whitespace-nowrap text-2xl font-semibold text-gray-800 dark:text-white',
 		},
 	},
 };

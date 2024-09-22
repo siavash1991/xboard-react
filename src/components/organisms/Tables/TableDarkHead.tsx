@@ -95,7 +95,9 @@ const XDarkHeadTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Dark Table head"
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"

@@ -81,7 +81,9 @@ const XActiveProjectCard = ({ className = '' }) => {
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 $className`}
+		>
 			<XComponentHeader
 				title="Active Project"
 				subtitle="Average 72% Completed"
@@ -102,10 +104,10 @@ const XActiveProjectCard = ({ className = '' }) => {
 									className="w-8"
 								/>
 								<div>
-									<h6 className="text-sm font-semibold text-gray-900 dark:text-white">
+									<h6 className="text-sm font-semibold text-gray-900 dark:text-white semi-dark:text-gray-200">
 										{project.title}
 									</h6>
-									<small className="text-gray-500 dark:text-gray-400">
+									<small className="text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 										{project.subtitle}
 									</small>
 								</div>
@@ -123,7 +125,7 @@ const XActiveProjectCard = ({ className = '' }) => {
 										aria-valuemax={100}
 									/>
 								</div>
-								<span className="text-gray-500 dark:text-gray-400">
+								<span className="text-gray-500 dark:text-gray-400 semi-dark:text-gray-300">
 									{project.progress}%
 								</span>
 							</div>

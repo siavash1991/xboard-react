@@ -48,11 +48,13 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 		<div className="relative">
 			<button
 				type="button"
-				className="flex items-center space-x-1 text-gray-500 hover:text-gray-900"
+				className="flex items-center rtl:flex-row-reverse space-x-1 text-gray-500 hover:text-gray-900"
 				onClick={toggleDropdown}
 				ref={buttonRef}
 			>
-				{React.cloneElement(menuIcon, { className: 'h-5 w-5' })}
+				{React.cloneElement(menuIcon, {
+					className: 'h-5 w-5 ',
+				})}
 				{arrowIcon &&
 					React.cloneElement(arrowIcon as React.ReactElement, {
 						className: 'h-5 w-5',
@@ -63,11 +65,11 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 				ref={dropdownRef}
 				className={`absolute top-full z-10 ${
 					dropdownPosition === 'right' ? 'right-0' : 'left-0'
-				} mt-2 w-44 bg-white rounded-lg shadow-md ${
+				} mt-2 w-44 bg-white dark:bg-gray-600 semi-dark:bg-gray-500 rounded-lg shadow-md ${
 					isDropdownOpen ? '' : 'hidden'
 				}`}
 			>
-				<ul className="py-1 text-gray-700">
+				<ul className="py-1 text-gray-700 dark:text-white semi-dark:text-gray-200">
 					{menuItems.map((item) => (
 						<li key={item.id}>
 							<button

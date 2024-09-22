@@ -228,7 +228,9 @@ const XOrdersByCountriesCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 $className`}
+		>
 			<XComponentHeader
 				title="Orders by Countries"
 				subtitle="62 deliveries in progress"

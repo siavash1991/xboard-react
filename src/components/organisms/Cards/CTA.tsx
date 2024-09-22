@@ -6,12 +6,12 @@ interface XCTACardProps {
 }
 const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper className={`break-inside-avoid $className`}>
 			<Card href="#" className={className}>
-				<h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
+				<h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white semi-dark:text-gray-200">
 					Work fast from anywhere
 				</h5>
-				<p className="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">
+				<p className="mb-5 text-base text-gray-500 dark:text-gray-400 semi-dark:text-gray-300 sm:text-lg">
 					Stay up to date and move work forward with Flowbite on iOS &
 					Android. Download the app today.
 				</p>

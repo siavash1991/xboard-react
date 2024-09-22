@@ -5,6 +5,8 @@ import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { barChartOptions } from '@shared/ApexChartsConfig';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 // Data for the bar chart
 const series = [
@@ -30,6 +32,8 @@ const categories = [
 ];
 
 const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
 	const menuItems = [
 		{ id: 'today', label: 'Today', onClick: () => {} },
 		{ id: 'yesterday', label: 'Yesterday', onClick: () => {} },
@@ -40,7 +44,9 @@ const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Data Science"
 				subtitle="Commercial networks"
@@ -53,6 +59,8 @@ const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
 				<ApexCharts
 					type="bar"
 					options={barChartOptions(
+						currentTheme,
+						currentDir,
 						['#826af9', '#d2b0ff'],
 						categories
 					)}

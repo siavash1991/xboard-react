@@ -5,6 +5,9 @@ import XPolarChart from '@molecules/ChartJs/PolarChart';
 import { ChartOptions, LegendItem } from 'chart.js';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import colors from 'tailwindcss/colors';
+import useTheme from '@hooks/useTheme';
+import { getThemeColor } from '@utils/themeUtils';
 
 // Data for the polar chart
 const chartData = {
@@ -25,52 +28,6 @@ const chartData = {
 			borderWidth: 1,
 		},
 	],
-};
-
-// Chart options for the polar chart
-const chartOptions: ChartOptions<'polarArea'> = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			title: {
-				display: true,
-			},
-			display: true,
-			position: 'right',
-			labels: {
-				usePointStyle: true,
-				padding: 25,
-				font: {
-					size: 11,
-				},
-				generateLabels: (chart) => {
-					const { data } = chart;
-					return (data.labels || []).map((label, index) => ({
-						text: label as string,
-						fillStyle: (
-							data.datasets[0].backgroundColor as string[]
-						)[index],
-						strokeStyle: data.datasets[0].borderColor as string,
-						lineWidth: 1,
-						hidden: false,
-						index,
-						pointStyle: 'circle',
-					})) as LegendItem[];
-				},
-			},
-		},
-	},
-	scales: {
-		r: {
-			grid: {
-				display: false,
-			},
-			ticks: {
-				display: false,
-			},
-		},
-	},
 };
 
 // Define menu items outside the component
@@ -101,8 +58,62 @@ const menuItems = [
 const XChartJsPolarCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+
+	// Chart options for the polar chart
+	const chartOptions: ChartOptions<'polarArea'> = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			legend: {
+				title: {
+					display: true,
+				},
+				display: true,
+				position: 'right',
+				labels: {
+					usePointStyle: true,
+					padding: 25,
+					font: {
+						size: 13,
+					},
+					generateLabels: (chart) => {
+						const { data } = chart;
+						return (data.labels || []).map((label, index) => ({
+							fontColor: getThemeColor(currentTheme, {
+								light: colors.gray[400],
+								semiDark: colors.gray[300],
+								dark: colors.white,
+							}),
+
+							text: label as string,
+							fillStyle: (
+								data.datasets[0].backgroundColor as string[]
+							)[index],
+							strokeStyle: data.datasets[0].borderColor as string,
+							lineWidth: 1,
+							hidden: false,
+							pointStyle: 'circle',
+						})) as LegendItem[];
+					},
+				},
+			},
+		},
+		scales: {
+			r: {
+				grid: {
+					display: false,
+				},
+				ticks: {
+					display: false,
+				},
+			},
+		},
+	};
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Average Skills"
 				arrowIcon={<ChevronDownIcon className="w-5 h-5" />}

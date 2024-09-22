@@ -37,7 +37,11 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 }) => {
 	const renderValueAndChange = () => (
 		<div className="flex items-center mt-2">
-			{value && <h5 className="text-gray-800 mr-4">{value}</h5>}
+			{value && (
+				<h5 className="text-gray-800 dark:text-gray-100 semi-dark:text-gray-200 mr-4">
+					{value}
+				</h5>
+			)}
 			{changePercentage && (
 				<span
 					className={`${
@@ -75,8 +79,8 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 					<span
 						className={`${
 							boldSubtitle
-								? 'text-lg font-semibold text-gray-800'
-								: 'text-sm font-normal text-gray-500'
+								? 'text-lg font-semibold text-gray-800 dark:text-white semi-dark:text-gray-300'
+								: 'text-sm font-normal text-gray-500 dark:text-gray-500 semi-dark:text-gray-400'
 						}`}
 					>
 						{subtitle}

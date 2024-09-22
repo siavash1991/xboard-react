@@ -6,7 +6,7 @@ interface XFormCardProps {
 }
 const XFormCard: React.FC<XFormCardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper className={`break-inside-avoid $className`}>
 			<Card href="#" className={`block ${className}`}>
 				<form className="flex flex-col gap-4">
 					<div>

@@ -3,6 +3,7 @@ import React, {
 	useEffect,
 	useLayoutEffect,
 	useCallback,
+	useRef,
 } from 'react';
 import {
 	StarIcon,
@@ -42,6 +43,7 @@ const updateDocumentTheme = (theme: Theme) => {
 const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const [currentTheme, setCurrentTheme] = useState<Theme>('system');
+	const dropdownRef = useRef<HTMLDivElement>(null);
 
 	const applyTheme = useCallback((theme: Theme) => {
 		const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
@@ -58,6 +60,28 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 			setIsDropdownOpen(false);
 		}
 	};
+
+	// Close dropdown if clicked outside
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (
+				dropdownRef.current &&
+				!dropdownRef.current.contains(event.target as Node)
+			) {
+				setIsDropdownOpen(false);
+			}
+		};
+
+		if (isDropdownOpen) {
+			document.addEventListener('mousedown', handleClickOutside);
+		} else {
+			document.removeEventListener('mousedown', handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [isDropdownOpen]);
 
 	// Ensure the theme is applied before the page renders
 	useLayoutEffect(() => {
@@ -92,7 +116,7 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 	}, []);
 
 	return (
-		<div className={`relative  ${className}`}>
+		<div className={`relative ${className}`} ref={dropdownRef}>
 			<button
 				type="button"
 				className="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600"

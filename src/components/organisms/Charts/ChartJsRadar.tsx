@@ -5,6 +5,9 @@ import XRadarChart from '@molecules/ChartJs/RadarChart';
 import { ChartOptions } from 'chart.js';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import colors from 'tailwindcss/colors';
+import useTheme from '@hooks/useTheme';
+import { getThemeColor } from '@utils/themeUtils';
 
 // Data for the radar chart
 const data = {
@@ -42,32 +45,6 @@ const data = {
 		},
 	],
 };
-
-// Chart options for the radar chart
-const chartOptions: ChartOptions<'radar'> = {
-	responsive: true,
-	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: true,
-		},
-	},
-	scales: {
-		r: {
-			angleLines: {
-				display: true,
-			},
-			suggestedMin: 0,
-			suggestedMax: 100,
-		},
-	},
-	elements: {
-		line: {
-			borderWidth: 3,
-		},
-	},
-};
-
 // Define menu items outside the component
 const menuItems = [
 	{
@@ -96,8 +73,61 @@ const menuItems = [
 const XChartJsRadarCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+
+	// Chart options for the radar chart
+	const chartOptions: ChartOptions<'radar'> = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			legend: {
+				display: true,
+				labels: {
+					color: getThemeColor(currentTheme, {
+						light: colors.gray[100],
+						semiDark: colors.gray[300],
+						dark: colors.white,
+					}),
+					boxHeight: 15,
+				},
+			},
+		},
+		scales: {
+			r: {
+				angleLines: {
+					display: true,
+				},
+				suggestedMin: 0,
+				suggestedMax: 100,
+				ticks: {
+					backdropColor: 'transparent', // Ensure the background behind the numbers is transparent
+					color: getThemeColor(currentTheme), // Adjust the text color if needed
+					showLabelBackdrop: false, // Disable the default white backdrop behind labels
+				},
+				pointLabels: {
+					font: {
+						size: 11,
+					},
+					padding: 12,
+					color: getThemeColor(currentTheme, {
+						light: colors.gray[400],
+						semiDark: colors.gray[300],
+						dark: colors.gray[300],
+					}),
+				},
+			},
+		},
+		elements: {
+			line: {
+				borderWidth: 3,
+			},
+		},
+	};
+
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Radar Chart"
 				arrowIcon={<ChevronDownIcon className="w-5 h-5" />}

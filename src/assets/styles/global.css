@@ -81,6 +81,20 @@
 		margin-inline-end: 1rem;
 	}
 }
+/* Apwxchart custom styles */
+/* Default legend text color */
+.apexcharts-legend .apexcharts-legend-text {
+	@apply text-gray-700 text-sm font-medium px-5;
+}
+
+/* Dark mode legend text color */
+.dark .apexcharts-legend .apexcharts-legend-text {
+	@apply !text-gray-100; /* Apply dark mode text color */
+}
+
+.apexcharts-yaxis .apexcharts-yaxis-label {
+	fill: #aaaaab;
+}
 
 /* react-select custom styles */
 .react-select__control {

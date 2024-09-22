@@ -5,6 +5,8 @@ import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import { horizontalBararChartOptions } from '@shared/ApexChartsConfig';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import useTheme from '@hooks/useTheme';
+import useDirection from '@hooks/useDirection';
 
 // Data for the horizontal bar chart
 const series = [{ data: [700, 350, 480, 600, 210, 550, 150] }];
@@ -21,6 +23,8 @@ const categories = [
 const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
+	const currentTheme = useTheme();
+	const currentDir = useDirection();
 	const menuItems = [
 		{ id: 'today', label: 'Today', onClick: () => {} },
 		{ id: 'yesterday', label: 'Yesterday', onClick: () => {} },
@@ -31,7 +35,9 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+		>
 			<XComponentHeader
 				title="Balance"
 				subtitle="$74,382.72"
@@ -43,7 +49,12 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 			/>
 			<XComponentBody>
 				<ApexCharts
-					options={horizontalBararChartOptions([], categories)}
+					options={horizontalBararChartOptions(
+						currentTheme,
+						currentDir,
+						[],
+						categories
+					)}
 					series={series}
 					type="bar"
 					height={450}

@@ -27,7 +27,7 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XCaptionTableProps {
+interface XTableResponsiveProps {
 	className?: string;
 }
 
@@ -80,7 +80,9 @@ const tableData: Project[] = [
 	},
 ];
 
-const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
+const XTableResponsive: React.FC<XTableResponsiveProps> = ({
+	className = '',
+}) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};
@@ -95,84 +97,84 @@ const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
 	];
 
 	return (
-		<ComponentWrapper className={className}>
+		<ComponentWrapper
+			className={`col-span-12 break-inside-avoid $className`}
+		>
 			<XComponentHeader
-				title="Table Caption"
+				title="Responsive Table"
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"
 			/>
 			<XComponentBody className="text-nowrap !p-0">
-				<Table>
-					<Table.Head>
-						<Table.HeadCell className="px-10 py-4">
-							Project
-						</Table.HeadCell>
-						<Table.HeadCell>Client</Table.HeadCell>
-						<Table.HeadCell>Users</Table.HeadCell>
-						<Table.HeadCell>Status</Table.HeadCell>
-						<Table.HeadCell>Actions</Table.HeadCell>
-					</Table.Head>
-					<Table.Body>
-						{tableData.map((item) => (
-							<Table.Row
-								key={item.id}
-								className="border-t dark:border-gray-600 semi-dark:border-gray-500"
-							>
-								<Table.Cell className="py-4">
-									<img
-										src={item.logo}
-										alt={`${item.project}-logo`}
-										className="w-5 mx-4 float-left"
-									/>
-									<span className="leading-2 font-semibold">
-										{item.project}
-									</span>
-								</Table.Cell>
-								<Table.Cell>{item.client}</Table.Cell>
-								<Table.Cell>
-									<ul className="list-unstyled m-0 avatar-group d-flex align-items-center">
-										{item.users.map((user) => (
-											<li
-												key={user.id}
-												className="avatar avatar-xs pull-up"
-											>
-												<Tippy content={user.fullName}>
-													<img
-														src={user.avatarUrl}
-														alt={`Avatar of ${user.fullName}`}
-														className="rounded-full w-5 float-left -mr-1 ring-2 ring-white dark:ring-gray-700 semi-dark:ring-gray-600"
-													/>
-												</Tippy>
-											</li>
-										))}
-									</ul>
-								</Table.Cell>
-								<Table.Cell>
-									<span
-										className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1`}
-									>
-										{item.status}
-									</span>
-								</Table.Cell>
-								<Table.Cell>
-									<XTableRowDropdownMenu
-										menuItems={menuItems}
-									/>
-								</Table.Cell>
-							</Table.Row>
-						))}
-					</Table.Body>
-
-					{/* Manually adding the Table Footer */}
-					<caption
-						className="caption-bottom p-4 ps-10 text-start border-t dark:border-gray-600
-						semi-dark:border-gray-500"
-					>
-						List of Projects
-					</caption>
-				</Table>
+				<div className="overflow-x-auto">
+					<Table className="min-w-full">
+						<Table.Head>
+							<Table.HeadCell>#</Table.HeadCell>
+							<Table.HeadCell>Project</Table.HeadCell>
+							<Table.HeadCell>Client</Table.HeadCell>
+							<Table.HeadCell>Users</Table.HeadCell>
+							<Table.HeadCell>Status</Table.HeadCell>
+							<Table.HeadCell>Actions</Table.HeadCell>
+						</Table.Head>
+						<Table.Body className="table-border-bottom-0">
+							{tableData.map((item, index) => (
+								<Table.Row
+									key={item.id}
+									className="border-t dark:border-gray-600 semi-dark:border-gray-500 hover:bg-gray-100 semi-dark:hover:bg-gray-700 dark:hover:bg-gray-800"
+								>
+									<Table.Cell className="py-4">
+										{index + 1}
+									</Table.Cell>
+									<Table.Cell className="py-4 text-wrap">
+										<img
+											src={item.logo}
+											alt={`${item.project}-logo`}
+											className="w-5 mx-4 float-left"
+										/>
+										<span className="leading-2 font-semibold ">
+											{item.project}
+										</span>
+									</Table.Cell>
+									<Table.Cell>{item.client}</Table.Cell>
+									<Table.Cell>
+										<ul className="list-unstyled m-0 avatar-group d-flex align-items-center">
+											{item.users.map((user) => (
+												<li
+													key={user.id}
+													className="avatar avatar-xs pull-up"
+												>
+													<Tippy
+														content={user.fullName}
+													>
+														<img
+															src={user.avatarUrl}
+															alt={`Avatar of ${user.fullName}`}
+															className="rounded-full w-5 float-left -mr-1 ring-2 ring-white dark:ring-gray-700 semi-dark:ring-gray-600"
+														/>
+													</Tippy>
+												</li>
+											))}
+										</ul>
+									</Table.Cell>
+									<Table.Cell>
+										<span
+											className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1`}
+										>
+											{item.status}
+										</span>
+									</Table.Cell>
+									<Table.Cell>
+										<XTableRowDropdownMenu
+											menuItems={menuItems}
+										/>
+									</Table.Cell>
+								</Table.Row>
+							))}
+						</Table.Body>
+					</Table>
+				</div>
 			</XComponentBody>
 		</ComponentWrapper>
 	);
 };
 
-export default XCaptionTable;
+export default XTableResponsive;

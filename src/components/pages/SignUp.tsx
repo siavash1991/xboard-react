@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import XAuthLayout from '@templates/AuthLayout';
 import XUserSignUpForm from '@organisms/UserSignUpForm';
 
-import Logo from '@assets/images/favicon.svg';
+import Logo from '@assets/images/logo-dark.svg';
 
 const XSignUp: React.FC = () => {
 	return (
 		<XAuthLayout>
 			<div className="content-wrapper pt-20 flex flex-col items-center">
-				<img src={Logo} alt="Your Logo" className="mb-4 h-16 w-auto" />
+				<img
+					src={Logo}
+					alt="Your Logo"
+					className="mb-4 h-16 w-auto fill-black"
+				/>
 
 				<h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
 					Welcome back!

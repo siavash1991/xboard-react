@@ -3,13 +3,19 @@ import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import LaravelImg from '@assets/images/cards/active-project/laravel-logo.png';
+import FigmaImg from '@assets/images/cards/active-project/figma-logo.png';
+import vueImg from '@assets/images/cards/active-project/vue-logo.png';
+import reactImg from '@assets/images/cards/active-project/react-logo.png';
+import BootstrapImg from '@assets/images/cards/active-project/bootstrap-logo.png';
+import SketchImg from '@assets/images/cards/active-project/sketch-logo.png';
 
 const projects = [
 	{
 		id: 1,
 		title: 'Laravel',
 		subtitle: 'eCommerce',
-		logo: 'images/cards/active-project/laravel-logo.png',
+		logo: LaravelImg,
 		progress: 65,
 		progressColor: 'bg-red-500',
 	},
@@ -17,7 +23,7 @@ const projects = [
 		id: 2,
 		title: 'Figma',
 		subtitle: 'App UI Kit',
-		logo: 'images/cards/active-project/figma-logo.png',
+		logo: FigmaImg,
 		progress: 86,
 		progressColor: 'bg-blue-500',
 	},
@@ -25,7 +31,7 @@ const projects = [
 		id: 3,
 		title: 'VueJs',
 		subtitle: 'Calendar App',
-		logo: 'images/cards/active-project/vue-logo.png',
+		logo: vueImg,
 		progress: 90,
 		progressColor: 'bg-green-500',
 	},
@@ -33,7 +39,7 @@ const projects = [
 		id: 4,
 		title: 'React',
 		subtitle: 'Dashboard',
-		logo: 'images/cards/active-project/react-logo.png',
+		logo: reactImg,
 		progress: 37,
 		progressColor: 'bg-teal-500',
 	},
@@ -41,7 +47,7 @@ const projects = [
 		id: 5,
 		title: 'Bootstrap',
 		subtitle: 'Website',
-		logo: 'images/cards/active-project/bootstrap-logo.png',
+		logo: BootstrapImg,
 		progress: 22,
 		progressColor: 'bg-blue-500',
 	},
@@ -49,7 +55,7 @@ const projects = [
 		id: 6,
 		title: 'Sketch',
 		subtitle: 'Website Design',
-		logo: 'images/cards/active-project/sketch-logo.png',
+		logo: SketchImg,
 		progress: 29,
 		progressColor: 'bg-yellow-500',
 	},

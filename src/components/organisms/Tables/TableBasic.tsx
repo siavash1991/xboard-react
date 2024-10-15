@@ -5,10 +5,15 @@ import 'tippy.js/dist/tippy.css'; // For default Tippy styles
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
+
 import avatar5 from '@assets/images/avatars/5.png';
 import avatar6 from '@assets/images/avatars/6.png';
 import avatar7 from '@assets/images/avatars/7.png';
-import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
+import LaravelImg from '@assets/images/cards/active-project/laravel-logo.png';
+import FigmaImg from '@assets/images/cards/active-project/figma-logo.png';
+import vueImg from '@assets/images/cards/active-project/vue-logo.png';
+import reactImg from '@assets/images/cards/active-project/react-logo.png';
 
 interface User {
 	id: string;
@@ -41,7 +46,7 @@ const tableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
-		logo: 'images/cards/active-project/laravel-logo.png',
+		logo: LaravelImg,
 		client: 'Olivia Parker',
 		users: [users[0], users[1], users[2]],
 		status: 'Pending',
@@ -51,7 +56,7 @@ const tableData: Project[] = [
 	{
 		id: '2',
 		project: 'VueJs Project',
-		logo: 'images/cards/active-project/vue-logo.png',
+		logo: vueImg,
 		client: 'Liam Carter',
 		users: [users[0], users[1], users[2]],
 		status: 'Scheduled',
@@ -61,7 +66,7 @@ const tableData: Project[] = [
 	{
 		id: '3',
 		project: 'Figma Design',
-		logo: 'images/cards/active-project/figma-logo.png',
+		logo: FigmaImg,
 		client: 'Sophia Walker',
 		users: [users[0], users[1], users[2]],
 		status: 'Active',
@@ -71,7 +76,7 @@ const tableData: Project[] = [
 	{
 		id: '4',
 		project: 'React Project',
-		logo: 'images/cards/active-project/react-logo.png',
+		logo: reactImg,
 		client: 'Noah Brooks',
 		users: [users[0], users[1], users[2]],
 		status: 'Pending',

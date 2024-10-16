@@ -21,6 +21,7 @@ const XBarChart: React.FC<BarChartProps> = ({
 			options={options}
 			className={className}
 			height={height}
+			data-testid="bar-chart"
 		/>
 	);
 };

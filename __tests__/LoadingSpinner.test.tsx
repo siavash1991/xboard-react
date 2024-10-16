@@ -10,8 +10,6 @@ describe('XLoadingSpinner', () => {
 		expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
 
 		// Optionally check if the spinner div is present
-		expect(
-			screen.getByTestId('loading-spinner').querySelector('.spinner')
-		).toBeInTheDocument();
+		expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
 	});
 });

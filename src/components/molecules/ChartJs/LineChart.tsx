@@ -14,7 +14,14 @@ const XLineChart: React.FC<LineChartProps> = ({
 	options,
 	height = '250',
 }) => {
-	return <Line data={data} options={options} height={parseInt(height, 10)} />;
+	return (
+		<Line
+			data={data}
+			options={options}
+			height={parseInt(height, 10)}
+			data-testid="line-chart"
+		/>
+	);
 };
 
 export default XLineChart;

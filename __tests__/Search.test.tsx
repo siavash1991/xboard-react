@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import XSearch from '@atoms/Search';
 
 describe('XSearch', () => {
-	test('focuses the input when Ctrl + / is pressed', () => {
+	it('focuses the input when Ctrl + / is pressed', () => {
 		render(<XSearch />);
 
 		// Simulate pressing Ctrl + /
@@ -14,7 +14,7 @@ describe('XSearch', () => {
 		expect(input).toHaveFocus();
 	});
 
-	test('renders the search input and icon', () => {
+	it('renders the search input and icon', () => {
 		render(<XSearch />);
 		const input = screen.getByPlaceholderText('Search ( Ctrl + / )');
 		const icon = screen.getByTestId('search-icon'); // Use the data-testid you added

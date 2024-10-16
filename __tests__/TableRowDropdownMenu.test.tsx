@@ -8,12 +8,12 @@ describe('XTableRowDropdownMenu', () => {
 		{ id: '2', label: 'Delete', onClick: jest.fn() },
 	];
 
-	test('renders dropdown menu', () => {
+	it('renders dropdown menu', () => {
 		render(<XTableRowDropdownMenu menuItems={mockMenuItems} />);
 		expect(screen.getByTestId('dropdown-menu')).toBeInTheDocument();
 	});
 
-	test('opens and closes the dropdown menu', async () => {
+	it('opens and closes the dropdown menu', async () => {
 		render(<XTableRowDropdownMenu menuItems={mockMenuItems} />);
 
 		const toggleButton = screen.getByTestId('toggle-button');
@@ -32,7 +32,7 @@ describe('XTableRowDropdownMenu', () => {
 		}, 0);
 	});
 
-	test('calls onClick function when menu item is clicked', () => {
+	it('calls onClick function when menu item is clicked', () => {
 		render(<XTableRowDropdownMenu menuItems={mockMenuItems} />);
 		const toggleButton = screen.getByTestId('toggle-button');
 		fireEvent.click(toggleButton);

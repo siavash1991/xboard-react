@@ -14,7 +14,13 @@ const XBubbleChart: React.FC<BubbleChartProps> = ({
 	height = '250',
 }) => {
 	return (
-		<Bubble data={data} options={options} height={parseInt(height, 10)} />
+		<div data-testid="bubble-chart">
+			<Bubble
+				data={data}
+				options={options}
+				height={parseInt(height, 10)}
+			/>
+		</div>
 	);
 };
 

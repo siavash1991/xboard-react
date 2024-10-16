@@ -8,12 +8,12 @@ beforeEach(() => {
 });
 
 describe('XThemeToggle', () => {
-	test('renders the theme toggle button', () => {
+	it('renders the theme toggle button', () => {
 		render(<XThemeToggle />);
 		expect(screen.getByTestId('theme-toggle-button')).toBeInTheDocument();
 	});
 
-	test('opens and closes the dropdown menu', () => {
+	it('opens and closes the dropdown menu', () => {
 		render(<XThemeToggle />);
 
 		const toggleButton = screen.getByTestId('theme-toggle-button');
@@ -27,7 +27,7 @@ describe('XThemeToggle', () => {
 		}, 0);
 	});
 
-	test('calls the appropriate theme change function when a theme is selected', () => {
+	it('calls the appropriate theme change function when a theme is selected', () => {
 		render(<XThemeToggle />);
 		const toggleButton = screen.getByTestId('theme-toggle-button');
 		fireEvent.click(toggleButton);

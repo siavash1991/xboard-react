@@ -22,7 +22,7 @@ describe('XSidebarToggle', () => {
 		});
 	});
 
-	test('renders toggle button', () => {
+	it('renders toggle button', () => {
 		render(
 			<Provider store={store}>
 				<XSidebarToggle />
@@ -36,7 +36,7 @@ describe('XSidebarToggle', () => {
 		expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
 	});
 
-	test('toggles sidebar open state when button is clicked', () => {
+	it('toggles sidebar open state when button is clicked', () => {
 		// Mock the store with sidebar open initially
 		store = mockStore({
 			sidebar: { isSidebarOpen: true },

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import XBarChart from '@molecules/ChartJs/BarChart';
 
 describe('XBarChart', () => {
-	test('renders the bar chart with the provided data and options', () => {
+	it('renders the bar chart with the provided data and options', () => {
 		const mockData = {
 			labels: ['January', 'February', 'March'],
 			datasets: [

@@ -18,9 +18,11 @@ const XPagination: React.FC<XPaginationProps> = ({
 }) => {
 	return (
 		<div
+			data-testid="pagination-container"
 			className={`flex  items-center justify-center mt-2 mb-10 ${className}`}
 		>
 			<FlowbitePagination
+				data-testid="flowbite-pagination"
 				layout="pagination"
 				currentPage={currentPage}
 				totalPages={Math.ceil(totalItems / itemsPerPage)}

@@ -9,7 +9,14 @@ interface PolarChartProps {
 }
 
 const XPolarChart: React.FC<PolarChartProps> = ({ data, options, height }) => {
-	return <PolarArea data={data} options={options} height={height} />;
+	return (
+		<PolarArea
+			data={data}
+			options={options}
+			height={height}
+			data-testid="polar-chart"
+		/>
+	);
 };
 
 export default XPolarChart;

@@ -51,6 +51,13 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 				className="flex items-center rtl:flex-row-reverse space-x-1 text-gray-500 hover:text-gray-900"
 				onClick={toggleDropdown}
 				ref={buttonRef}
+				aria-haspopup="true"
+				aria-expanded={isDropdownOpen}
+				aria-label={
+					menuLabel
+						? `Toggle ${menuLabel} dropdown`
+						: 'Toggle dropdown'
+				}
 			>
 				{React.cloneElement(menuIcon, {
 					className: 'h-5 w-5 ',
@@ -68,6 +75,8 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 				} mt-2 w-44 bg-white dark:bg-gray-600 semi-dark:bg-gray-500 rounded-lg shadow-md ${
 					isDropdownOpen ? '' : 'hidden'
 				}`}
+				role="menu"
+				aria-labelledby={menuLabel ? `${menuLabel}-label` : undefined}
 			>
 				<ul className="py-1 text-gray-700 dark:text-white semi-dark:text-gray-200">
 					{menuItems.map((item) => (
@@ -76,6 +85,8 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 								type="button"
 								className="block px-4 py-2 w-full text-left"
 								onClick={item.onClick}
+								aria-label={`Select ${item.label}`}
+								id={item.id} // Adding a unique ID for testing
 							>
 								{item.label}
 							</button>

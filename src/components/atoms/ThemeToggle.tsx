@@ -121,6 +121,7 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 				type="button"
 				className="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none ring-4 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-700 semi-dark:ring-gray-600 semi-dark:hover:bg-gray-600"
 				onClick={toggleDropdown}
+				data-testid="theme-toggle-button" // Add test ID here
 			>
 				{React.createElement(ICONS[currentTheme], {
 					className: 'w-6 h-6',
@@ -129,11 +130,15 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 			</button>
 
 			{isDropdownOpen && (
-				<div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden">
+				<div
+					className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden"
+					data-testid="theme-dropdown" // Add test ID here
+				>
 					{THEMES.map((theme) => (
 						<button
 							key={theme}
 							onClick={() => handleThemeChange(theme)}
+							data-testid={`theme-button-${theme}`} // Add test ID here
 							className={`flex items-center px-4 py-2 text-sm ${
 								currentTheme === theme
 									? 'bg-gray-100 dark:bg-gray-700'
@@ -154,5 +159,4 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 		</div>
 	);
 };
-
 export default XThemeToggle;

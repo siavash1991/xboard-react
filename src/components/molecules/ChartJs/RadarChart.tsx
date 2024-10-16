@@ -9,7 +9,14 @@ interface RadarChartProps {
 }
 
 const XRadarChart: React.FC<RadarChartProps> = ({ data, options, height }) => {
-	return <Radar data={data} options={options} height={height} />;
+	return (
+		<Radar
+			data={data}
+			options={options}
+			height={height}
+			data-testid="radar-chart"
+		/>
+	);
 };
 
 export default XRadarChart;

@@ -36,5 +36,13 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "__tests__", "**/*.ts", "craco.config.js"]
+	"include": [
+		"src",
+		"__tests__",
+		"**/*.ts",
+		"craco.config.js",
+		"cypress.config.js",
+		"jest.config.js"
+	],
+	"exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }

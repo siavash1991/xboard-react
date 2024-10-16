@@ -47,12 +47,13 @@ const XTableRowDropdownMenu: React.FC<XTableRowDropdownMenuProps> = ({
 	}, [isDropdownOpen]);
 
 	return (
-		<div className="relative w-fit">
+		<div className="relative w-fit" data-testid="dropdown-menu">
 			<button
 				type="button"
 				className="flex items-center text-gray-500 hover:text-gray-900"
 				onClick={toggleDropdown}
 				ref={buttonRef}
+				data-testid="toggle-button"
 			>
 				<EllipsisVerticalIcon className="h-5 w-5 dark:text-gray-100 semi-dark:text-gray-100" />
 			</button>
@@ -63,6 +64,7 @@ const XTableRowDropdownMenu: React.FC<XTableRowDropdownMenuProps> = ({
 				} ${
 					openUpwards ? 'bottom-full mt-1 me-5' : 'top-full mb-1 me-5'
 				}`}
+				data-testid="dropdown"
 			>
 				<ul className="py-1 text-gray-700">
 					{menuItems.map((item) => (
@@ -74,6 +76,7 @@ const XTableRowDropdownMenu: React.FC<XTableRowDropdownMenuProps> = ({
 									item.onClick();
 									setIsDropdownOpen(false);
 								}}
+								data-testid={`menu-item-${item.id}`}
 							>
 								{item.label}
 							</button>

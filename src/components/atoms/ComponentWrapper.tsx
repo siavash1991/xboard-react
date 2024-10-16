@@ -5,15 +5,17 @@ interface ComponentWrapperProps {
 	children?: ReactNode;
 }
 
-const ComponentWrapper: React.FC<ComponentWrapperProps> = ({
+const XComponentWrapper: React.FC<ComponentWrapperProps> = ({
 	className = '',
 	children,
 }) => {
 	return (
 		<div
-			className={`component-wrapper col-span-12 break-inside-avoid bg-component-light dark:bg-gray-600  semi-dark:bg-gray-500 mb-7 pb-1 ${className}`}
+			data-testid="component-wrapper"
+			className={`component-wrapper col-span-12 break-inside-avoid bg-component-light dark:bg-gray-600 semi-dark:bg-gray-500 mb-7 pb-1 ${className}`}
 		>
 			<div
+				data-testid="inner-wrapper"
 				className={`bg-white dark:bg-gray-700 semi-dark:bg-gray-600 rounded-lg h-full`}
 			>
 				{children}
@@ -22,4 +24,4 @@ const ComponentWrapper: React.FC<ComponentWrapperProps> = ({
 	);
 };
 
-export default ComponentWrapper;
+export default XComponentWrapper;

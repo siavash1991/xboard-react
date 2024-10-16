@@ -45,7 +45,7 @@ const XChartDropdownMenu: React.FC<XChartDropdownMenuProps> = ({
 	}, [isDropdownOpen]);
 
 	return (
-		<div className="relative">
+		<div className="relative" data-testid="dropdown-menu-placeholder">
 			<button
 				type="button"
 				className="flex items-center rtl:flex-row-reverse space-x-1 text-gray-500 hover:text-gray-900"

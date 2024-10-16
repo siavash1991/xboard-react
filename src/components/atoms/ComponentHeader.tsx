@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
-import ChartDropdownMenu from './ChartDropdownMenu';
 import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline';
+import ChartDropdownMenu from './ChartDropdownMenu';
 
 interface MenuItem {
 	id: string;
@@ -38,7 +38,10 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 	const renderValueAndChange = () => (
 		<div className="flex items-center mt-2">
 			{value && (
-				<h5 className="text-gray-800 dark:text-gray-100 semi-dark:text-gray-200 mr-4">
+				<h5
+					className="text-gray-800 dark:text-gray-100 semi-dark:text-gray-200 mr-4"
+					data-testid="value"
+				>
 					{value}
 				</h5>
 			)}
@@ -49,11 +52,18 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 							? 'bg-green-500 dark:bg-gray-500 text-green-600 dark:text-green-100'
 							: 'bg-red-100 dark:bg-red-200 text-red-600 dark:text-red-100'
 					} px-2 py-1 rounded flex items-center`}
+					data-testid="change-percentage"
 				>
 					{isPositiveChange ? (
-						<ArrowUpIcon className="h-3 w-3" />
+						<ArrowUpIcon
+							className="h-3 w-3"
+							data-testid="arrow-up-icon"
+						/>
 					) : (
-						<ArrowDownIcon className="h-3 w-3" />
+						<ArrowDownIcon
+							className="h-3 w-3"
+							data-testid="arrow-down-icon"
+						/>
 					)}
 					<span className="ml-1 text-sm">{changePercentage}</span>
 				</span>
@@ -63,6 +73,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 
 	return (
 		<div
+			data-testid="component-header"
 			className={`component-header flex items-center justify-between px-10 py-7 ${className}`}
 		>
 			<div className="component-title">
@@ -71,6 +82,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 						className={`text-lg text-gray-900 dark:text-white semi-dark:text-gray-200 ${
 							boldSubtitle ? 'font-normal' : 'font-semibold'
 						}`}
+						data-testid="title"
 					>
 						{title}
 					</h5>
@@ -82,6 +94,7 @@ const XComponentHeader: React.FC<XComponentHeaderProps> = ({
 								? 'text-lg font-semibold text-gray-800 dark:text-white semi-dark:text-gray-300'
 								: 'text-sm font-normal text-gray-500 dark:text-gray-500 semi-dark:text-gray-400'
 						}`}
+						data-testid="subtitle"
 					>
 						{subtitle}
 					</span>

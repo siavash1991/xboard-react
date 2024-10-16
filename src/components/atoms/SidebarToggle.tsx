@@ -32,11 +32,12 @@ const XSidebarToggle: React.FC = () => {
 				aria-label="Toggle Sidebar"
 				aria-expanded={isSidebarOpen}
 				aria-controls="sidebar"
+				data-testid="toggle-button"
 			>
 				{isSidebarOpen ? (
-					<XMarkIcon className="h-6 w-6" /> // Close icon when sidebar is open
+					<XMarkIcon className="h-6 w-6" data-testid="close-icon" /> // Close icon when sidebar is open
 				) : (
-					<Bars3Icon className="h-6 w-6" /> // Hamburger icon when sidebar is closed
+					<Bars3Icon className="h-6 w-6" data-testid="open-icon" /> // Hamburger icon when sidebar is closed
 				)}
 			</button>
 
@@ -52,6 +53,7 @@ const XSidebarToggle: React.FC = () => {
 							dispatch(toggleSidebar());
 						}
 					}}
+					data-testid="sidebar-overlay"
 				></div>
 			)}
 		</>

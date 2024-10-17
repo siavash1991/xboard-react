@@ -1,11 +1,20 @@
 module.exports = {
 	preset: 'ts-jest',
 	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: ['<rootDir>/__tests__/test-utils/setupTests.ts'],
+	setupFilesAfterEnv: ['<rootDir>/__tests__/test-utils/setupTests.tsx'],
 	transform: {
-		'^.+\\.tsx?$': 'ts-jest',
-		'^.+\\.svg$': '<rootDir>/__tests__/test-utils/svgTransform.js',
+		'^.+\\.(ts|tsx)$': [
+			'ts-jest',
+			{
+				tsconfig: {
+					jsx: 'react-jsx',
+				},
+			},
+		],
+		'^.+\\.(jpg|jpeg|png|gif|svg)$':
+			'<rootDir>/__tests__/test-utils/imgTransform.ts',
 	},
+
 	testPathIgnorePatterns: ['<rootDir>/__tests__/test-utils/'],
 	moduleNameMapper: {
 		'^@hooks/(.*)$': '<rootDir>/src/hooks/$1',

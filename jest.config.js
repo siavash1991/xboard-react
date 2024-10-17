@@ -27,7 +27,8 @@ module.exports = {
 		'^@organisms/(.*)$': '<rootDir>/src/components/organisms/$1',
 		'^@pages/(.*)$': '<rootDir>/src/components/pages/$1',
 		'^@templates/(.*)$': '<rootDir>/src/components/templates/$1',
+		'^flowbite-react$': '<rootDir>/__tests__/test-utils/flowbite-react.tsx',
 		'^.+\\.(css|less|scss|sass)$':
-			'<rootDir>/__tests__/test-utils/styleMock.ts',
+			'<rootDir>/__tests__/test-utils/styleMock',
 	},
 };

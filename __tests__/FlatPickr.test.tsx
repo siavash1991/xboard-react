@@ -1,14 +1,6 @@
-// __tests__/FlatPickr.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import XFlatPickr from '@molecules/FlatPickr'; // Adjusted import
-
-jest.mock('flowbite-react', () => ({
-	TextInput: (props: any) => (
-		<input data-testid={props['data-testid']} {...props} />
-	), // Mock TextInput
-	useTheme: jest.fn(() => ({})), // Mock useTheme to return an empty object
-}));
 
 describe('XFlatPickr', () => {
 	it('renders the flatpickr input', () => {
@@ -39,11 +31,11 @@ describe('XFlatPickr', () => {
 			/>
 		);
 
+		// Ensure the input is rendered
 		const input = screen.getByTestId('flatpickr-input');
-		// Simulate date selection or any actions needed
-		// Example: fireEvent.change(input, { target: { value: '2024-01-01' } });
+		expect(input).toBeInTheDocument();
 
-		// Verify that onChange was called
-		// expect(mockOnChange).toHaveBeenCalledWith(new Date('2024-01-01'));
+		// Simulate selecting a date (if applicable based on your FlatPickr setup)
+		// Example: input.value = '2024-10-17'; // This will need to be adjusted based on how FlatPickr updates the value
 	});
 });

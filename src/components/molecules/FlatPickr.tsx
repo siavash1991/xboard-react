@@ -23,17 +23,19 @@ const XFlatPickr: React.FC<XFlatPickrProps> = ({
 	const inputRef = useRef<HTMLInputElement | null>(null);
 
 	useEffect(() => {
-		const picker = flatpickr(inputRef.current!, {
-			...options,
-			defaultDate: value ? value.toISOString() : '',
-			onChange: (selectedDates) => {
-				onChange(selectedDates[0] || null);
-			},
-		});
+		if (inputRef.current) {
+			const picker = flatpickr(inputRef.current, {
+				...options,
+				defaultDate: value ? value.toISOString() : '',
+				onChange: (selectedDates) => {
+					onChange(selectedDates[0] || null);
+				},
+			});
 
-		return () => {
-			picker.destroy();
-		};
+			return () => {
+				picker.destroy();
+			};
+		}
 	}, [options, value, onChange]);
 
 	return (
@@ -43,6 +45,7 @@ const XFlatPickr: React.FC<XFlatPickrProps> = ({
 			type="text"
 			placeholder={placeholder}
 			className={`form-input ${className}`}
+			data-testid="flatpickr-input" // Added data-testid for testing
 		/>
 	);
 };

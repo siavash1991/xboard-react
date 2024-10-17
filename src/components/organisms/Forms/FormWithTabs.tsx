@@ -3,7 +3,7 @@ import { Label, Button, TextInput, Select } from 'flowbite-react';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
-import XFlatPickr from '@molecules/FlatPicker';
+import XFlatPickr from '@molecules/FlatPickr';
 import useTheme from '@hooks/useTheme';
 import reactSelectStyles from '@utils/reactSelectStyles';
 import ReactSelect, { MultiValue, ActionMeta } from 'react-select';

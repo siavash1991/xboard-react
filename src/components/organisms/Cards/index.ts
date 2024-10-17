@@ -5,7 +5,7 @@ export { default as XWithCTAButtonCard } from './WithCTAButton';
 export { default as XHorizontalCard } from './Horizontal';
 export { default as XFormCard } from './Form';
 export { default as XWithImageCard } from './Image';
-export { default as XPricingCard } from './Pricing';
+export { default as XPricingCard } from './PricingCard';
 export { default as XActiveProjectCard } from './ActiveProject';
 export { default as XCryptoCard } from './Crypto';
 export { default as XEarningReportsCard } from './EarningReport';

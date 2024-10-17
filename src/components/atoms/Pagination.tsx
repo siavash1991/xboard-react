@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination as FlowbitePagination } from 'flowbite-react';
+import { Pagination } from 'flowbite-react';
 
 interface XPaginationProps {
 	totalItems: number;
@@ -21,8 +21,7 @@ const XPagination: React.FC<XPaginationProps> = ({
 			data-testid="pagination-container"
 			className={`flex  items-center justify-center mt-2 mb-10 ${className}`}
 		>
-			<FlowbitePagination
-				data-testid="flowbite-pagination"
+			<Pagination
 				layout="pagination"
 				currentPage={currentPage}
 				totalPages={Math.ceil(totalItems / itemsPerPage)}

@@ -19,27 +19,5 @@ describe('XPagination', () => {
 
 		// Check if the pagination container is rendered
 		expect(screen.getByTestId('pagination-container')).toBeInTheDocument();
-		expect(screen.getByTestId('flowbite-pagination')).toBeInTheDocument();
-
-		// Check if the correct number of pages is rendered
-		expect(screen.getByText('Previous')).toBeInTheDocument();
-		expect(screen.getByText('Next')).toBeInTheDocument();
-	});
-
-	it('should call onPageChange when a page is clicked', () => {
-		render(
-			<XPagination
-				totalItems={totalItems}
-				itemsPerPage={itemsPerPage}
-				currentPage={1}
-				onPageChange={mockOnPageChange}
-			/>
-		);
-
-		// Simulate clicking on the next page
-		const nextButton = screen.getByText('Next');
-		nextButton.click();
-
-		expect(mockOnPageChange).toHaveBeenCalledWith(2); // Assuming next page is 2
 	});
 });

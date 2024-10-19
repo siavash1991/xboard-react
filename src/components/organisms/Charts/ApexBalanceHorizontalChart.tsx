@@ -36,7 +36,7 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Balance"
@@ -44,7 +44,10 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 				boldSubtitle={true}
 				menuItems={menuItems}
 				arrowIcon={
-					<ChevronDownIcon className="h-5 w-5 text-gray-600" />
+					<ChevronDownIcon
+						className="h-5 w-5 text-gray-600"
+						data-testid="arrow-icon"
+					/>
 				}
 			/>
 			<XComponentBody>
@@ -58,6 +61,7 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 					series={series}
 					type="bar"
 					height={450}
+					data-testid="apex-chart"
 				/>
 			</XComponentBody>
 		</ComponentWrapper>

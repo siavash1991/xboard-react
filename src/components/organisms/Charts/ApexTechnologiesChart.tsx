@@ -63,7 +63,7 @@ const series = [
 	},
 ];
 
-const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
+const XApexTechnologiesChart: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -97,4 +97,4 @@ const XApexTechnologiesCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XApexTechnologiesCard;
+export default XApexTechnologiesChart;

@@ -20,7 +20,7 @@ const categories = [
 	'MON, 23',
 ];
 
-const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
+const XApexBalanceHorizontalChart: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -61,11 +61,10 @@ const XApexBalanceHorizontalCard: React.FC<{ className?: string }> = ({
 					series={series}
 					type="bar"
 					height={450}
-					data-testid="apex-chart"
 				/>
 			</XComponentBody>
 		</ComponentWrapper>
 	);
 };
 
-export default XApexBalanceHorizontalCard;
+export default XApexBalanceHorizontalChart;

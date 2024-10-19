@@ -87,7 +87,7 @@ const menuItems = [
 	},
 ];
 
-const XApexAreaCard: React.FC<{ className?: string }> = ({
+const XApexAreaChart: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -127,4 +127,4 @@ const XApexAreaCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XApexAreaCard;
+export default XApexAreaChart;

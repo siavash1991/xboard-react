@@ -55,7 +55,7 @@ const menuItems = [
 	},
 ];
 
-const XChartJsPolarCard: React.FC<{ className?: string }> = ({
+const XChartJsPolar: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -130,4 +130,4 @@ const XChartJsPolarCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XChartJsPolarCard;
+export default XChartJsPolar;

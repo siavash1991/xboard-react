@@ -23,7 +23,7 @@ interface BubbleChartData {
 	r: number;
 }
 
-interface XChartJsBubbleCardProps {
+interface XChartJsBubbleProps {
 	className?: string;
 }
 
@@ -73,9 +73,7 @@ const bubbleChartData = {
 	] as BubbleChartDataset[],
 };
 
-const XChartJsBubbleCard: React.FC<XChartJsBubbleCardProps> = ({
-	className,
-}) => {
+const XChartJsBubble: React.FC<XChartJsBubbleProps> = ({ className }) => {
 	const currentTheme = useTheme();
 
 	const chartOptions: ChartOptions<'bubble'> = {
@@ -131,4 +129,4 @@ const XChartJsBubbleCard: React.FC<XChartJsBubbleCardProps> = ({
 	);
 };
 
-export default XChartJsBubbleCard;
+export default XChartJsBubble;

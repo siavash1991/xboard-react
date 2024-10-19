@@ -88,9 +88,7 @@ const menuItems = [
 	},
 ];
 
-const XChartJsBarCard: React.FC<{ className?: string }> = ({
-	className = '',
-}) => {
+const XChartJsBar: React.FC<{ className?: string }> = ({ className = '' }) => {
 	// Access theme inside the component
 	const currentTheme = useTheme();
 
@@ -159,4 +157,4 @@ const XChartJsBarCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XChartJsBarCard;
+export default XChartJsBar;

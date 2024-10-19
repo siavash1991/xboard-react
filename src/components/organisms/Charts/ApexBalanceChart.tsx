@@ -21,7 +21,7 @@ const series: ChartSeries[] = [
 	},
 ];
 
-const XApexBalanceCard: React.FC<{ className?: string }> = ({
+const XApexBalanceChart: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -52,4 +52,4 @@ const XApexBalanceCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XApexBalanceCard;
+export default XApexBalanceChart;

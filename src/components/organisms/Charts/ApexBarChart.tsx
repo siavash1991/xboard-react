@@ -31,7 +31,9 @@ const categories = [
 	'15/12',
 ];
 
-const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
+const XApexBarChart: React.FC<{ className?: string }> = ({
+	className = '',
+}) => {
 	const currentTheme = useTheme();
 	const currentDir = useDirection();
 	const menuItems = [
@@ -45,14 +47,17 @@ const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Data Science"
 				subtitle="Commercial networks"
 				menuItems={menuItems}
 				arrowIcon={
-					<ChevronDownIcon className="h-5 w-5 text-gray-600" />
+					<ChevronDownIcon
+						className="h-5 w-5 text-gray-600"
+						data-testid="arrow-icon"
+					/>
 				}
 			/>
 			<XComponentBody>
@@ -73,4 +78,4 @@ const XApexBarCard: React.FC<{ className?: string }> = ({ className = '' }) => {
 	);
 };
 
-export default XApexBarCard;
+export default XApexBarChart;

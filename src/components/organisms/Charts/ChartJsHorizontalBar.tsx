@@ -68,7 +68,7 @@ const menuItems = [
 	},
 ];
 
-const XChartJsHorizontalBarCard: React.FC<{ className?: string }> = ({
+const XChartJsHorizontalBar: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -122,4 +122,4 @@ const XChartJsHorizontalBarCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XChartJsHorizontalBarCard;
+export default XChartJsHorizontalBar;

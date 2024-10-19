@@ -70,7 +70,7 @@ const menuItems = [
 	},
 ];
 
-const XChartJsRadarCard: React.FC<{ className?: string }> = ({
+const XChartJsRadar: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -140,4 +140,4 @@ const XChartJsRadarCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XChartJsRadarCard;
+export default XChartJsRadar;

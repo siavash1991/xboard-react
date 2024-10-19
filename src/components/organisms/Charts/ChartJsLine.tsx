@@ -45,9 +45,7 @@ const chartData = {
 	],
 };
 
-const XChartJsLineCard: React.FC<{ className?: string }> = ({
-	className = '',
-}) => {
+const XChartJsLine: React.FC<{ className?: string }> = ({ className = '' }) => {
 	const currentTheme = useTheme();
 
 	const chartOptions: ChartOptions<'line'> = {
@@ -108,4 +106,4 @@ const XChartJsLineCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XChartJsLineCard;
+export default XChartJsLine;

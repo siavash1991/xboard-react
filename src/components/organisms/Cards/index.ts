@@ -1,4 +1,4 @@
-export { default as XDefaultCard } from './Default';
+export { default as XDefaultCard } from './DefaultCard';
 export { default as XCTACard } from './CTA';
 export { default as XEcommerceCard } from './EcommerceCard';
 export { default as XWithCTAButtonCard } from './WithCTAButton';
@@ -7,7 +7,7 @@ export { default as XFormCard } from './FormCard';
 export { default as XWithImageCard } from './ImageCard';
 export { default as XPricingCard } from './PricingCard';
 export { default as XActiveProjectCard } from './ActiveProject';
-export { default as XCryptoCard } from './Crypto';
+export { default as XCryptoCard } from './CryptoCard';
 export { default as XEarningReportsCard } from './EarningReport';
 export { default as XOrdersByCountriesCard } from './OrdersByCountries';
 export { default as XMonthlyCampaignStateCard } from './MonthlyCampaignState';

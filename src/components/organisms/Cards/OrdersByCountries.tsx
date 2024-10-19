@@ -5,7 +5,7 @@ import {
 	CheckCircleIcon,
 	MapPinIcon,
 } from '@heroicons/react/24/outline';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 
@@ -236,21 +236,22 @@ const XOrdersByCountriesCard: React.FC<{ className?: string }> = ({
 				subtitle="62 deliveries in progress"
 				menuItems={menuItems}
 				menuIcon={<EllipsisVerticalIcon />}
-			></XComponentHeader>
-			<XComponentBody>
+				data-testid="component-header"
+			/>
+			<XComponentBody data-testid="component-body">
 				<Tabs.Group aria-label="Tabs">
-					<Tabs.Item active title="New">
-						<div className="mt-4">{data.new.map(renderOrder)}</div>
+					<Tabs.Item active title="New" data-testid="tab-new">
+						<div className="mt-4" data-testid="new-orders">
+							{data.new.map(renderOrder)}
+						</div>
 					</Tabs.Item>
-
-					<Tabs.Item title="Preparing">
-						<div className="mt-4">
+					<Tabs.Item title="Preparing" data-testid="tab-preparing">
+						<div className="mt-4" data-testid="preparing-orders">
 							{data.preparing.map(renderOrder)}
 						</div>
 					</Tabs.Item>
-
-					<Tabs.Item title="Shipping">
-						<div className="mt-4">
+					<Tabs.Item title="Shipping" data-testid="tab-shipping">
+						<div className="mt-4" data-testid="shipping-orders">
 							{data.shipping.map(renderOrder)}
 						</div>
 					</Tabs.Item>

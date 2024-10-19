@@ -1,6 +1,6 @@
 export { default as XDefaultCard } from './Default';
 export { default as XCTACard } from './CTA';
-export { default as XEcommerceCard } from './Ecommerce';
+export { default as XEcommerceCard } from './EcommerceCard';
 export { default as XWithCTAButtonCard } from './WithCTAButton';
 export { default as XHorizontalCard } from './HorizontalCard';
 export { default as XFormCard } from './FormCard';

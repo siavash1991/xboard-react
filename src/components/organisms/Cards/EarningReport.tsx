@@ -6,11 +6,12 @@ import {
 	CreditCardIcon,
 	ChevronUpIcon,
 } from '@heroicons/react/24/outline';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import ComponentWrapper from '@atoms/ComponentWrapper';
 import ApexCharts from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+
 // Sample data for the chart
 const series: ApexOptions['series'] = [
 	{
@@ -37,7 +38,6 @@ const options: ApexOptions = {
 			enabled: false,
 		},
 	},
-
 	colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0'],
 	plotOptions: {
 		bar: {
@@ -117,12 +117,13 @@ const menuItems = [
 		},
 	},
 ];
+
 const XEarningReportsCard: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	return (
 		<ComponentWrapper
-			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 $className`}
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 ${className}`}
 		>
 			<XComponentHeader
 				title="Earning Reports"
@@ -136,6 +137,7 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 						<li
 							key={item.id}
 							className="flex items-center space-x-4"
+							data-testid={`earning-report-${item.id}`} // Added data-testid for each item
 						>
 							<div
 								className={`badge rounded-lg p-2 ${item.color}`}
@@ -171,6 +173,7 @@ const XEarningReportsCard: React.FC<{ className?: string }> = ({
 					series={series}
 					options={options}
 					height={200}
+					data-testid="apex-chart"
 				/>
 			</XComponentBody>
 		</ComponentWrapper>

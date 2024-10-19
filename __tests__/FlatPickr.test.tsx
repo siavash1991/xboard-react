@@ -16,7 +16,7 @@ describe('XFlatPickr', () => {
 		);
 
 		// Check if the input is rendered
-		expect(screen.getByTestId('flatpickr-input')).toBeInTheDocument();
+		expect(screen.getByTestId('input-text')).toBeInTheDocument();
 	});
 
 	it('calls onChange when a date is selected', () => {
@@ -32,7 +32,7 @@ describe('XFlatPickr', () => {
 		);
 
 		// Ensure the input is rendered
-		const input = screen.getByTestId('flatpickr-input');
+		const input = screen.getByTestId('input-text');
 		expect(input).toBeInTheDocument();
 
 		// Simulate selecting a date (if applicable based on your FlatPickr setup)

@@ -1,13 +1,26 @@
 import React from 'react';
 
-const Button = (props: any) => <button {...props} data-testid="button" />;
-const Card = (props: any) => <div {...props} data-testid="card" />;
-const Pagination = (props: any) => <div {...props} data-testid="pagination" />;
-const TextInput = (props: any) => (
-	<input {...props} data-testid="flatpickr-input" />
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	type?: 'button' | 'submit';
+}
+const Button = ({ type = 'button', ...props }: ButtonProps) => (
+	<button type={type} {...props} data-testid={`button-${type}`} />
 );
 
-export const Tabs = {
+const Card = (props: any) => <div {...props} data-testid="card" />;
+const Pagination = (props: any) => <div {...props} data-testid="pagination" />;
+const Label = (props: any) => <div {...props} data-testid="label" />;
+const Checkbox = (props: any) => <div {...props} data-testid="checkbox" />;
+
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+	type?: React.HTMLInputTypeAttribute;
+}
+
+const TextInput: React.FC<TextInputProps> = ({ type = 'text', ...props }) => (
+	<input type={type} {...props} data-testid={`input-${type}`} />
+);
+
+const Tabs = {
 	Group: ({ children }: { children: React.ReactNode }) => (
 		<div>{children}</div>
 	),
@@ -22,4 +35,4 @@ export const Tabs = {
 
 const useTheme = jest.fn(() => ({})); // Mock useTheme to return an empty object
 
-export { Button, Card, TextInput, Pagination, useTheme };
+export { Button, Card, TextInput, Pagination, Tabs, Label, Checkbox, useTheme };

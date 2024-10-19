@@ -45,7 +45,6 @@ const XFlatPickr: React.FC<XFlatPickrProps> = ({
 			type="text"
 			placeholder={placeholder}
 			className={`form-input ${className}`}
-			data-testid="flatpickr-input" // Added data-testid for testing
 		/>
 	);
 };

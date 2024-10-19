@@ -3,7 +3,7 @@ export { default as XCTACard } from './CTA';
 export { default as XEcommerceCard } from './Ecommerce';
 export { default as XWithCTAButtonCard } from './WithCTAButton';
 export { default as XHorizontalCard } from './HorizontalCard';
-export { default as XFormCard } from './Form';
+export { default as XFormCard } from './FormCard';
 export { default as XWithImageCard } from './ImageCard';
 export { default as XPricingCard } from './PricingCard';
 export { default as XActiveProjectCard } from './ActiveProject';

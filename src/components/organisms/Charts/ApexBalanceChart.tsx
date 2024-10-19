@@ -7,7 +7,7 @@ import { lineChartOptions } from '@shared/ApexChartsConfig';
 import useTheme from '@hooks/useTheme';
 import useDirection from '@hooks/useDirection';
 
-// Define types for series and menu items
+// Define types for series
 interface ChartSeries {
 	name: string;
 	data: number[];
@@ -28,7 +28,7 @@ const XApexBalanceCard: React.FC<{ className?: string }> = ({
 	const currentDir = useDirection();
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Balance"
@@ -45,6 +45,7 @@ const XApexBalanceCard: React.FC<{ className?: string }> = ({
 					series={series}
 					type="line"
 					height={300}
+					data-testid="apex-chart"
 				/>
 			</XComponentBody>
 		</ComponentWrapper>

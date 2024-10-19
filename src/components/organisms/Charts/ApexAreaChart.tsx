@@ -100,7 +100,12 @@ const XApexAreaCard: React.FC<{ className?: string }> = ({
 				title="Last updates"
 				subtitle="Commercial networks"
 				menuItems={menuItems}
-				arrowIcon={<ChevronDownIcon className="h-5 w-5" />}
+				arrowIcon={
+					<ChevronDownIcon
+						className="h-5 w-5"
+						data-testid="arrow-icon"
+					/>
+				}
 			></XComponentHeader>
 
 			<XComponentBody className="p-5">
@@ -115,6 +120,7 @@ const XApexAreaCard: React.FC<{ className?: string }> = ({
 					)}
 					width="100%"
 					className="chartjs"
+					data-testid="apex-charts"
 				/>
 			</XComponentBody>
 		</ComponentWrapper>

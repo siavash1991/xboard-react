@@ -33,6 +33,39 @@ const Tabs = {
 	}) => <div data-testid={`tab-${title.toLowerCase()}`}>{children}</div>,
 };
 
+const Breadcrumb = ({
+	children,
+	className,
+}: {
+	children: React.ReactNode;
+	className?: string;
+}) => (
+	<nav aria-label="breadcrumb" className={className}>
+		{children}
+	</nav>
+);
+Breadcrumb.Item = ({
+	href,
+	children,
+}: {
+	href?: string;
+	children: React.ReactNode;
+}) => (
+	<a href={href} data-testid={`breadcrumb-item-${href || 'no-href'}`}>
+		{children}
+	</a>
+);
+
 const useTheme = jest.fn(() => ({})); // Mock useTheme to return an empty object
 
-export { Button, Card, TextInput, Pagination, Tabs, Label, Checkbox, useTheme };
+export {
+	Button,
+	Card,
+	TextInput,
+	Pagination,
+	Tabs,
+	Label,
+	Checkbox,
+	Breadcrumb,
+	useTheme,
+};

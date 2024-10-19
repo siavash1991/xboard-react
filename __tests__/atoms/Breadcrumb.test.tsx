@@ -29,7 +29,7 @@ describe('XBreadcrumb', () => {
 
 	it('renders the breadcrumb with additional className', () => {
 		render(<XBreadcrumb items={items} className="extra-class" />);
-		const breadcrumbContainer = screen.getByRole('navigation');
+		const breadcrumbContainer = screen.getByRole('navigation'); // This should target the <nav> element
 		expect(breadcrumbContainer).toHaveClass('extra-class');
 	});
 });

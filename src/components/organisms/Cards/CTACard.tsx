@@ -1,17 +1,25 @@
 import React from 'react';
 import { Card } from 'flowbite-react';
-import ComponentWrapper from 'components/atoms/ComponentWrapper';
+import ComponentWrapper from '@atoms/ComponentWrapper';
+
 interface XCTACardProps {
 	className?: string;
 }
+
 const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 	return (
-		<ComponentWrapper className={`break-inside-avoid $className`}>
+		<ComponentWrapper className={`break-inside-avoid ${className}`}>
 			<Card href="#" className={className}>
-				<h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white semi-dark:text-gray-200">
+				<h5
+					className="mb-2 text-3xl font-bold text-gray-900 dark:text-white semi-dark:text-gray-200"
+					data-testid="xcta-card-title"
+				>
 					Work fast from anywhere
 				</h5>
-				<p className="mb-5 text-base text-gray-500 dark:text-gray-400 semi-dark:text-gray-300 sm:text-lg">
+				<p
+					className="mb-5 text-base text-gray-500 dark:text-gray-400 semi-dark:text-gray-300 sm:text-lg"
+					data-testid="xcta-card-description"
+				>
 					Stay up to date and move work forward with Flowbite on iOS &
 					Android. Download the app today.
 				</p>
@@ -19,6 +27,7 @@ const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 					<a
 						href="/"
 						className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto"
+						data-testid="xcta-card-apple-link"
 					>
 						<svg
 							className="mr-3 h-7 w-7"
@@ -45,6 +54,7 @@ const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 					<a
 						href="/"
 						className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto"
+						data-testid="xcta-card-google-play-link"
 					>
 						<svg
 							className="mr-3 h-7 w-7"
@@ -73,4 +83,5 @@ const XCTACard: React.FC<XCTACardProps> = ({ className = '' }) => {
 		</ComponentWrapper>
 	);
 };
+
 export default XCTACard;

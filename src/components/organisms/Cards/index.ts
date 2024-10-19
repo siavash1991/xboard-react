@@ -1,5 +1,5 @@
 export { default as XDefaultCard } from './DefaultCard';
-export { default as XCTACard } from './CTA';
+export { default as XCTACard } from './CTACard';
 export { default as XEcommerceCard } from './EcommerceCard';
 export { default as XWithCTAButtonCard } from './WithCTAButton';
 export { default as XHorizontalCard } from './HorizontalCard';

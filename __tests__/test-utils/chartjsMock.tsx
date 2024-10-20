@@ -29,4 +29,6 @@ export {
 	ChartJS as Line,
 	ChartJS as Pie,
 	ChartJS as Bubble,
+	ChartJS as PolarArea,
+	ChartJS as Radar,
 }; // Add other chart types as needed

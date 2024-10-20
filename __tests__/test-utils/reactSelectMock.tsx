@@ -10,6 +10,7 @@ const ReactSelectMock = (props: any) => {
 	return (
 		<select
 			data-testid="react-select"
+			id={props.id} // Add id prop to the select element
 			value={props.value}
 			onChange={(e) => handleChange(e.target.value)}
 		>

@@ -22,7 +22,7 @@ const languageOptions: OptionType[] = [
 	{ value: 'english', label: 'English' },
 	{ value: 'spanish', label: 'Spanish' },
 	{ value: 'french', label: 'French' },
-	{ value: 'german', label: 'German' }, // Add more language options as needed
+	{ value: 'german', label: 'German' },
 ];
 
 const XMultiColWithSep: React.FC<XMultiColWithSepProps> = ({

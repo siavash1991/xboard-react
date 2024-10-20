@@ -20,6 +20,15 @@ const TextInput: React.FC<TextInputProps> = ({ type = 'text', ...props }) => (
 	<input type={type} {...props} data-testid={`input-${type}`} />
 );
 
+interface TextareaProps
+	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+	rows?: number;
+}
+
+const Textarea: React.FC<TextareaProps> = ({ rows = 3, ...props }) => (
+	<textarea rows={rows} {...props} data-testid="textarea" />
+);
+
 interface LabelProps {
 	value: string;
 	htmlFor?: string; // Optional, if you want to support the htmlFor attribute
@@ -61,7 +70,7 @@ Breadcrumb.Item = ({
 	href?: string;
 	children: React.ReactNode;
 }) => (
-	<a href={href} data-testid={`breadcrumb-item-${href || 'no-href'}`}>
+	<a href={href} data-testid={`breadcrumb-item-${href ?? 'no-href'}`}>
 		{children}
 	</a>
 );
@@ -72,6 +81,7 @@ export {
 	Button,
 	Card,
 	TextInput,
+	Textarea,
 	Pagination,
 	Tabs,
 	Label,

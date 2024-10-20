@@ -82,7 +82,10 @@ const XApexTechnologiesChart: React.FC<{ className?: string }> = ({
 				title="New Technologies Data"
 				menuItems={menuItems}
 				arrowIcon={
-					<ChevronDownIcon className="h-5 w-5 text-gray-600" />
+					<ChevronDownIcon
+						className="h-5 w-5 text-gray-600"
+						data-testid="arrow-icon"
+					/>
 				}
 			/>
 			<XComponentBody>

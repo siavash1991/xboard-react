@@ -33,6 +33,7 @@ module.exports = {
 
 		'^chart.js$': '<rootDir>/__tests__/test-utils/chartjsMock.tsx',
 		'^react-chartjs-2$': '<rootDir>/__tests__/test-utils/chartjsMock.tsx',
+		'^react-select$': '<rootDir>/__tests__/test-utils/reactSelectMock.tsx',
 		'^.+\\.(css|less|scss|sass)$':
 			'<rootDir>/__tests__/test-utils/styleMock',
 	},

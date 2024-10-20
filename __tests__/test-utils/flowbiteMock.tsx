@@ -39,6 +39,25 @@ const Label: React.FC<LabelProps> = ({ value, ...props }) => (
 		{value}
 	</label>
 );
+
+interface SelectOption {
+	value: string;
+	label: string;
+}
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+	options: SelectOption[];
+}
+
+const Select: React.FC<SelectProps> = ({ options = [], ...props }) => (
+	<select {...props} data-testid="select">
+		{options.map((option) => (
+			<option key={option.value} value={option.value}>
+				{option.label}
+			</option>
+		))}
+	</select>
+);
+
 const Tabs = {
 	Group: ({ children }: { children: React.ReactNode }) => (
 		<div>{children}</div>
@@ -85,6 +104,7 @@ export {
 	Pagination,
 	Tabs,
 	Label,
+	Select,
 	Checkbox,
 	Breadcrumb,
 	useTheme,

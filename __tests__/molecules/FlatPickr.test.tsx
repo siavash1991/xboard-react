@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import XFlatPickr from '@molecules/FlatPickr'; // Adjusted import
+import XFlatPickr from '@molecules/FlatPickr';
 
 describe('XFlatPickr', () => {
 	it('renders the flatpickr input', () => {
@@ -34,8 +34,5 @@ describe('XFlatPickr', () => {
 		// Ensure the input is rendered
 		const input = screen.getByTestId('input-text');
 		expect(input).toBeInTheDocument();
-
-		// Simulate selecting a date (if applicable based on your FlatPickr setup)
-		// Example: input.value = '2024-10-17'; // This will need to be adjusted based on how FlatPickr updates the value
 	});
 });

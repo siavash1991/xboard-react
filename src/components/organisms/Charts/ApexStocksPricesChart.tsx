@@ -68,7 +68,7 @@ const series = [
 	},
 ];
 
-const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
+const XApexStocksPricesChart: React.FC<{ className?: string }> = ({
 	className = '',
 }) => {
 	const currentTheme = useTheme();
@@ -85,7 +85,7 @@ const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Stocks Prices"
@@ -93,7 +93,10 @@ const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 				boldSubtitle={true}
 				menuItems={menuItems}
 				arrowIcon={
-					<ChevronDownIcon className="h-5 w-5 text-gray-600" />
+					<ChevronDownIcon
+						className="h-5 w-5 text-gray-600"
+						data-testid="arrow-icon"
+					/>
 				}
 			/>
 			<XComponentBody>
@@ -108,4 +111,4 @@ const XApexStocksPricesCard: React.FC<{ className?: string }> = ({
 	);
 };
 
-export default XApexStocksPricesCard;
+export default XApexStocksPricesChart;

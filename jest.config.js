@@ -30,6 +30,9 @@ module.exports = {
 		'^flowbite-react$': '<rootDir>/__tests__/test-utils/flowbiteMock.tsx',
 		'^react-apexcharts$':
 			'<rootDir>/__tests__/test-utils/apexchartsMock.tsx',
+
+		'^chart.js$': '<rootDir>/__tests__/test-utils/chartjsMock.tsx',
+		'^react-chartjs-2$': '<rootDir>/__tests__/test-utils/chartjsMock.tsx',
 		'^.+\\.(css|less|scss|sass)$':
 			'<rootDir>/__tests__/test-utils/styleMock',
 	},

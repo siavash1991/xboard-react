@@ -9,7 +9,7 @@ const Button = ({ type = 'button', ...props }: ButtonProps) => (
 
 const Card = (props: any) => <div {...props} data-testid="card" />;
 const Pagination = (props: any) => <div {...props} data-testid="pagination" />;
-const Label = (props: any) => <div {...props} data-testid="label" />;
+
 const Checkbox = (props: any) => <div {...props} data-testid="checkbox" />;
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -20,6 +20,16 @@ const TextInput: React.FC<TextInputProps> = ({ type = 'text', ...props }) => (
 	<input type={type} {...props} data-testid={`input-${type}`} />
 );
 
+interface LabelProps {
+	value: string;
+	htmlFor?: string; // Optional, if you want to support the htmlFor attribute
+}
+
+const Label: React.FC<LabelProps> = ({ value, ...props }) => (
+	<label {...props} data-testid="label">
+		{value}
+	</label>
+);
 const Tabs = {
 	Group: ({ children }: { children: React.ReactNode }) => (
 		<div>{children}</div>

@@ -23,4 +23,10 @@ const Chart = {
 	unregister,
 };
 
-export { Chart, ChartJS as Bar, ChartJS as Line, ChartJS as Pie }; // Add other chart types as needed
+export {
+	Chart,
+	ChartJS as Bar,
+	ChartJS as Line,
+	ChartJS as Pie,
+	ChartJS as Bubble,
+}; // Add other chart types as needed

@@ -5,9 +5,6 @@ import 'tippy.js/dist/tippy.css'; // For default Tippy styles
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
-import avatar5 from '@assets/images/avatars/5.png';
-import avatar6 from '@assets/images/avatars/6.png';
-import avatar7 from '@assets/images/avatars/7.png';
 import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 
 interface User {
@@ -27,60 +24,15 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XBasicTableProps {
+interface XHeaderFooterTableProps {
 	className?: string;
+	tableData: Project[];
 }
 
-const users: User[] = [
-	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
-	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
-	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
-];
-
-const tableData: Project[] = [
-	{
-		id: '1',
-		project: 'Laravel Project',
-		logo: 'images/cards/active-project/laravel-logo.png',
-		client: 'Olivia Parker',
-		users: [users[0], users[1], users[2]],
-		status: 'Pending',
-		statusColor: 'bg-blue-100',
-		statusTextColor: 'text-blue-500',
-	},
-	{
-		id: '2',
-		project: 'VueJs Project',
-		logo: 'images/cards/active-project/vue-logo.png',
-		client: 'Liam Carter',
-		users: [users[0], users[1], users[2]],
-		status: 'Scheduled',
-		statusColor: 'bg-yellow-100',
-		statusTextColor: 'text-yellow-500',
-	},
-	{
-		id: '3',
-		project: 'Figma Design',
-		logo: 'images/cards/active-project/figma-logo.png',
-		client: 'Sophia Walker',
-		users: [users[0], users[1], users[2]],
-		status: 'Active',
-		statusColor: 'bg-green-100',
-		statusTextColor: 'text-green-500',
-	},
-	{
-		id: '4',
-		project: 'React Project',
-		logo: 'images/cards/active-project/react-logo.png',
-		client: 'Noah Brooks',
-		users: [users[0], users[1], users[2]],
-		status: 'Pending',
-		statusColor: 'bg-blue-100',
-		statusTextColor: 'text-blue-500',
-	},
-];
-
-const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
+const XHeaderFooterTable: React.FC<XHeaderFooterTableProps> = ({
+	className = '',
+	tableData,
+}) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};
@@ -96,7 +48,7 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Table Header and Footer"
@@ -150,7 +102,7 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 								</Table.Cell>
 								<Table.Cell>
 									<span
-										className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1 `}
+										className={`${item.statusColor} ${item.statusTextColor} rounded-md px-3 py-1`}
 									>
 										{item.status}
 									</span>
@@ -164,10 +116,7 @@ const XHeaderFooterTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
 						))}
 					</Table.Body>
 					{/* Manually adding the Table Footer */}
-					<tfoot
-						className="border-t dark:border-gray-600 
- 						text-gray-700 dark:text-gray-200 semi-dark:text-gray-300 bg-gray-50 dark:bg-gray-700 semi-dark:bg-gray-600"
-					>
+					<tfoot className="border-t dark:border-gray-600 text-gray-700 dark:text-gray-200 semi-dark:text-gray-300 bg-gray-50 dark:bg-gray-700 semi-dark:bg-gray-600">
 						<tr>
 							<th className="py-4 px-10 rounded-b-lg">Project</th>
 							<th className="px-6">Client</th>

@@ -15,6 +15,7 @@ import FigmaImg from '@assets/images/cards/active-project/figma-logo.png';
 import vueImg from '@assets/images/cards/active-project/vue-logo.png';
 import reactImg from '@assets/images/cards/active-project/react-logo.png';
 
+// Interfaces
 interface User {
 	id: string;
 	fullName: string;
@@ -34,15 +35,18 @@ interface Project {
 
 interface XTableBasicProps {
 	className?: string;
+	tableData: Project[]; // Accept tableData as a prop
 }
 
+// Sample user data
 const users: User[] = [
 	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
 	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
 	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
 ];
 
-const tableData: Project[] = [
+// Sample table data - can be removed if only using props
+const defaultTableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
@@ -85,23 +89,28 @@ const tableData: Project[] = [
 	},
 ];
 
-const XTableBasic: React.FC<XTableBasicProps> = ({ className = '' }) => {
-	const handleEdit = () => {
-		alert('Edit action');
+// Component Definition
+const XTableBasic: React.FC<XTableBasicProps> = ({
+	className = '',
+	tableData = defaultTableData,
+}) => {
+	// Handlers for actions
+	const handleEdit = (projectId: string) => {
+		alert(`Edit action for project ID: ${projectId}`);
 	};
 
-	const handleDelete = () => {
-		alert('Delete action');
+	const handleDelete = (projectId: string) => {
+		alert(`Delete action for project ID: ${projectId}`);
 	};
 
 	const menuItems = [
-		{ id: 'edit', label: 'Edit', onClick: handleEdit },
-		{ id: 'delete', label: 'Delete', onClick: handleDelete },
+		{ id: 'edit', label: 'Edit', onClick: () => handleEdit('') }, // placeholder, can be updated in XTableRowDropdownMenu
+		{ id: 'delete', label: 'Delete', onClick: () => handleDelete('') }, // placeholder, can be updated in XTableRowDropdownMenu
 	];
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Table Basic"
@@ -162,7 +171,20 @@ const XTableBasic: React.FC<XTableBasicProps> = ({ className = '' }) => {
 								</Table.Cell>
 								<Table.Cell>
 									<XTableRowDropdownMenu
-										menuItems={menuItems}
+										menuItems={menuItems.map(
+											(menuItem) => ({
+												...menuItem,
+												onClick: () => {
+													if (
+														menuItem.id === 'edit'
+													) {
+														handleEdit(item.id);
+													} else {
+														handleDelete(item.id);
+													}
+												},
+											})
+										)}
 									/>
 								</Table.Cell>
 							</Table.Row>

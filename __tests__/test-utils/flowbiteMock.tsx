@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	type?: 'button' | 'submit';
@@ -94,6 +94,46 @@ Breadcrumb.Item = ({
 	</a>
 );
 
+const Table: React.FC<{ children: ReactNode }> & {
+	Head: React.FC<{ children: ReactNode }>;
+	HeadCell: React.FC<{ children: ReactNode; className?: string }>;
+	Body: React.FC<{ children: ReactNode }>;
+	Row: React.FC<{ children: ReactNode }>;
+	Cell: React.FC<{ children: ReactNode }>;
+} = ({ children, ...props }) => (
+	<table {...props} data-testid="project-table">
+		{children}
+	</table>
+);
+
+Table.Head = ({ children }: { children: ReactNode }) => (
+	<thead data-testid="table-head">{children}</thead>
+);
+
+Table.HeadCell = ({
+	children,
+	className,
+}: {
+	children: ReactNode;
+	className?: string;
+}) => (
+	<th className={className} data-testid="table-head-cell">
+		{children}
+	</th>
+);
+
+Table.Body = ({ children }: { children: ReactNode }) => (
+	<tbody data-testid="table-body">{children}</tbody>
+);
+
+Table.Row = ({ children }: { children: ReactNode }) => (
+	<tr data-testid="table-row">{children}</tr>
+);
+
+Table.Cell = ({ children }: { children: ReactNode }) => (
+	<td data-testid="table-cell">{children}</td>
+);
+
 const useTheme = jest.fn(() => ({})); // Mock useTheme to return an empty object
 
 export {
@@ -107,5 +147,6 @@ export {
 	Select,
 	Checkbox,
 	Breadcrumb,
+	Table,
 	useTheme,
 };

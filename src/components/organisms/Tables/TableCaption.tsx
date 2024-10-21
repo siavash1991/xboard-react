@@ -5,11 +5,17 @@ import 'tippy.js/dist/tippy.css'; // For default Tippy styles
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
+
 import avatar5 from '@assets/images/avatars/5.png';
 import avatar6 from '@assets/images/avatars/6.png';
 import avatar7 from '@assets/images/avatars/7.png';
-import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
+import LaravelImg from '@assets/images/cards/active-project/laravel-logo.png';
+import FigmaImg from '@assets/images/cards/active-project/figma-logo.png';
+import vueImg from '@assets/images/cards/active-project/vue-logo.png';
+import reactImg from '@assets/images/cards/active-project/react-logo.png';
 
+// Interfaces
 interface User {
 	id: string;
 	fullName: string;
@@ -29,19 +35,22 @@ interface Project {
 
 interface XCaptionTableProps {
 	className?: string;
+	tableData?: Project[]; // Accept tableData as a prop
 }
 
+// Sample user data
 const users: User[] = [
 	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
 	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
 	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
 ];
 
-const tableData: Project[] = [
+// Sample table data
+const defaultTableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
-		logo: 'images/cards/active-project/laravel-logo.png',
+		logo: LaravelImg,
 		client: 'Olivia Parker',
 		users: [users[0], users[1], users[2]],
 		status: 'Pending',
@@ -51,7 +60,7 @@ const tableData: Project[] = [
 	{
 		id: '2',
 		project: 'VueJs Project',
-		logo: 'images/cards/active-project/vue-logo.png',
+		logo: vueImg,
 		client: 'Liam Carter',
 		users: [users[0], users[1], users[2]],
 		status: 'Scheduled',
@@ -61,7 +70,7 @@ const tableData: Project[] = [
 	{
 		id: '3',
 		project: 'Figma Design',
-		logo: 'images/cards/active-project/figma-logo.png',
+		logo: FigmaImg,
 		client: 'Sophia Walker',
 		users: [users[0], users[1], users[2]],
 		status: 'Active',
@@ -71,7 +80,7 @@ const tableData: Project[] = [
 	{
 		id: '4',
 		project: 'React Project',
-		logo: 'images/cards/active-project/react-logo.png',
+		logo: reactImg,
 		client: 'Noah Brooks',
 		users: [users[0], users[1], users[2]],
 		status: 'Pending',
@@ -80,23 +89,27 @@ const tableData: Project[] = [
 	},
 ];
 
-const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
-	const handleEdit = () => {
-		alert('Edit action');
+const XCaptionTable: React.FC<XCaptionTableProps> = ({
+	className = '',
+	tableData = defaultTableData,
+}) => {
+	// Handlers for actions
+	const handleEdit = (projectId: string) => {
+		alert(`Edit action for project ID: ${projectId}`);
 	};
 
-	const handleDelete = () => {
-		alert('Delete action');
+	const handleDelete = (projectId: string) => {
+		alert(`Delete action for project ID: ${projectId}`);
 	};
 
 	const menuItems = [
-		{ id: 'edit', label: 'Edit', onClick: handleEdit },
-		{ id: 'delete', label: 'Delete', onClick: handleDelete },
+		{ id: 'edit', label: 'Edit', onClick: () => handleEdit('') }, // placeholder, updated per row in XTableRowDropdownMenu
+		{ id: 'delete', label: 'Delete', onClick: () => handleDelete('') }, // placeholder, updated per row in XTableRowDropdownMenu
 	];
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Table Caption"
@@ -125,7 +138,7 @@ const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
 										alt={`${item.project}-logo`}
 										className="w-5 mx-4 float-left"
 									/>
-									<span className="leading-2 font-semibold">
+									<span className="leading-2 font-semibold pe-4">
 										{item.project}
 									</span>
 								</Table.Cell>
@@ -157,7 +170,20 @@ const XCaptionTable: React.FC<XCaptionTableProps> = ({ className = '' }) => {
 								</Table.Cell>
 								<Table.Cell>
 									<XTableRowDropdownMenu
-										menuItems={menuItems}
+										menuItems={menuItems.map(
+											(menuItem) => ({
+												...menuItem,
+												onClick: () => {
+													if (
+														menuItem.id === 'edit'
+													) {
+														handleEdit(item.id);
+													} else {
+														handleDelete(item.id);
+													}
+												},
+											})
+										)}
 									/>
 								</Table.Cell>
 							</Table.Row>

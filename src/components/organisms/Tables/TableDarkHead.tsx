@@ -27,17 +27,21 @@ interface Project {
 	statusTextColor: string;
 }
 
-interface XBasicTableProps {
+interface XDarkHeadTableProps {
 	className?: string;
+	tableData?: Project[]; // Accepting tableData as a prop, with optional default
+	title?: string; // Optional title for the table
 }
 
+// Default users data
 const users: User[] = [
 	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
 	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
 	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
 ];
 
-const tableData: Project[] = [
+// Default table data
+const defaultTableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
@@ -80,31 +84,36 @@ const tableData: Project[] = [
 	},
 ];
 
-const XDarkHeadTable: React.FC<XBasicTableProps> = ({ className = '' }) => {
-	const handleEdit = () => {
-		alert('Edit action');
-	};
+// Functions for handling actions
+const handleEdit = () => {
+	alert('Edit action');
+};
 
-	const handleDelete = () => {
-		alert('Delete action');
-	};
+const handleDelete = () => {
+	alert('Delete action');
+};
 
-	const menuItems = [
-		{ id: 'edit', label: 'Edit', onClick: handleEdit },
-		{ id: 'delete', label: 'Delete', onClick: handleDelete },
-	];
+const menuItems = [
+	{ id: 'edit', label: 'Edit', onClick: handleEdit },
+	{ id: 'delete', label: 'Delete', onClick: handleDelete },
+];
 
+const XDarkHeadTable: React.FC<XDarkHeadTableProps> = ({
+	className = '',
+	tableData = defaultTableData,
+	title = 'Dark Table head',
+}) => {
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
-				title="Dark Table head"
+				title={title}
 				className="border-b dark:border-gray-600 semi-dark:border-gray-500"
 			/>
 			<XComponentBody className="text-nowrap !p-0">
 				<Table>
-					<Table.Head className="bg-gray-800 dark:bg-white semi-dark:bg-gray-50  text-white dark:text-gray-700 semi-dark:text-gray-600">
+					<Table.Head className="bg-gray-800 dark:bg-white semi-dark:bg-gray-50 text-white dark:text-gray-700 semi-dark:text-gray-600">
 						<Table.HeadCell className="bg-inherit dark:bg-inherit semi-dark:bg-inherit px-10 py-4">
 							Project
 						</Table.HeadCell>

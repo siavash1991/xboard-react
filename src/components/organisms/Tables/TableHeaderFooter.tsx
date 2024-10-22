@@ -5,6 +5,9 @@ import 'tippy.js/dist/tippy.css'; // For default Tippy styles
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
+import avatar5 from '@assets/images/avatars/5.png';
+import avatar6 from '@assets/images/avatars/6.png';
+import avatar7 from '@assets/images/avatars/7.png';
 import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 
 interface User {
@@ -26,26 +29,79 @@ interface Project {
 
 interface XHeaderFooterTableProps {
 	className?: string;
-	tableData: Project[];
+	tableData?: Project[]; // Making tableData optional, with default
 }
+
+// Default users
+const users: User[] = [
+	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
+	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
+	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
+];
+
+// Default table data
+const defaultTableData: Project[] = [
+	{
+		id: '1',
+		project: 'Laravel Project',
+		logo: 'images/cards/active-project/laravel-logo.png',
+		client: 'Olivia Parker',
+		users: [users[0], users[1], users[2]],
+		status: 'Pending',
+		statusColor: 'bg-blue-100',
+		statusTextColor: 'text-blue-500',
+	},
+	{
+		id: '2',
+		project: 'VueJs Project',
+		logo: 'images/cards/active-project/vue-logo.png',
+		client: 'Liam Carter',
+		users: [users[0], users[1], users[2]],
+		status: 'Scheduled',
+		statusColor: 'bg-yellow-100',
+		statusTextColor: 'text-yellow-500',
+	},
+	{
+		id: '3',
+		project: 'Figma Design',
+		logo: 'images/cards/active-project/figma-logo.png',
+		client: 'Sophia Walker',
+		users: [users[0], users[1], users[2]],
+		status: 'Active',
+		statusColor: 'bg-green-100',
+		statusTextColor: 'text-green-500',
+	},
+	{
+		id: '4',
+		project: 'React Project',
+		logo: 'images/cards/active-project/react-logo.png',
+		client: 'Noah Brooks',
+		users: [users[0], users[1], users[2]],
+		status: 'Pending',
+		statusColor: 'bg-blue-100',
+		statusTextColor: 'text-blue-500',
+	},
+];
+
+// Action handlers
+const handleEdit = () => {
+	alert('Edit action');
+};
+
+const handleDelete = () => {
+	alert('Delete action');
+};
+
+// Menu items for each row
+const menuItems = [
+	{ id: 'edit', label: 'Edit', onClick: handleEdit },
+	{ id: 'delete', label: 'Delete', onClick: handleDelete },
+];
 
 const XHeaderFooterTable: React.FC<XHeaderFooterTableProps> = ({
 	className = '',
-	tableData,
+	tableData = defaultTableData, // Assigning default table data
 }) => {
-	const handleEdit = () => {
-		alert('Edit action');
-	};
-
-	const handleDelete = () => {
-		alert('Delete action');
-	};
-
-	const menuItems = [
-		{ id: 'edit', label: 'Edit', onClick: handleEdit },
-		{ id: 'delete', label: 'Delete', onClick: handleDelete },
-	];
-
 	return (
 		<ComponentWrapper
 			className={`col-span-12 break-inside-avoid ${className}`}

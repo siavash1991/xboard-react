@@ -2,13 +2,13 @@ import React from 'react';
 import { Table } from 'flowbite-react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // For default Tippy styles
+import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import avatar5 from '@assets/images/avatars/5.png';
 import avatar6 from '@assets/images/avatars/6.png';
 import avatar7 from '@assets/images/avatars/7.png';
-import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 
 interface User {
 	id: string;

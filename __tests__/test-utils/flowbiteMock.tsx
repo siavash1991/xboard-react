@@ -8,6 +8,54 @@ const Button = ({ type = 'button', ...props }: ButtonProps) => (
 );
 
 const Card = (props: any) => <div {...props} data-testid="card" />;
+
+const Sidebar: React.FC<{ children: ReactNode }> & {
+	Logo: React.FC<{ src: string; alt: string }>;
+	Item: React.FC<{ children: ReactNode }>;
+	ItemGroup: React.FC<{ children: ReactNode }>;
+	Items: React.FC<{ children: ReactNode }>;
+	CTA: React.FC<{ children: ReactNode }>;
+	Collapse: React.FC<{ isOpen: boolean; children: ReactNode }>;
+} = ({ children, ...props }) => (
+	<aside {...props} data-testid="sidebar">
+		{children}
+	</aside>
+);
+
+Sidebar.Logo = ({ src, alt }: { src: string; alt: string }) => (
+	<img src={src} alt={alt} data-testid="sidebar-logo" />
+);
+
+Sidebar.Item = ({ children }: { children: ReactNode }) => (
+	<div data-testid="sidebar-item">{children}</div>
+);
+
+Sidebar.ItemGroup = ({ children }: { children: ReactNode }) => (
+	<div data-testid="sidebar-item-group">{children}</div>
+);
+
+Sidebar.Items = ({ children }: { children: ReactNode }) => (
+	<div data-testid="sidebar-items">{children}</div>
+);
+
+Sidebar.CTA = ({ children }: { children: ReactNode }) => (
+	<div data-testid="sidebar-cta">{children}</div>
+);
+Sidebar.Collapse = ({
+	isOpen,
+	children,
+}: {
+	isOpen: boolean;
+	children: ReactNode;
+}) => (
+	<div
+		data-testid="sidebar-collapse"
+		style={{ display: isOpen ? 'block' : 'none' }}
+	>
+		{children}
+	</div>
+);
+const Badge = (props: any) => <div {...props} data-testid="Badge" />;
 const Pagination = (props: any) => <div {...props} data-testid="pagination" />;
 
 const Checkbox = (props: any) => <div {...props} data-testid="checkbox" />;
@@ -137,6 +185,8 @@ Table.Cell = ({ children }: { children: ReactNode }) => (
 const useTheme = jest.fn(() => ({})); // Mock useTheme to return an empty object
 
 export {
+	Sidebar,
+	Badge,
 	Button,
 	Card,
 	TextInput,

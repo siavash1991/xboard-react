@@ -1,11 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import XHeader from '@organisms/Header';
-import XSearch from '@atoms/Search';
-import XDirToggle from '@atoms/DirToggle';
-import XThemeToggle from '@atoms/ThemeToggle';
-import XSidebarToggle from '@atoms/SidebarToggle';
-import UserAvatarInfo from '@molecules/UserAvatarInfo';
 
 // Mock the child components
 jest.mock('@atoms/Search', () => () => <div data-testid="x-search" />);

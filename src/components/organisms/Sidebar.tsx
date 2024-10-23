@@ -3,7 +3,7 @@ import Logo from '@assets/images/logo.svg';
 import useActiveItem from '@hooks/useActiveItem';
 import { withBasePath } from '@shared/basePathHelper';
 import { useDispatch } from 'react-redux'; // Import useDispatch
-import { toggleSidebar } from '../../redux/sidebarSlice'; // Import toggleSidebar action
+import { toggleSidebar } from '@redux/sidebarSlice'; // Import toggleSidebar action
 import {
 	ArrowLeftIcon,
 	ArrowRightIcon,

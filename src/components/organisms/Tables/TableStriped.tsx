@@ -34,21 +34,22 @@ interface Project {
 
 interface XTableStripedProps {
 	className?: string;
+	tableData?: Project[]; // Allow overriding table data
 }
 
-const users: User[] = [
+const defaultUsers: User[] = [
 	{ id: '1', fullName: 'John Doe', avatarUrl: avatar5 },
 	{ id: '2', fullName: 'Jane Smith', avatarUrl: avatar6 },
 	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
 ];
 
-const tableData: Project[] = [
+const defaultTableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
 		logo: LaravelImg,
 		client: 'Olivia Parker',
-		users: [users[0], users[1], users[2]],
+		users: [defaultUsers[0], defaultUsers[1], defaultUsers[2]],
 		status: 'Pending',
 		statusColor: 'bg-blue-100',
 		statusTextColor: 'text-blue-500',
@@ -58,7 +59,7 @@ const tableData: Project[] = [
 		project: 'VueJs Project',
 		logo: vueImg,
 		client: 'Liam Carter',
-		users: [users[0], users[1], users[2]],
+		users: [defaultUsers[0], defaultUsers[1], defaultUsers[2]],
 		status: 'Scheduled',
 		statusColor: 'bg-yellow-100',
 		statusTextColor: 'text-yellow-500',
@@ -68,7 +69,7 @@ const tableData: Project[] = [
 		project: 'Figma Design',
 		logo: FigmaImg,
 		client: 'Sophia Walker',
-		users: [users[0], users[1], users[2]],
+		users: [defaultUsers[0], defaultUsers[1], defaultUsers[2]],
 		status: 'Active',
 		statusColor: 'bg-green-100',
 		statusTextColor: 'text-green-500',
@@ -78,14 +79,17 @@ const tableData: Project[] = [
 		project: 'React Project',
 		logo: reactImg,
 		client: 'Noah Brooks',
-		users: [users[0], users[1], users[2]],
+		users: [defaultUsers[0], defaultUsers[1], defaultUsers[2]],
 		status: 'Pending',
 		statusColor: 'bg-blue-100',
 		statusTextColor: 'text-blue-500',
 	},
 ];
 
-const XTableStriped: React.FC<XTableStripedProps> = ({ className = '' }) => {
+const XTableStriped: React.FC<XTableStripedProps> = ({
+	className = '',
+	tableData = defaultTableData,
+}) => {
 	const handleEdit = () => {
 		alert('Edit action');
 	};

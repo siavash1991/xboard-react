@@ -2,13 +2,13 @@ import React from 'react';
 import { Table } from 'flowbite-react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // For default Tippy styles
+import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
 import avatar5 from '@assets/images/avatars/5.png';
 import avatar6 from '@assets/images/avatars/6.png';
 import avatar7 from '@assets/images/avatars/7.png';
-import XTableRowDropdownMenu from '@atoms/TableRowDropdownMenu';
 
 interface User {
 	id: string;
@@ -29,6 +29,7 @@ interface Project {
 
 interface XTableResponsiveProps {
 	className?: string;
+	tableData?: Project[]; // Added tableData as a prop
 }
 
 const users: User[] = [
@@ -37,7 +38,7 @@ const users: User[] = [
 	{ id: '3', fullName: 'Alice Johnson', avatarUrl: avatar7 },
 ];
 
-const tableData: Project[] = [
+const defaultTableData: Project[] = [
 	{
 		id: '1',
 		project: 'Laravel Project',
@@ -82,6 +83,7 @@ const tableData: Project[] = [
 
 const XTableResponsive: React.FC<XTableResponsiveProps> = ({
 	className = '',
+	tableData = defaultTableData,
 }) => {
 	const handleEdit = () => {
 		alert('Edit action');
@@ -98,7 +100,7 @@ const XTableResponsive: React.FC<XTableResponsiveProps> = ({
 
 	return (
 		<ComponentWrapper
-			className={`col-span-12 break-inside-avoid $className`}
+			className={`col-span-12 break-inside-avoid ${className}`}
 		>
 			<XComponentHeader
 				title="Responsive Table"

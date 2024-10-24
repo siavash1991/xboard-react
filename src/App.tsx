@@ -4,10 +4,12 @@ import { Provider } from 'react-redux';
 import { store } from '@redux/store';
 import XLoadingSpinner from '@atoms/LoadingSpinner';
 import RedirectWithTrailingSlash from '@utils/RedirectWithTrailingSlash';
-import XApexCharts from '@pages/Charts/ApexCharts';
-import XChartJS from '@pages/Charts/ChartJS';
-import XForms from '@pages/Forms';
-import XTanles from '@pages/Tables';
+
+const XApexCharts = lazy(() => import('@pages/Charts/ApexCharts'));
+const XChartJS = lazy(() => import('@pages/Charts/ChartJS'));
+const XForms = lazy(() => import('@pages/Forms'));
+const XTables = lazy(() => import('@pages/Tables'));
+
 const XMain = lazy(() => import('@pages/Main'));
 const XUpdateUser = lazy(() => import('@pages/UpdateProfile'));
 const XUsers = lazy(() => import('@pages/Users'));
@@ -49,7 +51,7 @@ function App() {
 								path="/cards-default"
 								element={<XDefaultCards />}
 							/>
-							<Route path="/tables" element={<XTanles />} />
+							<Route path="/tables" element={<XTables />} />
 							<Route path="/forms" element={<XForms />} />
 							<Route path="/signin" element={<XSignIn />} />
 							<Route path="/signup" element={<XSignUp />} />

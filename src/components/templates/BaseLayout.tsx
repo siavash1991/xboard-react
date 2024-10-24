@@ -5,7 +5,7 @@ import XSidebar from '@organisms/Sidebar';
 import XHeader from '@organisms/Header';
 import XBreadcrumb from '@atoms/Breadcrumb';
 import PageTitle from '@atoms/PageTitle';
-import { RootState } from '../../redux/store';
+import { RootState } from '@redux/store';
 
 interface BaseLayoutProps {
 	children: ReactNode;

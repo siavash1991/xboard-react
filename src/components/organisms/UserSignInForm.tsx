@@ -1,4 +1,3 @@
-// src/components/organisms/UserSignInForm.tsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -13,7 +12,7 @@ interface SignInFormInputs {
 	password: string;
 }
 
-const UserSignInForm: React.FC = () => {
+const XUserSignInForm: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const { isLoading, error } = useSelector(
 		(state: RootState) => state.authentication
@@ -37,8 +36,9 @@ const UserSignInForm: React.FC = () => {
 				onSubmit={handleSubmit(onSubmit)}
 				className="rounded-lg bg-white dark:bg-gray-800 space-y-6 p-10"
 			>
-				{error && typeof error === 'string' && (
-					<div className="text-red-500">{error}</div>
+				{/* Display error message from Redux state */}
+				{error?.message && (
+					<div className="text-red-500">{error.message}</div>
 				)}
 				<div>
 					<label
@@ -96,4 +96,4 @@ const UserSignInForm: React.FC = () => {
 	);
 };
 
-export default UserSignInForm;
+export default XUserSignInForm;

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import { RootState } from './store';
 
+// Define interfaces for authentication state and error handling
 interface AuthState {
 	username: string | null;
 	token: string | null;
@@ -11,6 +11,11 @@ interface AuthState {
 
 interface AuthError {
 	message: string;
+}
+
+interface AuthPayload {
+	username: string;
+	token: string;
 }
 
 const initialState: AuthState = {
@@ -23,17 +28,15 @@ const initialState: AuthState = {
 // Simulated API base URL
 const API_BASE_URL = 'https://api.example.com';
 
+// Thunk for login
 export const login = createAsyncThunk<
-	{ username: string; token: string },
+	AuthPayload,
 	{ username: string; password: string },
-	{
-		rejectValue: AuthError;
-	}
+	{ rejectValue: AuthError }
 >(
 	'authentication/login',
 	async ({ username, password }, { rejectWithValue }) => {
 		try {
-			// Simulate an API call using Axios
 			const response = await axios.post(`${API_BASE_URL}/login`, {
 				username,
 				password,
@@ -41,32 +44,27 @@ export const login = createAsyncThunk<
 
 			return { username, token: response.data.token };
 		} catch (error) {
-			// Check if the error is of type AxiosError and has a response
 			if (axios.isAxiosError(error) && error.response) {
-				return Promise.reject(
-					rejectWithValue({
-						message: error.response.data.message || 'Login failed',
-					})
-				);
+				return rejectWithValue({
+					message: error.response.data.message || 'Login failed',
+				});
 			}
 
-			// Return a generic error if the above conditions are not met
-			return Promise.reject(rejectWithValue({ message: 'Login failed' }));
+			return rejectWithValue({ message: 'An unexpected error occurred' });
 		}
 	}
 );
 
+// Thunk for signup
 export const signup = createAsyncThunk<
-	{ username: string; token: string },
+	AuthPayload,
 	{
 		username: string;
 		email: string;
 		password: string;
 		confirmPassword: string;
 	},
-	{
-		rejectValue: AuthError;
-	}
+	{ rejectValue: AuthError }
 >(
 	'authentication/signup',
 	async (
@@ -74,7 +72,6 @@ export const signup = createAsyncThunk<
 		{ rejectWithValue }
 	) => {
 		try {
-			// Simulate an API call using Axios
 			const response = await axios.post(`${API_BASE_URL}/signup`, {
 				username,
 				email,
@@ -84,23 +81,18 @@ export const signup = createAsyncThunk<
 
 			return { username, token: response.data.token };
 		} catch (error) {
-			// Check if the error is of type AxiosError and has a response
 			if (axios.isAxiosError(error) && error.response) {
-				return Promise.reject(
-					rejectWithValue({
-						message: error.response.data.message || 'Signup failed',
-					})
-				);
+				return rejectWithValue({
+					message: error.response.data.message || 'Signup failed',
+				});
 			}
 
-			// Return a generic error if the above conditions are not met
-			return Promise.reject(
-				rejectWithValue({ message: 'Signup failed' })
-			);
+			return rejectWithValue({ message: 'An unexpected error occurred' });
 		}
 	}
 );
 
+// Create a slice of the authentication state
 const authenticationSlice = createSlice({
 	name: 'authentication',
 	initialState,
@@ -114,44 +106,49 @@ const authenticationSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder
+			// Handle login
 			.addCase(login.pending, (state) => {
 				state.isLoading = true;
 				state.error = null;
 			})
 			.addCase(
 				login.fulfilled,
-				(
-					state,
-					action: PayloadAction<{ username: string; token: string }>
-				) => {
+				(state, action: PayloadAction<AuthPayload>) => {
 					state.isLoading = false;
 					state.username = action.payload.username;
 					state.token = action.payload.token;
 				}
 			)
-			.addCase(login.rejected, (state, action) => {
-				state.isLoading = false;
-				state.error = action.payload || { message: 'Login failed' };
-			})
+			.addCase(
+				login.rejected,
+				(state, action: PayloadAction<AuthError | undefined>) => {
+					state.isLoading = false;
+					state.error = action.payload || { message: 'Login failed' };
+				}
+			)
+
+			// Handle signup
 			.addCase(signup.pending, (state) => {
 				state.isLoading = true;
 				state.error = null;
 			})
 			.addCase(
 				signup.fulfilled,
-				(
-					state,
-					action: PayloadAction<{ username: string; token: string }>
-				) => {
+				(state, action: PayloadAction<AuthPayload>) => {
 					state.isLoading = false;
 					state.username = action.payload.username;
 					state.token = action.payload.token;
 				}
 			)
-			.addCase(signup.rejected, (state, action) => {
-				state.isLoading = false;
-				state.error = action.payload || { message: 'Signup failed' };
-			});
+			.addCase(
+				signup.rejected,
+				(state, action: PayloadAction<AuthError | undefined>) => {
+					state.isLoading = false;
+					state.error = action.payload || {
+						message: 'Signup failed',
+					};
+				}
+			);
 	},
 });
 

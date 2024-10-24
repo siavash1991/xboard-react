@@ -35,7 +35,7 @@ interface Project {
 
 interface XTableBasicProps {
 	className?: string;
-	tableData: Project[]; // Accept tableData as a prop
+	tableData?: Project[]; // Accept tableData as a prop
 }
 
 // Sample user data

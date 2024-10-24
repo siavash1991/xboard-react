@@ -131,7 +131,7 @@ const XThemeToggle: React.FC<XThemeToggleProps> = ({ className = '' }) => {
 
 			{isDropdownOpen && (
 				<div
-					className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden"
+					className="absolute right-0 py-2 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden"
 					data-testid="theme-dropdown" // Add test ID here
 				>
 					{THEMES.map((theme) => (

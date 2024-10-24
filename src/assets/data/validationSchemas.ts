@@ -1,11 +1,10 @@
-// /validationSchemas.ts
 import * as yup from 'yup';
 
 export const signUpSchema = yup.object({
 	username: yup
 		.string()
 		.required('Username is required')
-		.transform((value) => value && value.toLowerCase())
+		.transform((value) => value?.toLowerCase())
 		.matches(
 			/^[a-zA-Z][a-zA-Z0-9]*$/,
 			'Username must start with a letter and can only contain letters and numbers'
@@ -37,7 +36,7 @@ export const signInSchema = yup.object({
 	username: yup
 		.string()
 		.required('Username is required')
-		.transform((value) => value && value.toLowerCase())
+		.transform((value) => value?.toLowerCase())
 		.matches(
 			/^[a-zA-Z][a-zA-Z0-9]*$/,
 			'Username must start with a letter and can only contain letters and numbers'
@@ -64,7 +63,7 @@ export const UserUpdateSchema = yup.object().shape({
 	username: yup
 		.string()
 		.required('Username is required')
-		.transform((value) => value && value.toLowerCase())
+		.transform((value) => value?.toLowerCase())
 		.matches(
 			/^[a-zA-Z][a-zA-Z0-9]*$/,
 			'Username must start with a letter and can only contain letters and numbers'

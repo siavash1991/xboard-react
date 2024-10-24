@@ -112,7 +112,7 @@ const XChartJsPolar: React.FC<{ className?: string }> = ({
 	};
 	return (
 		<ComponentWrapper
-			className={`col-span-12 lg:col-span-6 xl:col-span-4 break-inside-avoid $className`}
+			className={`col-span-12 lg:col-span-6 2xl:col-span-4 break-inside-avoid $className`}
 		>
 			<XComponentHeader
 				title="Average Skills"

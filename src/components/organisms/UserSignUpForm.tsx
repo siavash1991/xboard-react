@@ -14,7 +14,7 @@ interface SignUpFormInputs {
 	confirmPassword: string;
 }
 
-const UserSignUpForm: React.FC = () => {
+const XUserSignUpForm: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const { isLoading, error } = useSelector(
 		(state: RootState) => state.authentication
@@ -139,4 +139,4 @@ const UserSignUpForm: React.FC = () => {
 	);
 };
 
-export default UserSignUpForm;
+export default XUserSignUpForm;

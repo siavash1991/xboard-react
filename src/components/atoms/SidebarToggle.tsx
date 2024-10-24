@@ -32,7 +32,7 @@ const XSidebarToggle: React.FC = () => {
 				aria-label="Toggle Sidebar"
 				aria-expanded={isSidebarOpen}
 				aria-controls="sidebar"
-				data-testid="toggle-button"
+				data-testid="sidebar-toggle"
 			>
 				{isSidebarOpen ? (
 					<XMarkIcon className="h-6 w-6" data-testid="close-icon" /> // Close icon when sidebar is open

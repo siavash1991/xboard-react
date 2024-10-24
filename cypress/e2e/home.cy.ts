@@ -4,6 +4,6 @@ describe('Home Page Test', () => {
 		cy.visit('https://siavash1991.github.io/xboard-react/#/');
 
 		// Assert that the home page is loaded
-		cy.contains('Dashboard'); // Replace 'Home Page Title' with the title or content of your home page
+		cy.contains('Dashboard');
 	});
 });

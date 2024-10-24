@@ -42,7 +42,9 @@
 		"**/*.ts",
 		"craco.config.js",
 		"cypress.config.js",
-		"jest.config.js"
+		"jest.config.js",
+		"cypress/tsconfig.json",
+		"cypress/**/*.ts"
 	],
 	"exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }

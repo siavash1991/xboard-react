@@ -5,10 +5,7 @@ describe('User Profile Update', () => {
 	});
 
 	it('should display the update profile form with pre-filled data', () => {
-		cy.get('[data-testid=profile-heading]').should(
-			'contain',
-			'Update Profile'
-		);
+		cy.get('[data-testid=page-title]').should('contain', 'User Profile');
 
 		cy.get('[data-testid=user-profile-form]').within(() => {
 			cy.get('[data-testid=username-input]').should(

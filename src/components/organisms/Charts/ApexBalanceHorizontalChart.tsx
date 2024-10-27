@@ -3,7 +3,7 @@ import ApexCharts from 'react-apexcharts';
 import ComponentWrapper from '@atoms/ComponentWrapper';
 import XComponentHeader from '@atoms/ComponentHeader';
 import XComponentBody from '@atoms/ComponentBody';
-import { horizontalBararChartOptions } from '@shared/ApexChartsConfig';
+import { horizontalBarChartOptions } from '@shared/ApexChartsConfig';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import useTheme from '@hooks/useTheme';
 import useDirection from '@hooks/useDirection';
@@ -52,7 +52,7 @@ const XApexBalanceHorizontalChart: React.FC<{ className?: string }> = ({
 			/>
 			<XComponentBody>
 				<ApexCharts
-					options={horizontalBararChartOptions(
+					options={horizontalBarChartOptions(
 						currentTheme,
 						currentDir,
 						[],

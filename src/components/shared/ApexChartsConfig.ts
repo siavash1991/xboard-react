@@ -2,8 +2,10 @@ import { getThemeColor } from '@utils/themeUtils';
 import { ApexOptions } from 'apexcharts';
 import colors from 'tailwindcss/colors';
 
+type Theme = 'light' | 'dark' | 'semi-dark';
+
 export const splineAreaChartOptions = (
-	theme: 'light' | 'dark' | 'semi-dark' = 'light',
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
@@ -209,7 +211,7 @@ export const splineAreaChartOptions = (
 });
 
 export const barChartOptions = (
-	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
@@ -311,7 +313,7 @@ export const barChartOptions = (
 });
 
 export const bubbleChartOptions = (
-	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
@@ -416,7 +418,7 @@ export const bubbleChartOptions = (
 });
 
 export const lineChartOptions = (
-	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
@@ -498,8 +500,8 @@ export const lineChartOptions = (
 	},
 });
 
-export const horizontalBararChartOptions = (
-	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+export const horizontalBarChartOptions = (
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]
@@ -545,7 +547,7 @@ export const horizontalBararChartOptions = (
 });
 
 export const candlestickChartOptions = (
-	theme: 'light' | 'semi-dark' | 'dark' = 'light',
+	theme: Theme = 'light',
 	direction: 'ltr' | 'rtl' = 'ltr',
 	colorsPalette?: string[],
 	categories?: string[]

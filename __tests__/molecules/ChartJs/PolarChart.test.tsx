@@ -31,6 +31,6 @@ describe('XPolarChart', () => {
 
 	it('renders the polar chart with the provided data', () => {
 		render(<XPolarChart data={mockData} options={mockOptions} />);
-		expect(screen.getByTestId('polar-chart')).toBeInTheDocument();
+		expect(screen.getByTestId('chart-js')).toBeInTheDocument();
 	});
 });

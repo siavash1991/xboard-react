@@ -26,6 +26,6 @@ describe('XLineChart', () => {
 
 	it('renders the line chart with the provided data', () => {
 		render(<XLineChart data={mockData} options={mockOptions} />);
-		expect(screen.getByTestId('line-chart')).toBeInTheDocument();
+		expect(screen.getByTestId('chart-js')).toBeInTheDocument();
 	});
 });

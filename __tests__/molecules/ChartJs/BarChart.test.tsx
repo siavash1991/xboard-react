@@ -25,6 +25,6 @@ describe('XBarChart', () => {
 
 		render(<XBarChart data={mockData} options={mockOptions} />);
 
-		expect(screen.getByTestId('bar-chart')).toBeInTheDocument();
+		expect(screen.getByTestId('chart-js')).toBeInTheDocument();
 	});
 });

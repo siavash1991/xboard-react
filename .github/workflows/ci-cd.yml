@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - development # Trigger on pushes to the 'development' branch
+            - '!gh-pages' # Exclude gh-pages branch
 
 jobs:
     build-and-deploy:
@@ -33,3 +34,7 @@ jobs:
 
             - name: Clean up build files
               run: rm -rf build
+            - name: Run Semantic Release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+              run: npx semantic-release

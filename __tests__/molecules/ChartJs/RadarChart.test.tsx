@@ -23,6 +23,6 @@ describe('XRadarChart', () => {
 
 	it('renders the radar chart with the provided data', () => {
 		render(<XRadarChart data={mockData} options={mockOptions} />);
-		expect(screen.getByTestId('radar-chart')).toBeInTheDocument();
+		expect(screen.getByTestId('chart-js')).toBeInTheDocument();
 	});
 });

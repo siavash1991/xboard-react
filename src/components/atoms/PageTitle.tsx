@@ -4,7 +4,7 @@ interface PageTitleProps {
 	title: string;
 }
 
-const PageTitle: React.FC<PageTitleProps> = ({ title = '' }) => {
+const XPageTitle: React.FC<PageTitleProps> = ({ title = '' }) => {
 	return (
 		<h1
 			data-testid="page-title"
@@ -15,4 +15,4 @@ const PageTitle: React.FC<PageTitleProps> = ({ title = '' }) => {
 	);
 };
 
-export default PageTitle;
+export default XPageTitle;

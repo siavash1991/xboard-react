@@ -20,6 +20,6 @@ describe('XBubbleChart', () => {
 
 		render(<XBubbleChart data={mockData} />);
 
-		expect(screen.getByTestId('bubble-chart')).toBeInTheDocument();
+		expect(screen.getByTestId('chart-js')).toBeInTheDocument();
 	});
 });

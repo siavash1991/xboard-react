@@ -17,7 +17,7 @@ import {
 const XSidebar = () => {
 	const activeItem = useActiveItem();
 	const basePath = withBasePath();
-	const dispatch = useDispatch(); // Initialize dispatch
+	const dispatch = useDispatch();
 
 	const getActiveItemClassName = (isActive: boolean) =>
 		isActive

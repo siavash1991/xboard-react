@@ -3,7 +3,7 @@ name: CI/CD
 on:
     push:
         branches:
-            - development # Trigger on pushes to the 'development' branch
+            - main # Trigger on pushes to the 'main' branch
             - '!gh-pages' # Exclude gh-pages branch
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '20.14.0' # Update to your desired Node.js version
+                  node-version: 'lts/*'
 
             - name: Install Dependencies
               run: npm install
@@ -34,7 +34,3 @@ jobs:
 
             - name: Clean up build files
               run: rm -rf build
-            - name: Run Semantic Release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
-              run: npx semantic-release

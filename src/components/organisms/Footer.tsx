@@ -1,15 +1,18 @@
 import { Footer } from 'flowbite-react';
-import Logo from '@assets/images/logo.svg';
 import { withBasePath } from '@shared/basePathHelper';
+import useTheme from '@hooks/useTheme';
+import getLogo from '@utils/getLogo';
 
 const XFooter = () => {
+	const currentTheme = useTheme();
+	const logo = getLogo(currentTheme);
 	return (
 		<Footer container className="mb-7 sticky top-[100vh]">
 			<div className="w-full text-center">
 				<div className="w-full flex flex-wrap items-center justify-center sm:justify-between">
 					<Footer.Brand
 						href={`${withBasePath()}`}
-						src={Logo}
+						src={logo}
 						alt="Xboard Logo"
 						name="XBoard"
 					/>

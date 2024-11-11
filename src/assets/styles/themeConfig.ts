@@ -244,7 +244,7 @@ const customTheme: CustomFlowbiteTheme = {
 			},
 		},
 		brand: {
-			img: 'bg-gray-800 dark:bg-gray-700 semi-dark:bg-gray-600 mr-3 h-8 rtl:mr-0 rtl:ml-3',
+			img: 'mr-3 h-8 rtl:mr-0 rtl:ml-3',
 			span: 'dark:text-white semi-dark:text-white self-center whitespace-nowrap text-2xl font-semibold text-gray-800 dark:text-white',
 		},
 	},

@@ -34,7 +34,7 @@ const XUserSignInForm: React.FC = () => {
 		<ComponentWrapper>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="rounded-lg bg-white dark:bg-gray-800 space-y-6 p-10"
+				className="rounded-lg bg-white dark:bg-gray-800  semi-dark:bg-gray-700 space-y-6 p-10"
 			>
 				{/* Display error message from Redux state */}
 				{error?.message && (
@@ -43,7 +43,7 @@ const XUserSignInForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="username"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Username:
 					</label>
@@ -64,7 +64,7 @@ const XUserSignInForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="password"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Password:
 					</label>

@@ -26,7 +26,7 @@ const XUsersTable: React.FC<UsersTableProps> = ({ userData, usersPerPage }) => {
 
 	return (
 		<>
-			<ComponentWrapper className="col-span-12 mb-1">
+			<ComponentWrapper className="col-span-12 mb-1 overflow-x-auto">
 				<Table striped>
 					<Table.Head>
 						<Table.HeadCell className="bg-white dark:bg-gray-800 semi-dark:bg-gray-600">

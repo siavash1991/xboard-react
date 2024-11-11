@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { toggleSidebar } from '../../redux/sidebarSlice';
-import { RootState, AppDispatch } from '../../redux/store'; // Adjust the path as needed
+import { toggleSidebar } from '@redux/sidebarSlice';
+import { RootState, AppDispatch } from '@redux/store';
 
 const XSidebarToggle: React.FC = () => {
 	const dispatch: AppDispatch = useDispatch();

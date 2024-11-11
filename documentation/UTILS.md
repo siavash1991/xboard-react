@@ -2,6 +2,19 @@
 
 The utils directory contains utility functions and components that provide common functionality throughout the application, enhancing code reusability and organization.
 
+## getLogo.ts
+
+The getLogo function returns the appropriate logo based on the current theme (light or dark).
+
+### Key Features:
+
+Takes the theme (either 'light', 'dark', or 'semi-dark') as input.
+Returns the corresponding logo based on the input theme.
+
+### Usage:
+
+The getLogo function is used to dynamically switch between logos based on the current theme in the application. It is often used in components that need to display a different logo depending on the theme (e.g., light, dark, or semi-dark modes).
+
 ## ratingStars.ts
 
 The createRatingStars function generates an array of rating stars based on the total number of stars and the number of filled stars.

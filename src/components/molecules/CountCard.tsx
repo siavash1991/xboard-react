@@ -32,18 +32,18 @@ const XCountCard: React.FC<CardProps> = ({
 			<Card href="#" className="gap-2 dark:bg-gray-800">
 				<div className="flex items-center">
 					<IconComponent
-						className="h-5 w-5 text-gray-500"
+						className="h-5 w-5 text-gray-500 dark:text-gray-300 semi-dark:text-gray-200 "
 						data-testid="card-icon"
 					/>
 					<h5
-						className="text-lg font-bold tracking-tight text-gray-900 dark:text-white ml-2"
+						className="text-lg font-bold tracking-tight text-gray-900 dark:text-white semi-dark:text-gray-200 ml-2"
 						data-testid="card-title"
 					>
 						{title}
 					</h5>
 				</div>
 				<p
-					className="font-medium text-lg text-gray-700 dark:text-gray-400 ml-1 p-0"
+					className="font-medium text-lg text-gray-700 dark:text-gray-300 semi-dark:text-gray-200 ml-1 p-0"
 					data-testid="card-content"
 				>
 					{content}

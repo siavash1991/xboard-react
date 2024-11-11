@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import XAuthLayout from '@templates/AuthLayout';
 import XUserSignInForm from '@organisms/UserSignInForm';
-
-import Logo from '@assets/images/logo-dark.svg';
+import useTheme from '@hooks/useTheme';
+import getLogo from '@utils/getLogo';
 
 const XSignIn: React.FC = () => {
+	const currentTheme = useTheme();
+	const logo = getLogo(currentTheme);
 	return (
 		<XAuthLayout>
 			<div className="content-wrapper pt-20 flex flex-col items-center">
-				<img src={Logo} alt="Your Logo" className="mb-4 h-16 w-auto" />
+				<img src={logo} alt="Your Logo" className="mb-4 h-16 w-auto" />
 
 				<h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
 					Welcome back!

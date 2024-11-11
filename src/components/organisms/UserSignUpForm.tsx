@@ -36,7 +36,7 @@ const XUserSignUpForm: React.FC = () => {
 		<ComponentWrapper>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="rounded-lg bg-white dark:bg-gray-800 space-y-6 p-10"
+				className="rounded-lg bg-white dark:bg-gray-800 semi-dark:bg-gray-700 space-y-6 p-10"
 			>
 				{error && typeof error === 'string' && (
 					<div className="text-red-500">{error}</div>
@@ -44,7 +44,7 @@ const XUserSignUpForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="username"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Username:
 					</label>
@@ -65,7 +65,7 @@ const XUserSignUpForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="email"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Email:
 					</label>
@@ -86,7 +86,7 @@ const XUserSignUpForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="password"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Password:
 					</label>
@@ -107,7 +107,7 @@ const XUserSignUpForm: React.FC = () => {
 				<div>
 					<label
 						htmlFor="confirmPassword"
-						className="block mb-2 text-sm font-medium text-gray-900"
+						className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100 semi-dark:text-gray-100"
 					>
 						Confirm Password:
 					</label>

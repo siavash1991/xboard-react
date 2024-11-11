@@ -32,7 +32,7 @@ const XActiveProjectCard = ({ className = '' }) => {
 
 	return (
 		<ComponentWrapper
-			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 xl:col-span-4 ${className}`}
+			className={`bg-component-light dark:bg-gray-600 col-span-12 lg:col-span-6 2xl:col-span-4 ${className}`}
 		>
 			<XComponentHeader
 				title="Active Project"

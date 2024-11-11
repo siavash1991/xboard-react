@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import XAuthLayout from '@templates/AuthLayout';
 import XUserSignUpForm from '@organisms/UserSignUpForm';
 
-import Logo from '@assets/images/logo-dark.svg';
+import useTheme from '@hooks/useTheme';
+import getLogo from '@utils/getLogo';
 
 const XSignUp: React.FC = () => {
+	const currentTheme = useTheme();
+	const logo = getLogo(currentTheme);
 	return (
 		<XAuthLayout>
 			<div className="content-wrapper pt-20 flex flex-col items-center">
 				<img
-					src={Logo}
+					src={logo}
 					alt="Your Logo"
 					className="mb-4 h-16 w-auto fill-black"
 				/>
@@ -23,7 +26,6 @@ const XSignUp: React.FC = () => {
 				</p>
 
 				<div className="w-full max-w-md">
-					{/* Additional styling for the form */}
 					<XUserSignUpForm />
 				</div>
 

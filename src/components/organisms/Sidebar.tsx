@@ -1,5 +1,5 @@
 import { Badge, Sidebar } from 'flowbite-react';
-import Logo from '@assets/images/logo/logo.svg';
+import Logo from '@assets/images/logos/logo.svg';
 import useActiveItem from '@hooks/useActiveItem';
 import { withBasePath } from '@shared/basePathHelper';
 import { useDispatch } from 'react-redux'; // Import useDispatch

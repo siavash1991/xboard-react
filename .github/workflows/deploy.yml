@@ -34,7 +34,3 @@ jobs:
 
             - name: Clean up build files
               run: rm -rf build
-            - name: Run Semantic Release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
-              run: npx semantic-release

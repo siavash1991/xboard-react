@@ -2,6 +2,8 @@
 
 Welcome to XBoard React! This project is a React-based application designed to create reusable components and utilities for a seamless user experience.
 
+![Preview](./documentation/preview.webp)
+
 ## Table of Contents
 
 -   [Installation](#installation)

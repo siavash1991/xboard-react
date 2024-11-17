@@ -2,6 +2,7 @@
 
 Welcome to XBoard React! This project is a React-based application designed to create reusable components and utilities for a seamless user experience.
 [Demo available here](https://siavash1991.github.io/xboard-react/)
+
 ![Preview](./documentation/preview.webp)
 
 ## Table of Contents
@@ -18,6 +19,8 @@ Welcome to XBoard React! This project is a React-based application designed to c
 -   [Hooks Directory](#hooks-directory)
 -   [Utils Directory](#utils-directory)
 -   [Tests](#tests)
+    [CI/CD](#cicd)
+    [Docker](#docker)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -318,6 +321,37 @@ Runs on pushes to the development branch (excluding gh-pages).
 Uses semantic-release to automate versioning and release notes, ensuring consistent, automated updates.
 
 #### This setup streamlines the development workflow, so contributors only need to push changes to the development branch, and CI/CD handles the rest.
+
+## Docker
+
+This project is available as a Docker image on Docker Hub, making it easy to run the application in a consistent environment.
+
+### Using the Docker Hub Image
+
+1. Pull the Docker Image
+   To get started, you can pull the Docker image from Docker Hub using the following command:
+
+```bash
+docker pull siavash1991/xboard-react
+```
+
+2. Run the Docker Container
+   Once the image is pulled, run the container with Docker Compose using the following command:
+
+```bash
+docker-compose up
+```
+
+This will start the application and expose it on port 3000 of your local machine.
+
+3. Access the Application
+   After the container is running, open your browser and navigate to:
+
+```bash
+http://localhost:3000/xboard-react
+```
+
+You should now see the application running.
 
 ## Contributing
 
